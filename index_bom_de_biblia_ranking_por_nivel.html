@@ -1,1239 +1,265 @@
-<!doctype html>
-<html lang="pt">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#102b46">
-<meta name="description" content="Bom de Bíblia IASD Calemba 2 Antena — aprende, crê e vive a Palavra.">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Bom de Bíblia">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
-<title>Bom de Bíblia IASD Calemba 2 Antena</title>
-<style>
-  
-/* DESIGN PROFISSIONAL — BOM DE BÍBLIA */
-
-body {
-  background: #f2f5fb;
-  color: #17243b;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 16px;
-}
-
-h1, h2, h3 {
-  color: #102b50;
-  line-height: 1.3;
-}
-
-h1 {
-  text-align: center;
-  font-size: clamp(24px, 6vw, 34px);
-  font-weight: 800;
-}
-
-h2 {
-  font-size: 23px;
-  border-bottom: 3px solid #d6ad45;
-  padding-bottom: 8px;
-}
-
-button,
-.primary {
-  background: linear-gradient(135deg, #123966, #205a91);
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(16, 43, 80, 0.15);
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-button:active,
-.primary:active {
-  transform: scale(0.98);
-}
-
-button:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ccd5e3;
-  border-radius: 10px;
-  padding: 12px;
-  font-size: 16px;
-  background: #ffffff;
-  color: #17243b;
-  margin-bottom: 10px;
-}
-
-p {
-  overflow-wrap: anywhere;
-}
-
-#pontuacaoOnline,
-#estadoPartida,
-#nomesJogadores,
-#nivelOnline,
-#progressoOnline {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 12px;
-  margin: 10px 0;
-  border-left: 4px solid #d6ad45;
-}
-
-#classificacaoNivelOnline {
-  background: #ffffff;
-  border: 1px solid #e1e7f0;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 16px 0;
-  box-shadow: 0 5px 18px rgba(16, 43, 80, 0.08);
-}
-
-#classificacaoNivelOnline h3 {
-  color: #123966;
-}
-
-#barraNivel {
-  width: 100%;
-  height: 12px;
-  accent-color: #d6ad45;
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  button,
-  .primary {
-    max-width: 100%;
-    min-height: 44px;
-  }
-
-  #classificacaoNivelOnline {
-    padding: 12px;
-  }
-}
-
-:root{--navy:#102b46;--blue:#174a72;--gold:#e7b84b;--cream:#f6f3ea;--ink:#172535;--muted:#667587;--green:#217a53;--red:#a83c3c}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#102b46,#1d5275);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);min-height:100vh;padding:20px}
-.wrap{max-width:760px;margin:0 auto}.brand{color:#fff;text-align:center;padding:12px 0 20px}.mark{display:inline-grid;place-items:center;width:78px;height:78px;border:1.5px solid var(--gold);border-radius:20px;color:var(--gold);margin-bottom:10px;padding:8px}.mark svg{width:100%;height:100%;display:block}.church-label{display:block;color:#f5d98d;font-size:10px;letter-spacing:1.2px;font-weight:800;margin:0 0 10px}.brand h1{margin:0;font-size:clamp(28px,6vw,42px);letter-spacing:.2px}.brand p{margin:7px 0 0;color:#d8e4ed}.tag{display:inline-block;border:1px solid #52718b;border-radius:999px;padding:5px 11px;font-size:12px;margin-top:12px;color:#f5d98d}
-.panel{background:var(--cream);border-radius:22px;padding:clamp(18px,4vw,30px);box-shadow:0 18px 55px #06162666}.intro{text-align:center}.intro h2{font-size:25px;margin:5px 0 8px;color:var(--navy)}.intro p{color:var(--muted);line-height:1.55}.controls{display:grid;gap:13px;margin:22px 0}.field label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}.field select,.field input{width:100%;padding:13px;border:1px solid #cbd3da;border-radius:11px;background:#fff;font:inherit;color:var(--ink)}button{font:inherit;font-weight:750;border:0;border-radius:12px;padding:13px 16px;cursor:pointer;transition:transform .12s,opacity .12s}button:active{transform:scale(.99)}button:disabled{opacity:.5;cursor:not-allowed}.primary{background:var(--gold);color:#172535;width:100%}.secondary{background:#e5eaf0;color:var(--navy)}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);margin-bottom:14px}.progress{height:8px;background:#dce2e6;border-radius:99px;overflow:hidden;margin-bottom:23px}.progress div{height:100%;width:0;background:var(--gold);transition:width .25s}.qmeta{font-size:12px;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.7px}.question{font-size:clamp(20px,4.5vw,27px);line-height:1.3;color:var(--navy);margin:9px 0 20px}.answers{display:grid;gap:10px}.answer{display:flex;gap:11px;align-items:center;text-align:left;width:100%;background:#fff;border:1px solid #d7dee4;color:var(--ink);font-weight:600}.letter{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:9px;background:#edf1f4;color:var(--navy);font-size:13px}.answer.correct{border-color:var(--green);background:#e7f4ec}.answer.correct .letter{background:var(--green);color:#fff}.answer.wrong{border-color:var(--red);background:#f9e9e7}.answer.wrong .letter{background:var(--red);color:#fff}.feedback{margin-top:16px;padding:14px;border-radius:12px;background:#e9eef2;line-height:1.5}.feedback.good{background:#e7f4ec}.feedback.bad{background:#f9e9e7}.ref{display:block;font-size:12px;color:var(--muted);margin-top:8px;font-weight:700}.actions{display:flex;gap:10px;margin-top:18px}.actions button{flex:1}.scoregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}.scorebox{background:#fff;border-radius:12px;padding:13px;text-align:center}.scorebox strong{display:block;font-size:24px;color:var(--navy)}.scorebox span{font-size:11px;color:var(--muted)}.notice{font-size:12px;line-height:1.5;color:var(--muted);margin-top:18px;text-align:center}.ranking{margin-top:22px;padding-top:18px;border-top:1px solid #d7dee4}.ranking h3{color:var(--navy);margin:0 0 8px}.ranking-list{display:grid;gap:8px;margin-top:12px}.rank-row{display:grid;grid-template-columns:34px 1fr auto;gap:9px;align-items:center;background:#fff;border-radius:10px;padding:10px;font-size:14px}.rank-pos{font-weight:800;color:var(--blue);font-size:18px;text-align:center}.rank-row.podium-1{border:2px solid #d8aa24;background:#fff8df}.rank-row.podium-2{border:2px solid #aeb8c2;background:#f4f6f8}.rank-row.podium-3{border:2px solid #bd8154;background:#fff0e5}.rank-score{font-weight:800;color:var(--navy);white-space:nowrap}.hidden{display:none!important}.pill{display:inline-block;background:#e4ebef;color:var(--navy);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
-@media(min-width:600px){.controls.two{grid-template-columns:1fr 1fr}}
-  
-/* MELHORAR A NITIDEZ DO CABEÇALHO */
-
-#cabecalhoBiblia {
-  background: #ffffff !important;
-  border: 2px solid #d6ad45;
-  box-shadow: 0 5px 16px rgba(16, 43, 80, 0.12);
-}
-
-#cabecalhoBiblia .textoCabecalho h1 {
-  color: #102b50 !important;
-  font-weight: 900;
-  text-shadow: none;
-}
-
-#cabecalhoBiblia .identidadeIgreja {
-  color: #805900 !important;
-  font-weight: 800;
-}
-
-#cabecalhoBiblia .fraseCabecalho {
-  color: #26364b !important;
-  font-weight: 600;
-}
-
-#cabecalhoBiblia .linhaDourada {
-  background: #d6ad45;
-}
-
-/* CENTRALIZAR O CABEÇALHO */
-
-#cabecalhoBiblia {
-  text-align: center !important;
-}
-
-#cabecalhoBiblia .textoCabecalho {
-  width: 100%;
-  text-align: center !important;
-}
-
-#cabecalhoBiblia .textoCabecalho h1,
-#cabecalhoBiblia .identidadeIgreja,
-#cabecalhoBiblia .fraseCabecalho {
-  text-align: center !important;
-  width: 100%;
-}
-
-#cabecalhoBiblia {
-  flex-direction: column;
-}
-
-/* CARTÕES DOS NÍVEIS — BOM DE BÍBLIA */
-.niveis-cartoes {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 24px 0;
-}
-
-.cartao-nivel {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  width: 100%;
-  min-height: 100px;
-  padding: 16px;
-  border: 2px solid transparent;
-  border-radius: 16px;
-  background: #ffffff;
-  color: #17304f;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cartao-nivel:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px #00000025;
-}
-
-.cartao-nivel.ativo {
-  border-color: #e9b949;
-  box-shadow: 0 0 0 2px #e9b94935;
-  background: #fff9e9;
-}
-
-.emoji-nivel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: #edf2fa;
-  font-size: 27px;
-}
-
-.texto-nivel {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  min-width: 0;
-}
-
-.texto-nivel strong {
-  font-size: 16px;
-  line-height: 1.3;
-}
-
-.texto-nivel small {
-  color: #637187;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.cartao-nivel:focus-visible {
-  outline: 3px solid #e9b949;
-  outline-offset: 3px;
-}
-
-@media (max-width: 520px) {
-  .niveis-cartoes {
-    grid-template-columns: 1fr;
-    gap: 11px;
-  }
-
-  .cartao-nivel {
-    min-height: 84px;
-  }
-}
-
-
-
-/* ===== SISTEMA VISUAL PROFISSIONAL V4 ===== */
-:root{
-  --navy:#0b1f3a;--blue:#174a78;--blue2:#2868a5;--gold:#e4b64f;
-  --cream:#ffffff;--ink:#17283e;--muted:#5e6f83;--green:#16734b;--red:#b33b46;
-  --line:#dce5ef;--surface:#f4f7fb;--shadow:0 16px 42px rgba(7,27,53,.12)
-}
-html{scroll-behavior:smooth}
-body{padding:clamp(10px,2.8vw,28px);background:radial-gradient(ellipse at top left,#24547a 0%,#102b46 42%,#08192d 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
-#cabecalhoBiblia{display:none!important}
-.wrap{max-width:1040px;margin:0 auto}
-.brand{position:relative;overflow:hidden;padding:26px 20px 30px;margin:0 auto 22px;border:1px solid rgba(228,182,79,.45);border-radius:26px;background:linear-gradient(135deg,rgba(13,35,61,.98),rgba(24,74,113,.96));box-shadow:0 22px 50px rgba(0,0,0,.22)}
-.brand:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(228,182,79,.13);border-radius:50%;right:-110px;top:-155px;box-shadow:0 0 0 28px rgba(228,182,79,.035),0 0 0 58px rgba(228,182,79,.025);pointer-events:none}
-.brand:after{content:"";position:absolute;height:3px;left:12%;right:12%;bottom:0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.mark{width:86px;height:86px;border-radius:24px;background:rgba(255,255,255,.055);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);position:relative}
-.church-label{font-size:11px;letter-spacing:2px;color:#f5d98d}
-.brand h1{font-size:clamp(30px,5vw,48px);font-weight:900;letter-spacing:-1.1px;line-height:1.08;margin:5px 0 10px;text-wrap:balance}
-.brand p{font-size:clamp(14px,2vw,17px);color:#dce8f2}
-.tag{font-size:10px;letter-spacing:.8px;background:rgba(255,255,255,.06);border-color:rgba(228,182,79,.45);color:#f7d986}
-.panel{background:#fff;border:1px solid rgba(255,255,255,.7);border-radius:26px;padding:clamp(17px,3.8vw,36px);box-shadow:var(--shadow)}
-.intro h2{font-size:clamp(23px,3vw,30px);letter-spacing:-.45px;border:0;padding:0;margin:12px 0 8px}
-.intro p{max-width:690px;margin:0 auto;color:#5c6c80;font-size:15px}
-.pill{background:#eaf2fb;color:#1b4f7c;border:1px solid #d6e5f4;font-size:11px;letter-spacing:.35px;text-transform:uppercase}
-.percurso-niveis{display:flex;align-items:flex-start;gap:13px;margin:23px 0 14px;padding:15px 17px;border:1px solid #d8e6f4;border-radius:17px;background:linear-gradient(110deg,#f0f6fd,#fff)}
-.percurso-icone{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:12px;background:#174a78;color:#fff;font-size:23px;font-weight:800}
-.percurso-niveis strong{display:block;color:#102b46;font-size:14px}
-.percurso-niveis p{margin:3px 0 0;color:#627287;font-size:13px;line-height:1.5}
-.niveis-cartoes{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:16px 0 25px}
-.cartao-nivel{position:relative;min-height:116px;align-items:flex-start;padding:17px;border:1px solid #dce5ef;border-radius:18px;background:linear-gradient(145deg,#fff,#f8fafd);box-shadow:0 4px 12px rgba(16,43,70,.035);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-.cartao-nivel:before{content:"";position:absolute;top:0;left:17px;right:17px;height:3px;border-radius:0 0 6px 6px;background:#c8d5e4;transition:background .18s ease}
-.cartao-nivel:hover{transform:translateY(-3px);border-color:#b5cce2;box-shadow:0 12px 22px rgba(16,43,70,.09)}
-.cartao-nivel.ativo{border-color:#d7a934;background:linear-gradient(145deg,#fffdf6,#fff7e4);box-shadow:0 0 0 2px rgba(228,182,79,.16),0 12px 25px rgba(16,43,70,.08)}
-.cartao-nivel.ativo:before{background:linear-gradient(90deg,#c88c1c,#f1d47d)}
-.emoji-nivel{width:50px;height:50px;border-radius:15px;background:#eaf1f9;font-size:26px;box-shadow:inset 0 0 0 1px rgba(23,74,120,.05)}
-.cartao-nivel.ativo .emoji-nivel{background:#ffedbc}
-.texto-nivel{gap:6px;padding-top:1px}
-.texto-nivel strong{font-size:16px;color:#102b46}
-.texto-nivel small{font-size:12px;line-height:1.45;color:#607186}
-.field label,label{font-size:13px;font-weight:750;color:#233b55}
-.field input,.field select,input,select,textarea{border:1px solid #cbd7e4;border-radius:12px;background:#fff;color:#142a43;padding:13px 14px;outline:none;transition:border-color .15s,box-shadow .15s}
-input:focus,select:focus,textarea:focus{border-color:#4b86bb;box-shadow:0 0 0 3px rgba(40,104,165,.13)}
-button{border-radius:13px;min-height:46px;transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
-button:hover:not(:disabled){filter:brightness(1.025);box-shadow:0 7px 16px rgba(13,43,73,.12)}
-button:focus-visible{outline:3px solid #e4b64f;outline-offset:3px}
-.primary{background:linear-gradient(120deg,#174a78,#246ca4);color:#fff;box-shadow:0 7px 16px rgba(23,74,120,.18)}
-#begin{background:linear-gradient(110deg,#d7a43a,#f0ce76);color:#17283e;font-size:16px;font-weight:850;box-shadow:0 9px 18px rgba(181,132,35,.22)}
-.secondary{background:#edf2f7;color:#1b3a5b;border:1px solid #d8e2ec}
-.card{border:1px solid #dce5ef;border-radius:20px;background:linear-gradient(145deg,#fff,#f9fbfd);box-shadow:0 8px 25px rgba(16,43,70,.06);padding:clamp(15px,3vw,23px)!important}
-.card h2{font-size:21px;border:0;border-bottom:1px solid #e3eaf2;padding-bottom:12px;margin:0 0 12px;color:#102b46}
-#areaPartidaOnline{scroll-margin-top:18px}
-#areaPartidaOnline.online-active{animation:onlineIn .32s ease both}
-@keyframes onlineIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-#estadoPartida{background:#edf5fb;border:1px solid #d8e7f4;border-left:4px solid #2d75ad;border-radius:12px;padding:11px 13px;font-weight:750;color:#174a78}
-#nomesJogadores,#progressoOnline,#nivelOnline,#pontuacaoOnline{border:1px solid #e0e8f0;border-left:4px solid #d9ac43;background:#fff;border-radius:12px;padding:12px 13px;font-size:13px;color:#3b5068;overflow-wrap:anywhere}
-#perguntaOnline{font-size:clamp(20px,3vw,26px);line-height:1.35;color:#102b46;margin:22px 0 17px;letter-spacing:-.25px}
-#respostasOnline .primary{display:flex!important;align-items:center;text-align:left;min-height:54px;padding:14px 16px;background:#fff;color:#173553;border:1px solid #d8e3ee;box-shadow:none;white-space:normal;line-height:1.45}
-#respostasOnline .primary:hover:not(:disabled){border-color:#75a1c8;background:#f3f8fd}
-#respostasOnline .primary:disabled{opacity:.76;background:#f1f5f9;color:#3e5369}
-#feedbackOnline{padding:12px 14px;border-radius:12px;background:#f1f6fb;color:#37526e;font-size:13px;line-height:1.55}
-#barraNivel{height:10px!important;border-radius:99px;overflow:hidden;accent-color:#d9ad43}
-#classificacaoNivelOnline{border:1px solid #e0e8f0;background:#f9fbfd;box-shadow:none}
-#classificacaoNivelOnline h3{color:#102b46}
-.ranking{margin-top:30px;padding-top:25px;border-top:1px solid #e0e8f0}
-.ranking h3{font-size:21px;color:#102b46}
-.rank-row{border:1px solid #e4ebf2;border-radius:13px;padding:12px}
-.rank-row.podium-1{border-color:#e1bd5c;background:#fff9e8}
-.notice{font-size:12px;color:#718095;line-height:1.6}
-#result .scorebox{border:1px solid #e0e8f0;box-shadow:0 4px 12px rgba(16,43,70,.04)}
-#result .scorebox strong{font-size:clamp(22px,4vw,30px)}
-footer#assinaturaEduardo{box-shadow:0 12px 32px rgba(0,0,0,.18);border:1px solid rgba(228,182,79,.4);border-bottom:0}
-@media(min-width:760px){.controls{grid-template-columns:1fr}.card[style*="margin-top:20px"]{margin-top:24px!important}}
-@media(max-width:600px){body{padding:10px}.brand{padding:22px 15px 25px;border-radius:21px;margin-bottom:14px}.mark{width:74px;height:74px;border-radius:20px}.brand h1{font-size:clamp(27px,8vw,36px)}.panel{border-radius:21px;padding:17px}.niveis-cartoes{grid-template-columns:1fr;gap:10px}.cartao-nivel{min-height:86px;padding:14px}.emoji-nivel{width:46px;height:46px}.percurso-niveis{padding:13px}.scoregrid{grid-template-columns:1fr 1fr}.scorebox:last-child{grid-column:1/-1}.actions{flex-direction:column}.actions button{width:100%}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-
-
-/* EXPERIÊNCIA AVANÇADA: progresso, transições e assinatura */
-.level-ribbon{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
-.level-chip{padding:7px 11px;border:1px solid #d6dee7;border-radius:999px;background:#fff;color:#516174;font-size:12px;font-weight:800}
-.level-chip.active{background:#102b46;color:#f3cf70;border-color:#d7b34f;box-shadow:0 4px 14px #102b4620}
-.level-chip.done{background:#e6f5ed;color:#176b47;border-color:#9bd3b6}
-.level-transition{padding:22px;border-radius:18px;background:linear-gradient(135deg,#102b46,#174d78);color:#fff;text-align:center;box-shadow:0 12px 32px #102b4630}
-.level-transition h3{font-size:clamp(23px,4vw,32px);margin:8px 0;color:#f3cf70}
-.level-transition p{line-height:1.6;color:#e7eef7}
-#assinaturaEduardo{position:relative;overflow:hidden;box-shadow:0 18px 50px #06162630!important}
-#assinaturaEduardo:before{content:"EA";position:absolute;right:16px;top:-28px;font-size:130px;font-weight:900;letter-spacing:-12px;color:#ffffff08;pointer-events:none}
-.signature-mark{width:54px;height:54px;margin:0 auto 13px;border:1px solid #d6b45c;border-radius:16px;display:grid;place-items:center;color:#f3cf70;font-size:17px;font-weight:900;letter-spacing:1px;box-shadow:inset 0 0 0 4px #ffffff08}
-.signature-role{display:inline-block;border:1px solid #ffffff26;border-radius:999px;padding:7px 12px;margin:0 0 14px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#e7eef7}
-.signature-credit{font-size:21px!important;letter-spacing:.2px}
-.signature-line{max-width:360px;width:60%;height:1px;background:linear-gradient(90deg,transparent,#d6b45c,transparent);margin:15px auto}
-</style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-</head>
-<body>
-  
-<header id="cabecalhoBiblia" aria-hidden="true">
-  <div class="simboloBiblia" aria-hidden="true">📖</div>
-  <div class="textoCabecalho">
-    <h1>BOM DE BÍBLIA</h1>
-    <p class="identidadeIgreja">IASD Calemba 2 Antena</p>
-    <p class="fraseCabecalho">Aprender a Bíblia, fortalecer a fé.</p>
-  </div>
-  <div class="linhaDourada"></div>
-</header>
-
-<div class="wrap">
-  <header class="brand">
-    <div class="mark" role="img" aria-label="Símbolo inspirado na identidade visual adventista: cruz, chamas e Bíblia aberta">
-      <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M36 36V14 M28 22H44"/>
-          <path d="M35 11C27 5 20 11 23 19C25 24 30 28 35 31"/>
-          <path d="M37 11C45 5 52 11 49 19C47 24 42 28 37 31"/>
-          <path d="M9 42C18 37 27 39 35 44V61C27 56 18 54 9 58Z"/>
-          <path d="M63 42C54 37 45 39 37 44V61C45 56 54 54 63 58Z"/>
-          <path d="M36 44V61"/>
-        </g>
-      </svg>
-    </div>
-    <span class="church-label">IGREJA ADVENTISTA DO SÉTIMO DIA</span>
-    <h1>Bom de Bíblia IASD Calemba 2 Antena</h1>
-    <p>Aprende. Crê. Vive a Palavra.</p>
-    <span class="tag">PROJECTO INDEPENDENTE • BASE BÍBLICA ADVENTISTA</span>
-  </header>
-  <main class="panel">
-    <section id="start">
-      <div class="intro">
-        <span class="pill">Desafio bíblico gratuito</span>
-        <h2>Vamos testar o teu conhecimento?</h2>
-        <p>Escolhe um dos cinco níveis, responde às perguntas, consulta as referências bíblicas e aprende com cada explicação. Quanto mais avanças, maior será o foco em interpretação, contexto e análise bíblica.</p>
-      </div>
-   
-<div class="niveis-cartoes" id="niveisCartoes">
-
-  <button type="button" class="cartao-nivel ativo"
-    data-nivel="Iniciante">
-    <span class="emoji-nivel">📘</span>
-    <span class="texto-nivel">
-      <strong>Iniciante</strong>
-      <small>Base bíblica e reconhecimento directo · 10 perguntas</small>
-    </span>
-  </button>
-
-  <button type="button" class="cartao-nivel"
-    data-nivel="Intermediário">
-    <span class="emoji-nivel">📗</span>
-    <span class="texto-nivel">
-      <strong>Intermediário</strong>
-      <small>Compreensão de textos e histórias · 15 perguntas</small>
-    </span>
-  </button>
-
-  <button type="button" class="cartao-nivel"
-    data-nivel="Avançado">
-    <span class="emoji-nivel">📙</span>
-    <span class="texto-nivel">
-      <strong>Avançado</strong>
-      <small>Aplicação, contexto e relações bíblicas · 20 perguntas</small>
-    </span>
-  </button>
-
-  <button type="button" class="cartao-nivel"
-    data-nivel="Mestre da Bíblia">
-    <span class="emoji-nivel">📕</span>
-    <span class="texto-nivel">
-      <strong>Mestre da Bíblia</strong>
-      <small>Interpretação e comparação de passagens · 25 perguntas</small>
-    </span>
-  </button>
-
-  <button type="button" class="cartao-nivel"
-    data-nivel="Desafio Apocalíptico">
-    <span class="emoji-nivel">🏆</span>
-    <span class="texto-nivel">
-      <strong>Desafio Apocalíptico</strong>
-      <small>Análise profética e temas complexos · 30 perguntas</small>
-    </span>
-  </button>
-
-</div>
-
-<select id="level" hidden>
-  <option value="Iniciante">Iniciante</option>
-  <option value="Intermediário">Intermediário</option>
-  <option value="Avançado">Avançado</option>
-  <option value="Mestre da Bíblia">Mestre da Bíblia</option>
-  <option value="Desafio Apocalíptico">Desafio Apocalíptico</option>
-</select>
-
-<div class="controls">
-  <div class="field">
-    <label for="player">Nome do participante</label>
-    <input id="player" maxlength="32"
-      placeholder="Ex.: Ana Manuel">
-  </div>
-</div>
-
-      <p class="notice" style="margin:0 0 12px">A Maratona Bíblica percorre automaticamente os 5 níveis: 100 perguntas por partida, seleccionadas de um banco que cobre os 66 livros da Bíblia. As alternativas são embaralhadas e a dificuldade progride por nível. No fim de cada nível, a plataforma avança sozinha para o seguinte.</p>
-      <button class="primary" id="begin">🚀 Iniciar Maratona Bíblica</button>
-      
-<div class="card" style="margin-top:20px;padding:18px;">
-  <h2>⚔️ Disputas Bíblicas Online</h2>
-  <p>Cria uma sala privada com código ou encontra uma partida aberta. Cada sala aceita até 10 participantes.</p>
-  <label for="nomeDisputa">O teu nome</label>
-  <input id="nomeDisputa" type="text" maxlength="32" placeholder="Escreve o teu nome">
-  <label for="nivelDisputa">Modo de dificuldade</label>
-  <select id="nivelDisputa">
-    <option value="Iniciante">Maratona progressiva — começa no Iniciante e termina no Desafio Apocalíptico</option>
-  </select>
-  <button class="primary" id="criarSala">🔐 Criar sala privada</button>
-  <button class="primary" id="partidaAberta">🌍 Procurar partida aberta</button>
-  <p id="mensagemDisputa"></p>
-  
-  <label for="codigoEntrada">Código da sala</label>
-  <input
-    id="codigoEntrada"
-    type="text"
-    maxlength="6"
-    placeholder="Ex.: AB12CD"
-    style="text-transform:uppercase"
-  >
-  <button class="primary" id="entrarSala" type="button">
-    🚪 Entrar na sala
-  </button>
-  <p id="mensagemEntrada"></p>
-</div>
-      
-<div id="areaPartidaOnline" class="card" style="display:none;margin-top:20px;padding:18px;">
-  <h2>📖 Partida Bíblica Online</h2>
-  <p id="estadoPartida">A aguardar os jogadores...</p>
-  <p id="nomesJogadores"></p>
-  <p id="progressoOnline"></p>
-  <p id="nivelOnline">Nível: Aguardando partida</p>
-  <progress id="barraNivel" value="0" max="10"
-  style="width:100%;height:18px;"></progress>
-  <h3 id="perguntaOnline">Aguardando o início da partida</h3>
-  <div id="respostasOnline"></div>
-  <p id="feedbackOnline"></p>
-  <p id="pontuacaoOnline"></p>
-  <div id="classificacaoNivelOnline"></div>
-  <button id="iniciarPartidaOnline" class="primary" type="button">▶️ Iniciar partida</button>
-  <button id="proximaOnline" class="primary" type="button">Próxima pergunta</button>
-</div>
-
-
-      <section class="ranking" aria-labelledby="rankingTitle">
-        <h3 id="rankingTitle">🏆 Ranking público</h3>
-        <p class="notice" style="text-align:left;margin:6px 0">Os melhores resultados aparecem aqui quando a ligação à base de dados estiver configurada.</p>
-        <button class="secondary" id="refreshRanking" type="button" style="width:100%">Atualizar ranking</button>
-        <p id="rankingStatus" class="notice" aria-live="polite">Aguardando configuração da base de dados.</p>
-        <div id="rankingList" class="ranking-list"></div>
-      </section>
-      <p class="notice">As explicações resumem uma leitura bíblica de orientação adventista. O banco foi ampliado para abranger os 66 livros bíblicos; recomenda-se revisão editorial contínua das perguntas e referências. Esta versão não é afiliada oficialmente à Igreja Adventista.</p>
-    </section>
-    <section id="quiz" class="hidden">
-      <div id="levelRibbon" class="level-ribbon" aria-label="Progresso dos cinco níveis"></div>
-      <div class="topline"><span id="playerLabel">Participante</span><span id="counter">Pergunta 1 de 8</span></div>
-      <div class="progress"><div id="bar"></div></div>
-      <div class="qmeta" id="qmeta"></div>
-      <h2 class="question" id="question"></h2>
-      <div class="answers" id="answers"></div>
-      <div id="feedback" class="feedback hidden" aria-live="polite"></div>
-      <div class="actions"><button id="quit" class="secondary">Sair</button><button id="next" class="primary" disabled>Próxima pergunta</button></div>
-    </section>
-    <section id="result" class="hidden">
-      <div class="intro">
-        <span class="pill">Desafio concluído</span>
-        <h2 id="resultTitle">Muito bem!</h2>
-        <p id="resultMessage"></p>
-      </div>
-      <div class="scoregrid">
-        <div class="scorebox"><strong id="points">0</strong><span>PONTOS</span></div>
-        <div class="scorebox"><strong id="correctCount">0/0</strong><span>RESPOSTAS CERTAS</span></div>
-        <div class="scorebox"><strong id="percentage">0%</strong><span>APROVEITAMENTO</span></div>
-      </div>
-      <button class="primary" id="again">Jogar novamente</button>
-      <p id="saveStatus" class="notice" aria-live="polite">A preparar o envio do resultado para o ranking público.</p>
-    </section>
-  </main>
-</div>
-<script>
-// CONFIGURAÇÃO: substitui estes dois valores pelos dados do teu projecto Supabase.
-// Usa apenas Project URL e Publishable key (ou anon key antiga). Nunca uses Secret key/service_role.
-const SUPABASE_URL = "https://pjzvhagbmgtwlpbuhjyy.supabase.co";
-const SUPABASE_PUBLIC_KEY = "sb_publishable_A--3byS30zfsVvy3_EKC2w_NVDeg8bD";
-const supabaseClient = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_PUBLIC_KEY
-);
-function supabaseConfigured(){
-  return SUPABASE_URL.startsWith("https://") &&
-    !SUPABASE_URL.includes("COLOCA_AQUI") &&
-    SUPABASE_PUBLIC_KEY.length > 20 &&
-    !SUPABASE_PUBLIC_KEY.includes("COLOCA_AQUI");
-}
-async function loadRanking(){
-  const status=$("rankingStatus");
-  const list=$("rankingList");
-  if(!supabaseConfigured()){
-    status.textContent="Falta configurar o Project URL e a Publishable key neste ficheiro HTML.";
-    return;
-  }
-  status.textContent="A carregar ranking por nível…";
-  try{
-    const response=await fetch(`${SUPABASE_URL}/rest/v1/ranking_biblia?select=nome,pontuacao,total_perguntas,nivel,criado_em&order=nivel.asc,pontuacao.desc,criado_em.asc&limit=500`,{
-      headers:{apikey:SUPABASE_PUBLIC_KEY,Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`}
-    });
-    if(!response.ok) throw new Error("Não foi possível ler o ranking. Verifica as políticas da tabela e o Project URL.");
-    const rows=await response.json();
-    list.replaceChildren();
-    if(!rows.length){status.textContent="Ainda não há resultados no ranking. Sê o primeiro a participar!";return;}
-    const niveis=typeof ORDEM_NIVEIS!=="undefined"?ORDEM_NIVEIS:[...new Set(rows.map(r=>r.nivel||"Nível não indicado"))];
-    let totalMostrado=0;
-    for(const nivel of niveis){
-      const nivelRows=rows.filter(row=>(row.nivel||"Nível não indicado")===nivel)
-        .sort((a,b)=>Number(b.pontuacao||0)-Number(a.pontuacao||0)||
-          String(a.criado_em||"").localeCompare(String(b.criado_em||"")));
-      if(!nivelRows.length) continue;
-      const heading=document.createElement("h4");
-      heading.textContent=nivel;
-      heading.style.cssText="margin:18px 0 8px;color:var(--navy)";
-      list.appendChild(heading);
-      nivelRows.slice(0,10).forEach((row,i)=>{
-        const item=document.createElement("div");item.className="rank-row";
-        if(i<3)item.classList.add(`podium-${i+1}`);
-        const pos=document.createElement("span");pos.className="rank-pos";
-        pos.textContent=i===0?"🥇":i===1?"🥈":i===2?"🥉":`${i+1}.`;
-        const info=document.createElement("span");
-        const name=document.createElement("strong");name.textContent=row.nome||"Participante";
-        const detail=document.createElement("small");detail.style.display="block";detail.style.color="var(--muted)";
-        detail.textContent=`${row.total_perguntas||0} perguntas`;
-        info.append(name,detail);
-        const scoreEl=document.createElement("span");scoreEl.className="rank-score";scoreEl.textContent=`${row.pontuacao} pts`;
-        item.append(pos,info,scoreEl);list.appendChild(item);totalMostrado++;
-      });
-    }
-    status.textContent=`Ranking por nível — ${totalMostrado} resultado(s) apresentado(s).`;
-  }catch(error){status.textContent=error.message||"Erro ao carregar o ranking.";}
-}
-async function saveNamedLevelRankingResult(nome, nivel, acertos, totalPerguntas){
-  if(!supabaseConfigured()) throw new Error("O ranking não está ligado ao Supabase.");
-  const response=await fetch(`${SUPABASE_URL}/rest/v1/rpc/guardar_melhor_pontuacao`,{
-    method:"POST",
-    headers:{apikey:SUPABASE_PUBLIC_KEY,Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`,"Content-Type":"application/json"},
-    body:JSON.stringify({
-      p_nome:String(nome||"Participante").trim().slice(0,32),
-      p_pontuacao:Number(acertos)*10,
-      p_total_perguntas:Number(totalPerguntas),
-      p_nivel:nivel
-    })
-  });
-  if(!response.ok){
-    const detalhe=await response.text().catch(()=> "");
-    throw new Error(detalhe||"Não foi possível guardar a melhor pontuação. Confirma a função SQL e as permissões.");
-  }
-}
-async function saveLevelRankingResult(nivel, acertos, totalPerguntas){
-  const status=$("saveStatus");
-  try{
-    await saveNamedLevelRankingResult(playerName,nivel,acertos,totalPerguntas);
-    status.textContent=`Melhor pontuação de ${nivel} enviada para o ranking público.`;
-    await loadRanking();
-  }catch(error){
-    status.textContent=error.message||"Erro ao guardar o resultado.";
-    console.error("Ranking individual:",error);
-  }
-}
-
-const bank = [
- {level:"Iniciante",cat:"Bíblia",q:"Quem construiu a arca para sobreviver ao dilúvio?",a:["Abraão","Moisés","Noé","David"],correct:2,ref:"Génesis 6:13-22",why:"Deus instruiu Noé a construir a arca para preservar a sua família e os animais durante o dilúvio."},
-{level:"Iniciante",cat:"Bíblia",q:"Quem recebeu de Deus a missão de libertar Israel do Egipto?",a:["Moisés","Samuel","Gideão","Neemias"],correct:0,ref:"Êxodo 3:7-10",why:"Deus chamou Moisés para conduzir os israelitas para fora do Egipto."},
-{level:"Iniciante",cat:"Bíblia",q:"Qual foi o primeiro milagre de Jesus relatado no Evangelho de João?",a:["Curar um cego","Transformar água em vinho","Ressuscitar Lázaro","Multiplicar os pães"],correct:1,ref:"João 2:1-11",why:"Em Caná da Galileia, Jesus transformou água em vinho, manifestando a sua glória."},
- {level:"Iniciante",cat:"Doutrinas adventistas",q:"Segundo Génesis 2:2-3, o que fez Deus no sétimo dia?",a:["Criou os peixes","Descansou, abençoou e santificou o dia","Construiu o santuário","Instituiu a Páscoa"],correct:1,ref:"Génesis 2:2-3; Êxodo 20:8-11",why:"O relato diz que Deus descansou no sétimo dia, o abençoou e o santificou. Os adventistas reconhecem aqui a base bíblica do sábado como memorial da criação."},
- {level:"Iniciante",cat:"Bíblia",q:"Em que cidade nasceu Jesus?",a:["Nazaré","Jerusalém","Belém","Cafarnaum"],correct:2,ref:"Mateus 2:1; Lucas 2:4-7",why:"Os Evangelhos de Mateus e Lucas situam o nascimento de Jesus em Belém."},
- {level:"Intermediário",cat:"Vida cristã",q:"Segundo João 13:34-35, como os discípulos de Jesus seriam reconhecidos?",a:["Pela riqueza","Pelo amor uns aos outros","Pelo poder político","Pela fama"],correct:1,ref:"João 13:34-35",why:"Jesus ensinou que o amor mútuo seria a marca visível dos seus discípulos."},
- {level:"Intermediário",cat:"Doutrinas adventistas",q:"Qual é a esperança central apresentada em 1 Tessalonicenses 4:16-17?",a:["A reencarnação","A segunda vinda de Cristo e a reunião dos fiéis com Ele","A imortalidade natural de todos os seres humanos","A construção de um templo em Jerusalém"],correct:1,ref:"1 Tessalonicenses 4:16-17",why:"Paulo descreve a descida do Senhor, a ressurreição dos mortos em Cristo e a reunião dos salvos com Ele."},
- {level:"Intermediário",cat:"Bíblia",q:"Quem recebeu os Dez Mandamentos no monte Sinai?",a:["Josué","Arão","Moisés","Elias"],correct:2,ref:"Êxodo 31:18; 32:15-16",why:"O relato bíblico identifica Moisés como aquele que recebeu as tábuas do testemunho."},
- {level:"Avançado",cat:"Doutrinas adventistas",q:"Segundo Eclesiastes 9:5, qual é a condição dos mortos descrita pelo texto?",a:["Conhecem tudo o que acontece na Terra","Os mortos não sabem coisa nenhuma","Regressam imediatamente em outro corpo","Governam os vivos"],correct:1,ref:"Eclesiastes 9:5; João 11:11-14",why:"Eclesiastes afirma que os mortos não sabem coisa nenhuma; Jesus também comparou a morte de Lázaro ao sono. A interpretação deve considerar o contexto bíblico mais amplo."},
- {level:"Avançado",cat:"Vida cristã",q:"Segundo Miqueias 6:8, o que o Senhor pede ao ser humano?",a:["Praticar a justiça, amar a misericórdia e andar humildemente com Deus","Procurar fama","Nunca ajudar desconhecidos","Confiar apenas nas próprias forças"],correct:0,ref:"Miqueias 6:8",why:"O profeta resume a resposta que Deus deseja: justiça, misericórdia e humildade diante dEle."},
- {level:"Avançado",cat:"Bíblia",q:"Qual discípulo negou Jesus três vezes antes de o galo cantar?",a:["João","Pedro","André","Tomé"],correct:1,ref:"Lucas 22:54-62",why:"Pedro negou conhecer Jesus três vezes e, depois de se lembrar das palavras do Senhor, chorou amargamente."},
- {level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"De acordo com Apocalipse 14:6-7, a mensagem do primeiro anjo chama as pessoas a quê?",a:["Adorar o Criador","Adorar imagens","Abandonar a Bíblia","Procurar poder terreno"],correct:0,ref:"Apocalipse 14:6-7",why:"A mensagem chama todas as nações a temer a Deus, dar-Lhe glória e adorar Aquele que fez o céu, a Terra, o mar e as fontes das águas."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Daniel 2, que materiais aparecem misturados nos pés da estátua?",a:["Ouro e prata", "Ferro e barro", "Bronze e cobre", "Prata e madeira"],correct:1,ref:"Daniel 2:41-43",why:"O ferro misturado com barro representa um reino dividido."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"Quantos animais aparecem na visão de Daniel 7?",a:["Dois", "Três", "Quatro", "Sete"],correct:2,ref:"Daniel 7:2-7",why:"A visão apresenta quatro grandes animais."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"Quantas igrejas recebem mensagens em Apocalipse 2 e 3?",a:["Quatro", "Sete", "Doze", "Vinte e quatro"],correct:1,ref:"Apocalipse 1:11; capítulos 2–3",why:"As mensagens são dirigidas a sete igrejas da Ásia."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 12, que mulher é vista vestida do sol?",a:["Uma mulher numa visão simbólica", "A rainha de Sabá", "A esposa de Pilatos", "A filha de Herodes"],correct:0,ref:"Apocalipse 12:1-6",why:"A mulher e o dragão fazem parte de uma visão profética."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"O que anuncia o primeiro anjo de Apocalipse 14?",a:["O evangelho eterno", "A construção de uma torre", "Um rei terreno", "O fim da oração"],correct:0,ref:"Apocalipse 14:6-7",why:"O primeiro anjo proclama o evangelho eterno e chama à adoração do Criador."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"Qual número é associado à besta em Apocalipse 13:18?",a:["12", "40", "666", "144"],correct:2,ref:"Apocalipse 13:18",why:"O texto menciona o número 666."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"Que período é mencionado em Daniel 8:14?",a:["2300 tardes e manhãs", "40 dias", "70 anos", "12 meses"],correct:0,ref:"Daniel 8:14",why:"A passagem menciona 2300 tardes e manhãs; a interpretação requer estudar o contexto."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"O que João vê descendo do céu em Apocalipse 21?",a:["A Nova Jerusalém", "A torre de Babel", "A antiga Babilónia", "O monte Sinai"],correct:0,ref:"Apocalipse 21:1-2",why:"João vê a Nova Jerusalém descendo do céu."},
- 
- // Perguntas adicionais por nível — cada nível tem pelo menos oito perguntas.
- {level:"Iniciante",cat:"Bíblia",q:"Quem foi lançado na cova dos leões?",a:["Daniel","José","Samuel","Isaías"],correct:0,ref:"Daniel 6:16-23",why:"Daniel foi lançado na cova por continuar a orar a Deus."},
- {level:"Iniciante",cat:"Bíblia",q:"Quem derrotou Golias?",a:["Saul","David","Salomão","Josué"],correct:1,ref:"1 Samuel 17:45-50",why:"David enfrentou Golias confiando no Senhor."},
- {level:"Iniciante",cat:"Bíblia",q:"Quantos discípulos Jesus escolheu como apóstolos?",a:["Sete","Dez","Doze","Quarenta"],correct:2,ref:"Lucas 6:13-16",why:"Jesus escolheu doze apóstolos."},
- {level:"Iniciante",cat:"Bíblia",q:"Quem era a mãe de Jesus?",a:["Marta","Maria","Rute","Ester"],correct:1,ref:"Lucas 1:26-31",why:"O anjo Gabriel anunciou a Maria que ela seria mãe de Jesus."},
- {level:"Iniciante",cat:"Bíblia",q:"Que alimento Jesus usou para alimentar uma multidão, além de peixes?",a:["Uvas","Pães","Azeitonas","Melões"],correct:1,ref:"João 6:9-13",why:"O relato menciona cinco pães de cevada e dois peixes."},
- {level:"Intermediário",cat:"Bíblia",q:"Que parábola fala de um homem que ajudou um viajante ferido?",a:["O semeador","O bom samaritano","As dez virgens","O rico insensato"],correct:1,ref:"Lucas 10:30-37",why:"O samaritano demonstrou amor prático ao cuidar do homem ferido."},
- {level:"Intermediário",cat:"Bíblia",q:"Qual profeta foi engolido por um grande peixe?",a:["Jonas","Amós","Joel","Ageu"],correct:0,ref:"Jonas 1:17",why:"O livro de Jonas relata que o Senhor preparou um grande peixe."},
- {level:"Intermediário",cat:"Bíblia",q:"Quem interpretou os sonhos do faraó no Egipto?",a:["Moisés","José","Arão","Benjamim"],correct:1,ref:"Génesis 41:14-32",why:"José explicou os sonhos sobre sete anos de abundância e sete anos de fome."},
- {level:"Intermediário",cat:"Bíblia",q:"Em que rio João baptizava as pessoas?",a:["Nilo","Eufrates","Jordão","Tigre"],correct:2,ref:"Mateus 3:5-6",why:"João baptizava no rio Jordão."},
- {level:"Intermediário",cat:"Bíblia",q:"Qual mulher escondeu os espias israelitas em Jericó?",a:["Débora","Raabe","Ana","Abigail"],correct:1,ref:"Josué 2:1-6",why:"Raabe acolheu e escondeu os espias enviados por Josué."},
- {level:"Avançado",cat:"Doutrinas",q:"Segundo Romanos 6:23, qual é o dom gratuito de Deus?",a:["Riqueza terrena","Vida eterna em Cristo Jesus","Fama","Poder político"],correct:1,ref:"Romanos 6:23",why:"Paulo contrasta o salário do pecado com o dom gratuito de Deus: a vida eterna em Cristo."},
- {level:"Avançado",cat:"Bíblia",q:"Qual era o nome do sacerdote que encontrou o livro da Lei no templo no tempo de Josias?",a:["Hilquias","Eli","Zadoque","Abiatar"],correct:0,ref:"2 Reis 22:8-11",why:"Hilquias, o sumo sacerdote, encontrou o livro da Lei na casa do Senhor."},
- {level:"Avançado",cat:"Bíblia",q:"Quem escreveu a maior parte das cartas do Novo Testamento tradicionalmente atribuídas a um apóstolo?",a:["Pedro","Paulo","Tiago","Judas"],correct:1,ref:"Romanos 1:1; 2 Timóteo 1:1",why:"O Novo Testamento contém numerosas cartas identificadas como escritas por Paulo."},
- {level:"Avançado",cat:"Bíblia",q:"Em Actos 15, qual questão importante foi debatida pelos apóstolos e anciãos?",a:["A construção da arca","A circuncisão dos gentios convertidos","A escolha de um rei","A divisão do Mar Vermelho"],correct:1,ref:"Actos 15:1-29",why:"O concílio de Jerusalém debateu as exigências impostas aos gentios que se convertiam."},
- {level:"Avançado",cat:"Bíblia",q:"Segundo Hebreus 11:1, a fé é a certeza de quê?",a:["Das coisas que se esperam e a convicção de factos que se não veem","Que nunca teremos dificuldades","Que podemos controlar o futuro","Que não precisamos de agir"],correct:0,ref:"Hebreus 11:1",why:"Hebreus descreve a fé como certeza daquilo que se espera e convicção do que não se vê."},
- {level:"Mestre da Bíblia",cat:"Exegese",q:"Em Lucas 4:16-21, que passagem Jesus leu na sinagoga de Nazaré?",a:["Isaías 61:1-2","Daniel 2:44","Salmo 23","Génesis 1:1"],correct:0,ref:"Lucas 4:16-21; Isaías 61:1-2",why:"Jesus leu uma passagem de Isaías sobre o Espírito do Senhor e a missão de anunciar boas-novas."},
- {level:"Mestre da Bíblia",cat:"Santuário",q:"Segundo Hebreus 8:1-2, Cristo é ministro de que santuário?",a:["De um santuário feito por mãos humanas apenas","Do santuário verdadeiro, que o Senhor erigiu","Do templo de Salomão na Terra","De um altar pagão"],correct:1,ref:"Hebreus 8:1-2",why:"Hebreus apresenta Cristo como ministro do santuário verdadeiro, estabelecido pelo Senhor."},
- {level:"Mestre da Bíblia",cat:"Profecias",q:"Em Daniel 9:24, sobre quem e sobre que cidade são determinadas as setenta semanas?",a:["O povo de Daniel e a cidade santa","Os filisteus e Gaza","Roma e Atenas","Egipto e Tebas"],correct:0,ref:"Daniel 9:24",why:"O texto menciona o povo de Daniel e a cidade santa; a interpretação profética exige analisar o contexto."},
- {level:"Mestre da Bíblia",cat:"Exegese",q:"Qual princípio é ilustrado pela comparação de Escritura com Escritura?",a:["Interpretar um texto ignorando o contexto","Deixar que passagens relacionadas ajudem a esclarecer o tema","Usar apenas opiniões pessoais","Evitar ler o capítulo inteiro"],correct:1,ref:"Isaías 28:9-10; 1 Coríntios 2:13",why:"Comparar passagens relacionadas ajuda a compreender o ensino bíblico dentro do seu contexto."},
- {level:"Mestre da Bíblia",cat:"Doutrinas",q:"Segundo 1 Coríntios 15:51-54, quando os fiéis mortais serão revestidos de imortalidade?",a:["Na ressurreição, ao toque da última trombeta","No nascimento","Ao receberem uma coroa terrena","Antes da criação"],correct:0,ref:"1 Coríntios 15:51-54",why:"Paulo relaciona a transformação dos fiéis com a última trombeta e a ressurreição."},
- {level:"Mestre da Bíblia",cat:"Profecias",q:"Em Apocalipse 1:20, o que representam as sete estrelas na explicação da visão?",a:["Os anjos das sete igrejas","Sete reis do Egipto","Sete rios","Sete montanhas"],correct:0,ref:"Apocalipse 1:20",why:"A própria passagem explica que as estrelas são os anjos das sete igrejas."},
- {level:"Mestre da Bíblia",cat:"Profecias",q:"Segundo Daniel 7:10, o que foi colocado diante do Ancião de Dias?",a:["Um mar de vidro","Milhares de milhares que o serviam e milhões que estavam diante dele","Uma arca de madeira","Uma torre"],correct:1,ref:"Daniel 7:9-10",why:"A visão descreve a corte celestial e multidões que serviam diante do Ancião de Dias."},
- {level:"Mestre da Bíblia",cat:"Bíblia",q:"Qual é o tema central de Hebreus 4:14-16?",a:["Jesus como grande sumo sacerdote e o convite para nos aproximarmos de Deus","A construção do templo de Salomão","A viagem de Jonas","A queda de Jericó"],correct:0,ref:"Hebreus 4:14-16",why:"O texto apresenta Jesus como grande sumo sacerdote e convida os crentes a aproximarem-se do trono da graça."},
- {level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 5, quem é digno de abrir o livro e os seus selos?",a:["Um dos anciãos","O Leão da tribo de Judá, o Cordeiro","O dragão","A besta que sobe do mar"],correct:1,ref:"Apocalipse 5:1-9",why:"A visão identifica Cristo como o Cordeiro digno de abrir o livro e os seus selos."}, 
-{level:"Intermediário",cat:"Bíblia",q:"Quem sucedeu Moisés na liderança de Israel?",a:["Calebe","Josué","Arão","Samuel"],correct:1,ref:"Josué 1:1-2",why:"Deus chamou Josué para conduzir Israel depois da morte de Moisés."},
-{level:"Intermediário",cat:"Bíblia",q:"Qual rei pediu sabedoria a Deus?",a:["Saul","David","Salomão","Ezequias"],correct:2,ref:"1 Reis 3:5-12",why:"Salomão pediu entendimento para governar o povo com justiça."},
-{level:"Intermediário",cat:"Bíblia",q:"Quem foi levado ao céu num redemoinho?",a:["Elias","Eliseu","Isaías","Jeremias"],correct:0,ref:"2 Reis 2:11",why:"Elias foi levado ao céu num redemoinho."},
-{level:"Intermediário",cat:"Bíblia",q:"Quem era o cobrador de impostos que subiu a uma árvore para ver Jesus?",a:["Nicodemos","Zaqueu","Bartimeu","Cornélio"],correct:1,ref:"Lucas 19:1-4",why:"Zaqueu subiu a um sicómoro porque era de pequena estatura."},
-{level:"Intermediário",cat:"Bíblia",q:"Em que dia da semana as mulheres foram ao túmulo de Jesus?",a:["No primeiro dia da semana","No segundo dia","Na sexta-feira","No sábado à tarde"],correct:0,ref:"Lucas 24:1",why:"As mulheres foram ao túmulo muito cedo no primeiro dia da semana."},
-{level:"Intermediário",cat:"Bíblia",q:"Qual apóstolo era conhecido como o discípulo amado no Evangelho de João?",a:["João","Pedro","André","Filipe"],correct:0,ref:"João 21:20-24",why:"O Evangelho identifica o discípulo que Jesus amava, tradicionalmente entendido como João."},
-{level:"Intermediário",cat:"Bíblia",q:"Quem foi escolhido para ocupar o lugar de Judas entre os doze apóstolos?",a:["Barnabé","Matias","Silas","Estêvão"],correct:1,ref:"Actos 1:23-26",why:"Matias foi escolhido depois de os discípulos orarem e lançarem sortes."},
-{level:"Intermediário",cat:"Vida cristã",q:"Segundo Gálatas 5:22-23, qual destas qualidades faz parte do fruto do Espírito?",a:["Inveja","Domínio próprio","Orgulho","Vingança"],correct:1,ref:"Gálatas 5:22-23",why:"O domínio próprio é uma das qualidades enumeradas por Paulo."},
-{level:"Intermediário",cat:"Doutrinas adventistas",q:"Segundo Êxodo 20:8-11, qual dia foi separado como sábado?",a:["O primeiro dia","O sexto dia","O sétimo dia","Qualquer dia escolhido"],correct:2,ref:"Êxodo 20:8-11",why:"O mandamento identifica o sétimo dia como sábado, memorial da criação."},
- 
-{level:"Avançado",cat:"Bíblia",q:"Qual profeta confrontou o rei David por causa do seu pecado com Bate-Seba?",a:["Elias","Natã","Eliseu","Samuel"],correct:1,ref:"2 Samuel 12:1-7",why:"Natã contou uma parábola a David e mostrou-lhe a gravidade do seu pecado."},
-{level:"Avançado",cat:"Bíblia",q:"Quem foi escolhido para substituir Judas Iscariotes entre os apóstolos?",a:["Paulo","Matias","Barnabé","Timóteo"],correct:1,ref:"Actos 1:21-26",why:"Os discípulos escolheram Matias depois de orarem."},
-{level:"Avançado",cat:"Bíblia",q:"Qual rei viu uma mão escrever na parede durante um banquete?",a:["Nabucodonosor","Ciro","Belsazar","Dario"],correct:2,ref:"Daniel 5:1-5",why:"Durante o banquete de Belsazar, apareceu uma mão que escreveu na parede."},
-{level:"Avançado",cat:"Bíblia",q:"Quem explicou ao eunuco etíope a profecia de Isaías?",a:["Pedro","Filipe","Estêvão","André"],correct:1,ref:"Actos 8:26-35",why:"Filipe explicou que a passagem apontava para Jesus."},
-{level:"Avançado",cat:"Bíblia",q:"Qual juiz de Israel fez um voto precipitado depois de uma batalha?",a:["Gideão","Sansão","Jefté","Débora"],correct:2,ref:"Juízes 11:30-35",why:"Jefté fez um voto precipitado antes de enfrentar os amonitas."},
-{level:"Avançado",cat:"Bíblia",q:"Que profeta teve a visão de um vale de ossos secos?",a:["Ezequiel","Jeremias","Oseias","Amós"],correct:0,ref:"Ezequiel 37:1-14",why:"A visão simbolizava a restauração de Israel pelo poder de Deus."},
-{level:"Avançado",cat:"Bíblia",q:"Quem foi a mulher que julgava Israel debaixo de uma palmeira?",a:["Ester","Débora","Rute","Miriã"],correct:1,ref:"Juízes 4:4-5",why:"Débora era profetisa e julgava Israel."},
-{level:"Avançado",cat:"Bíblia",q:"Qual apóstolo teve a visão de um lençol com animais antes de visitar Cornélio?",a:["João","Pedro","Paulo","Tiago"],correct:1,ref:"Actos 10:9-20",why:"A visão preparou Pedro para compreender que não devia considerar impuros os gentios que Deus aceitava."},
-{level:"Avançado",cat:"Bíblia",q:"Quem pediu a Jesus que se lembrasse dele quando entrasse no seu reino?",a:["Um dos ladrões crucificados","Pilatos","Barrabás","Simão, o fariseu"],correct:0,ref:"Lucas 23:39-43",why:"Um dos criminosos reconheceu a inocência de Jesus e pediu-Lhe que Se lembrasse dele."},
-{level:"Avançado",cat:"Doutrinas adventistas",q:"Segundo 1 Coríntios 6:19-20, por que devemos cuidar do nosso corpo?",a:["Porque somos donos absolutos dele","Porque o corpo é santuário do Espírito Santo e pertencemos a Deus","Para nunca envelhecer","Para obter fama"],correct:1,ref:"1 Coríntios 6:19-20",why:"Paulo ensina que o corpo é santuário do Espírito Santo e que devemos glorificar a Deus nele."},
-{level:"Avançado",cat:"Bíblia",q:"Qual rei de Judá promoveu uma importante reforma depois de se encontrar o livro da Lei?",a:["Josias","Acaz","Manassés","Roboão"],correct:0,ref:"2 Reis 22:8-13; 23:1-3",why:"Josias ouviu a leitura do livro da Lei e promoveu uma reforma religiosa."},
-{level:"Avançado",cat:"Bíblia",q:"Segundo Actos 17:11, por que os bereanos foram considerados mais nobres?",a:["Porque eram ricos","Porque examinavam diariamente as Escrituras para verificar o que ouviam","Porque recusavam ouvir os apóstolos","Porque governavam muitas cidades"],correct:1,ref:"Actos 17:10-12",why:"Os bereanos comparavam a pregação com as Escrituras para verificar se era verdadeira."},
-
-{level:"Mestre da Bíblia",cat:"Exegese",q:"Em João 1:1, como é descrito o Verbo?",a:["Como um anjo criado","Como estando no princípio com Deus e sendo Deus","Como um rei de Israel","Como um sacerdote levítico"],correct:1,ref:"João 1:1-3",why:"João apresenta o Verbo como existente desde o princípio, em relação com Deus e identificado como Deus."},
-{level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"Segundo Romanos 3:28, como é justificado o ser humano?",a:["Pelas obras da lei","Pela fé, independentemente das obras da lei","Pela riqueza","Pela tradição humana"],correct:1,ref:"Romanos 3:28",why:"Paulo ensina que a justificação é pela fé, não como resultado das obras da lei."},
-{level:"Mestre da Bíblia",cat:"Santuário",q:"Em Hebreus 9:11-12, o que Cristo obteve por meio do seu próprio sangue?",a:["Uma coroa terrena","Eterna redenção","Um reino político","A libertação de Roma"],correct:1,ref:"Hebreus 9:11-12",why:"O texto afirma que Cristo entrou uma vez por todas e obteve eterna redenção."},
-{level:"Mestre da Bíblia",cat:"Profecias",q:"Em Daniel 7:13-14, o que é dado ao Filho do Homem?",a:["Domínio, glória e reino","O trono de Babilónia","A liderança dos levitas","Um exército romano"],correct:0,ref:"Daniel 7:13-14",why:"A visão descreve o Filho do Homem recebendo domínio, glória e um reino eterno."},
-{level:"Mestre da Bíblia",cat:"Bíblia",q:"Segundo Efésios 2:8-10, para que fomos criados em Cristo Jesus?",a:["Para viver sem responsabilidade","Para boas obras que Deus preparou","Para obter fama","Para evitar toda a convivência"],correct:1,ref:"Efésios 2:8-10",why:"A salvação é pela graça mediante a fé, e os salvos são criados em Cristo para boas obras."},
-{level:"Mestre da Bíblia",cat:"Exegese",q:"Qual é o contexto imediato de Filipenses 2:5-8?",a:["O apelo à humildade e à atitude de Cristo","A divisão do reino de Israel","A construção da arca","A queda de Jericó"],correct:0,ref:"Filipenses 2:1-8",why:"Paulo usa a atitude humilde de Cristo como exemplo para a comunidade cristã."},
-{level:"Mestre da Bíblia",cat:"Bíblia",q:"Em Romanos 5:12, por meio de quem o pecado entrou no mundo?",a:["Moisés","Adão","Abraão","David"],correct:1,ref:"Romanos 5:12",why:"Paulo relaciona a entrada do pecado no mundo com um só homem, Adão."},
-{level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"Segundo 1 Tessalonicenses 4:16, o que acontece primeiro na sequência descrita por Paulo?",a:["Os mortos em Cristo ressuscitam","Todos recebem imediatamente a recompensa final","A Terra deixa de existir","Os discípulos regressam a Jerusalém"],correct:0,ref:"1 Tessalonicenses 4:16-17",why:"Paulo afirma que os mortos em Cristo ressuscitarão primeiro, antes da reunião descrita no versículo seguinte."},
-{level:"Mestre da Bíblia",cat:"Profecias",q:"Em Apocalipse 12:17, contra quem o dragão faz guerra?",a:["Aos que guardam os mandamentos de Deus e têm o testemunho de Jesus","Aos reis de Israel apenas","Aos comerciantes de Tiro","Aos habitantes de Nínive"],correct:0,ref:"Apocalipse 12:17",why:"A passagem identifica o povo contra o qual o dragão faz guerra."},
-{level:"Mestre da Bíblia",cat:"Bíblia",q:"Qual foi a principal preocupação de Paulo em Romanos 9–11?",a:["O lugar de Israel no plano de Deus e a misericórdia divina","A construção do templo de Salomão","A escolha dos doze apóstolos","A divisão das terras de Canaã"],correct:0,ref:"Romanos 9–11",why:"Paulo discute Israel, a promessa, a fé e a misericórdia de Deus."},
-{level:"Mestre da Bíblia",cat:"Exegese",q:"Em Mateus 5:17, o que Jesus diz sobre a Lei e os Profetas?",a:["Veio abolir tudo","Veio cumprir","Não tinham importância","Eram apenas tradições romanas"],correct:1,ref:"Mateus 5:17-20",why:"Jesus declara que não veio abolir a Lei ou os Profetas, mas cumprir."},
-{level:"Mestre da Bíblia",cat:"Santuário",q:"Segundo Hebreus 10:19-22, por que os crentes podem aproximar-se de Deus com confiança?",a:["Por causa do caminho aberto pelo sangue de Jesus","Por causa da sua posição social","Por causa de sacrifícios humanos","Por causa da riqueza do templo"],correct:0,ref:"Hebreus 10:19-22",why:"O texto associa o acesso confiante a Deus à obra de Jesus e ao seu sangue."},
-{level:"Mestre da Bíblia",cat:"Bíblia",q:"Em 1 Coríntios 13, qual destas virtudes permanece juntamente com a fé e a esperança?",a:["A fama","O amor","A riqueza","O poder"],correct:1,ref:"1 Coríntios 13:13",why:"Paulo destaca a fé, a esperança e o amor, afirmando que o maior deles é o amor."},
-{level:"Mestre da Bíblia",cat:"Profecias",q:"Em Apocalipse 20:4, o que é mencionado em relação aos santos?",a:["Que viveram e reinaram com Cristo mil anos","Que construíram a torre de Babel","Que governaram o Egipto","Que nunca enfrentaram perseguição"],correct:0,ref:"Apocalipse 20:4-6",why:"A passagem descreve os santos vivendo e reinando com Cristo durante mil anos."},
-{level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"Segundo João 14:1-3, qual é a promessa de Jesus aos discípulos?",a:["Que nunca morreriam fisicamente","Que voltará e os levará para estar com Ele","Que governariam Roma","Que receberiam riquezas imediatamente"],correct:1,ref:"João 14:1-3",why:"Jesus promete preparar lugar e voltar para receber os seus discípulos."},
-{level:"Mestre da Bíblia",cat:"Bíblia",q:"Segundo Gálatas 3:16, a quem Paulo relaciona a promessa feita a Abraão?",a:["A Cristo, identificado como a descendência prometida","A Ciro","A Pilatos","A Herodes"],correct:0,ref:"Gálatas 3:16",why:"Paulo interpreta a promessa e destaca Cristo na sua referência à descendência de Abraão."},
-{level:"Mestre da Bíblia",cat:"Exegese",q:"Qual é a função do contexto histórico e literário na interpretação bíblica?",a:["Substituir o texto por opiniões pessoais","Ajudar a compreender o sentido da passagem no seu contexto","Impedir a comparação de passagens","Eliminar a necessidade de ler o capítulo"],correct:1,ref:"Neemias 8:8; Lucas 24:27",why:"Examinar o contexto e explicar o texto ajuda a evitar interpretações isoladas ou incorretas."},
- 
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 1:8, como Deus Se identifica?",a:["O Alfa e o Ómega","O rei de Babilónia","O anjo do abismo","O filho de Herodes"],correct:0,ref:"Apocalipse 1:8",why:"O texto apresenta o Senhor Deus como o Alfa e o Ómega, Aquele que é, que era e que há de vir."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 4, quantos seres viventes estão ao redor do trono?",a:["Dois","Quatro","Sete","Doze"],correct:1,ref:"Apocalipse 4:6-8",why:"A visão descreve quatro seres viventes ao redor do trono."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 6, o que acontece quando o sexto selo é aberto?",a:["Há um grande terramoto e fenómenos celestes","O templo de Salomão é construído","Moisés regressa ao Egipto","O Jordão seca"],correct:0,ref:"Apocalipse 6:12-17",why:"O sexto selo descreve um grande terramoto e sinais no Sol, na Lua e nas estrelas."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 7:4, quantos são selados das tribos de Israel na visão?",a:["12 mil","70 mil","144 mil","2300"],correct:2,ref:"Apocalipse 7:4-8",why:"João ouve o número de 144 mil selados, distribuídos pelas tribos mencionadas."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 8, o que ocorre quando o sétimo selo é aberto?",a:["Há silêncio no céu por cerca de meia hora","A Nova Jerusalém desce","Jesus nasce em Belém","O mar transforma-se em sangue"],correct:0,ref:"Apocalipse 8:1",why:"O texto descreve silêncio no céu por cerca de meia hora."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 11:3, por quanto tempo as duas testemunhas profetizam?",a:["40 dias","1260 dias","2300 dias","1000 anos"],correct:1,ref:"Apocalipse 11:3",why:"A passagem menciona 1260 dias, usando linguagem profética."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 12:9, como é identificado o grande dragão?",a:["Como a antiga serpente, chamada diabo e Satanás","Como o rei Ciro","Como o profeta Daniel","Como o sumo sacerdote"],correct:0,ref:"Apocalipse 12:9",why:"O próprio texto identifica o dragão com o diabo e Satanás."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 13:1, de onde sobe a besta vista por João?",a:["Do mar","Do templo","Do monte Sinai","Do rio Jordão"],correct:0,ref:"Apocalipse 13:1",why:"João vê uma besta a subir do mar."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 13:11, de onde sobe a segunda besta?",a:["Da terra","Do mar","Do céu aberto","Do rio Eufrates"],correct:0,ref:"Apocalipse 13:11",why:"A segunda besta é descrita como subindo da terra."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 14:8, que cidade é anunciada como caída?",a:["Babilónia","Jerusalém","Nínive","Damasco"],correct:0,ref:"Apocalipse 14:8",why:"O segundo anjo anuncia a queda de Babilónia."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 14:12, quais características são atribuídas aos santos?",a:["Paciência, guardar os mandamentos de Deus e fé em Jesus","Riqueza e poder político","Dominar todos os povos","Nunca enfrentar provações"],correct:0,ref:"Apocalipse 14:12",why:"A passagem destaca a perseverança dos santos, os mandamentos de Deus e a fé em Jesus."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 15:2, o que João vê junto do mar de vidro?",a:["Os vencedores da besta, da sua imagem e do número do seu nome","Os reis de Israel em guerra","Os construtores da arca","Os sacerdotes de Baal"],correct:0,ref:"Apocalipse 15:2",why:"João vê os vencedores junto do mar de vidro, com harpas de Deus."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 16:16, que lugar é chamado Armagedom?",a:["O lugar onde os reis são reunidos para a batalha","A cidade do nascimento de Jesus","O monte onde Moisés recebeu a Lei","O jardim do Éden"],correct:0,ref:"Apocalipse 16:13-16",why:"A passagem menciona a reunião dos reis no lugar chamado Armagedom."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 17, sobre que animal está sentada a mulher da visão?",a:["Uma besta escarlate","Um cordeiro branco","Um cavalo de guerra","Um leão dourado"],correct:0,ref:"Apocalipse 17:3",why:"João vê uma mulher sentada sobre uma besta escarlate."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 19:11, como é chamado o cavaleiro fiel e verdadeiro?",a:["A Palavra de Deus","O rei de Tiro","O anjo do abismo","O príncipe do Egipto"],correct:0,ref:"Apocalipse 19:11-13",why:"A visão apresenta o cavaleiro fiel e verdadeiro e identifica o seu nome como a Palavra de Deus."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 20:1-3, por quanto tempo Satanás é preso simbolicamente?",a:["Sete anos","Quarenta dias","Mil anos","Setenta semanas"],correct:2,ref:"Apocalipse 20:1-3",why:"O texto descreve Satanás preso por mil anos."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 20:12, que livros são abertos no juízo?",a:["Os livros e o livro da vida","Apenas os livros dos reis","Os livros de Moisés somente","Os registos de Roma"],correct:0,ref:"Apocalipse 20:11-15",why:"A visão menciona livros abertos e também o livro da vida."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 21:4, o que Deus fará na nova criação?",a:["Enxugará dos olhos toda lágrima e eliminará a morte","Restaurará Babilónia","Construirá outro Egipto","Reiniciará o dilúvio"],correct:0,ref:"Apocalipse 21:1-4",why:"A promessa descreve o fim da morte, do luto, do clamor e da dor."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 21:16, que forma tem a cidade santa?",a:["Quadrada, com comprimento e largura iguais","Circular","Em forma de triângulo","Em forma de estrela"],correct:0,ref:"Apocalipse 21:15-17",why:"A cidade é descrita com comprimento e largura iguais."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 22:2, o que cresce junto ao rio da água da vida?",a:["A árvore da vida","A árvore do conhecimento do bem e do mal","Uma oliveira comum","Uma videira de Noé"],correct:0,ref:"Apocalipse 22:1-2",why:"A visão descreve a árvore da vida, que produz doze frutos e cujas folhas servem para a cura das nações."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 22:12, o que Jesus declara que traz consigo?",a:["A sua recompensa para retribuir a cada um","Uma nova arca","As tábuas da Lei","O trono de Salomão"],correct:0,ref:"Apocalipse 22:12",why:"Jesus declara que vem sem demora e traz consigo a recompensa."},
-{level:"Desafio Apocalíptico",cat:"Profecias",q:"Qual é o convite final de Apocalipse 22:17?",a:["Quem tem sede venha e receba de graça a água da vida","Todos devem construir uma torre","Ninguém pode aproximar-se","Todos devem regressar ao Egipto"],correct:0,ref:"Apocalipse 22:17",why:"O convite chama quem tem sede a vir e receber gratuitamente a água da vida."},
-,
-{level:"Iniciante",cat:"Génesis",q:"Que sinal Deus colocou como aliança de que não voltaria a destruir toda a terra com um dilúvio?",a:["Um arco nas nuvens","Uma coluna de fogo","Uma estrela","Uma oliveira"],correct:0,ref:"Génesis 9:12-17",why:"O arco nas nuvens é apresentado como sinal da aliança de Deus com a terra."},
-{level:"Iniciante",cat:"Êxodo",q:"O que Deus usou para falar com Moisés no deserto?",a:["Uma sarça que ardia sem se consumir","Uma estátua de ouro","Um navio","Uma árvore caída"],correct:0,ref:"Êxodo 3:1-6",why:"Deus chamou Moisés do meio da sarça ardente."},
-{level:"Iniciante",cat:"Levítico",q:"Que dia anual era especialmente dedicado à purificação do santuário e ao povo?",a:["Dia da Expiação","Festa das Trombetas apenas","Pentecostes","Lua nova"],correct:0,ref:"Levítico 16:29-34",why:"Levítico descreve o Dia da Expiação como ocasião solene de purificação."},
-{level:"Iniciante",cat:"Números",q:"Quem foi enviado com outros homens para espiar Canaã e demonstrou confiança em Deus juntamente com Josué?",a:["Calebe","Corá","Balaão","Arão"],correct:0,ref:"Números 13:30; 14:6-9",why:"Calebe e Josué confiaram que Deus poderia conduzir Israel à terra."},
-{level:"Iniciante",cat:"Deuteronómio",q:"Qual é o princípio central de Deuteronómio 6:5?",a:["Amar a Deus de todo o coração, alma e força","Confiar nos ídolos","Buscar riqueza primeiro","Evitar toda a comunidade"],correct:0,ref:"Deuteronómio 6:4-5",why:"Israel é chamado a amar o Senhor integralmente."},
-{level:"Iniciante",cat:"Josué",q:"Que cidade teve as suas muralhas a cair depois de Israel obedecer às instruções de Deus?",a:["Jericó","Nínive","Babilónia","Damasco"],correct:0,ref:"Josué 6:1-20",why:"A queda das muralhas de Jericó é narrada em Josué 6."},
-{level:"Iniciante",cat:"Juízes",q:"Que juiz ficou conhecido pela sua força extraordinária?",a:["Sansão","Gedeão","Otniel","Jefté"],correct:0,ref:"Juízes 14:5-6; 16:17",why:"Sansão recebeu força extraordinária enquanto consagrado a Deus."},
-{level:"Iniciante",cat:"Rute",q:"Qual foi a atitude de Rute para com Noemi?",a:["Permaneceu fiel e acompanhou-a","Abandonou-a imediatamente","Tornou-se rainha do Egipto","Conduziu um exército"],correct:0,ref:"Rute 1:16-17",why:"Rute escolheu acompanhar Noemi e adoptar o seu povo e Deus."},
-{level:"Iniciante",cat:"1 Samuel",q:"Quem ouviu Deus chamá-lo quando ainda era menino?",a:["Samuel","Saul","Absalão","Joabe"],correct:0,ref:"1 Samuel 3:1-10",why:"Samuel ouviu o chamado de Deus e respondeu com disponibilidade."},
-{level:"Iniciante",cat:"2 Samuel",q:"Que rei ficou associado à aliança de Deus sobre uma dinastia duradoura?",a:["David","Acabe","Saul","Nabucodonosor"],correct:0,ref:"2 Samuel 7:12-16",why:"Deus prometeu a David uma casa e um reino, numa promessa ligada à esperança messiânica."},
-{level:"Iniciante",cat:"1 Reis",q:"Que rei pediu sabedoria a Deus para governar o povo?",a:["Salomão","Roboão","Acabe","Jeú"],correct:0,ref:"1 Reis 3:5-12",why:"Salomão pediu discernimento para julgar o povo."},
-{level:"Iniciante",cat:"2 Reis",q:"Quem foi levado ao céu num redemoinho, segundo o relato bíblico?",a:["Elias","Eliseu","Isaías","Jeremias"],correct:0,ref:"2 Reis 2:9-12",why:"Elias foi levado ao céu num redemoinho."},
-{level:"Iniciante",cat:"Esdras",q:"Que escriba é apresentado como alguém dedicado a estudar, praticar e ensinar a Lei do Senhor?",a:["Esdras","Neemias","Mardoqueu","Zorobabel"],correct:0,ref:"Esdras 7:10",why:"Esdras preparou o coração para estudar, cumprir e ensinar a Lei."},
-{level:"Iniciante",cat:"Neemias",q:"Que obra Neemias liderou em Jerusalém?",a:["Reconstrução das muralhas","Construção da arca","Construção do templo de Salomão","Construção da torre de Babel"],correct:0,ref:"Neemias 2:17-18; 6:15",why:"Neemias mobilizou o povo para reconstruir as muralhas de Jerusalém."},
-{level:"Iniciante",cat:"1 Crónicas",q:"Que rei é destacado em 1 Crónicas como central na preparação para o templo, embora não o tenha construído?",a:["David","Saul","Acabe","Faraó"],correct:0,ref:"1 Crónicas 22:1-8",why:"David preparou materiais e planos, mas Deus reservou a construção do templo a Salomão."},
-{level:"Intermediário",cat:"2 Crónicas",q:"Que rei promoveu uma reforma religiosa e mandou reparar o templo após encontrar o Livro da Lei?",a:["Josias","Acaz","Manassés no início do reinado","Roboão"],correct:0,ref:"2 Crónicas 34:14-33",why:"Josias respondeu à leitura do Livro da Lei com arrependimento e reforma."},
-{level:"Intermediário",cat:"Ester",q:"Que risco Ester aceitou enfrentar para interceder pelo seu povo?",a:["Apresentar-se ao rei sem ser chamada","Fugir para o Egipto","Destruir o templo","Enfrentar Golias"],correct:0,ref:"Ester 4:11-16",why:"Ester decidiu aproximar-se do rei, mesmo correndo risco de morte."},
-{level:"Intermediário",cat:"Jó",q:"Qual foi a resposta de Jó que expressa confiança mesmo em meio à perda?",a:["O Senhor deu e o Senhor tomou; bendito seja o nome do Senhor","Deus não existe","A riqueza é tudo","Nunca voltarei a orar"],correct:0,ref:"Jó 1:20-22",why:"Jó lamentou, mas não atribuiu a Deus culpa injusta."},
-{level:"Intermediário",cat:"Salmos",q:"Segundo Salmo 119:105, o que é a palavra de Deus para o caminho do crente?",a:["Lâmpada para os pés e luz para o caminho","Uma espada de ferro literal","Uma coroa real","Um mapa político"],correct:0,ref:"Salmo 119:105",why:"A Palavra ilumina o caminho e orienta as decisões."},
-{level:"Intermediário",cat:"Provérbios",q:"Segundo Provérbios 1:7, qual é o princípio do conhecimento?",a:["O temor do Senhor","A fama pública","A força física","A riqueza herdada"],correct:0,ref:"Provérbios 1:7",why:"O temor do Senhor é apresentado como princípio do conhecimento."},
-{level:"Intermediário",cat:"Eclesiastes",q:"Qual conclusão aparece em Eclesiastes 12:13?",a:["Temer a Deus e guardar os Seus mandamentos","Viver apenas para o prazer","Confiar na fama","Acumular bens sem limite"],correct:0,ref:"Eclesiastes 12:13",why:"O livro conclui chamando a humanidade a temer a Deus e guardar os Seus mandamentos."},
-{level:"Intermediário",cat:"Cântico dos Cânticos",q:"Que tema humano é celebrado poeticamente em Cântico dos Cânticos?",a:["O amor entre os enamorados","A conquista de Jericó","A construção da arca","A queda de Babilónia"],correct:0,ref:"Cântico dos Cânticos 8:6-7",why:"O poema celebra a força e o valor do amor."},
-{level:"Intermediário",cat:"Isaías",q:"Que promessa messiânica anuncia um filho chamado Emanuel?",a:["Deus connosco","O guerreiro do Egipto","Rei da Babilónia","Filho de Moabe"],correct:0,ref:"Isaías 7:14",why:"Emanuel significa “Deus connosco” e é lido pelos cristãos em relação a Jesus."},
-{level:"Intermediário",cat:"Jeremias",q:"Que tipo de aliança Jeremias 31:31-34 anuncia?",a:["Uma nova aliança com a lei escrita no coração","Uma aliança com os ídolos","Um pacto militar com a Assíria","Uma aliança para reconstruir Babel"],correct:0,ref:"Jeremias 31:31-34",why:"A promessa descreve a lei de Deus escrita no coração e o perdão dos pecados."},
-{level:"Intermediário",cat:"Lamentações",q:"Que verdade sobre a misericórdia de Deus é afirmada em Lamentações 3:22-23?",a:["As Suas misericórdias renovam-se cada manhã","Deus nunca perdoa","A esperança é impossível","A justiça não tem valor"],correct:0,ref:"Lamentações 3:22-23",why:"O texto afirma que as misericórdias do Senhor não têm fim e renovam-se."},
-{level:"Intermediário",cat:"Ezequiel",q:"Na visão dos ossos secos, o que Deus promete fazer pelo povo?",a:["Dar vida e restaurar a esperança","Transformá-los em ouro","Levá-los ao Egipto","Apagar a sua história"],correct:0,ref:"Ezequiel 37:1-14",why:"A visão simboliza a restauração de Israel pelo poder de Deus."},
-{level:"Intermediário",cat:"Daniel",q:"Que três jovens foram lançados na fornalha por não adorarem a imagem?",a:["Sadraque, Mesaque e Abede-Nego","Pedro, Tiago e João","Caim, Abel e Sete","Elias, Eliseu e Samuel"],correct:0,ref:"Daniel 3:12-27",why:"Os três hebreus recusaram adorar a imagem e foram preservados por Deus."},
-{level:"Intermediário",cat:"Oseias",q:"Que imagem Oseias usa para descrever o amor persistente de Deus pelo Seu povo?",a:["Amor fiel apesar da infidelidade","Indiferença absoluta","Um contrato comercial","Uma guerra sem fim"],correct:0,ref:"Oseias 11:1-4",why:"Oseias retrata o cuidado de Deus como amor compassivo e paciente."},
-{level:"Intermediário",cat:"Joel",q:"Que promessa de Joel 2:28-29 é citada por Pedro no Pentecostes?",a:["Deus derramaria o Seu Espírito sobre toda a carne","O mar secaria para sempre","O templo seria levado ao céu","Israel nunca sofreria"],correct:0,ref:"Joel 2:28-32; Actos 2:16-21",why:"Pedro relaciona a manifestação do Espírito com a profecia de Joel."},
-{level:"Intermediário",cat:"Amós",q:"O que Amós 5:24 pede que corra como águas?",a:["O juízo e a justiça","O ouro e a prata","O vinho e o azeite","O poder militar"],correct:0,ref:"Amós 5:21-24",why:"Deus rejeita o culto vazio e exige justiça verdadeira."},
-{level:"Avançado",cat:"Obadias",q:"Qual é o tema central da mensagem de Obadias?",a:["O juízo contra Edom por orgulho e violência contra Judá","A construção do templo","A libertação do Egipto","A visão da nova Jerusalém"],correct:0,ref:"Obadias 1:3-15",why:"Obadias denuncia o orgulho de Edom e a sua atitude contra o irmão."},
-{level:"Avançado",cat:"Jonas",q:"Que aspecto do carácter de Deus Jonas reconhece no capítulo 4?",a:["Deus é compassivo e tardio em irar-se","Deus não se importa com as nações","Deus só ouve reis","Deus nunca perdoa cidades"],correct:0,ref:"Jonas 4:1-2",why:"Jonas sabe que Deus é misericordioso e compassivo, inclusive com Nínive."},
-{level:"Avançado",cat:"Miqueias",q:"Segundo Miqueias 6:8, o que Deus requer do ser humano?",a:["Praticar a justiça, amar a misericórdia e andar humildemente com Deus","Oferecer sacrifícios sem mudança de vida","Conquistar outras nações","Viver sem responsabilidade"],correct:0,ref:"Miqueias 6:8",why:"O profeta resume a vida fiel em justiça, misericórdia e humildade."},
-{level:"Avançado",cat:"Naum",q:"Que cidade é o foco da profecia de Naum?",a:["Nínive","Belém","Jerusalém apenas","Damasco"],correct:0,ref:"Naum 1:1; 3:1-7",why:"Naum anuncia o juízo contra Nínive, capital assíria."},
-{level:"Avançado",cat:"Habacuque",q:"Qual é a declaração de Habacuque 2:4 retomada no Novo Testamento?",a:["O justo viverá pela sua fé","O forte viverá pela espada","O rico será sempre feliz","O rei nunca cairá"],correct:0,ref:"Habacuque 2:4; Romanos 1:17",why:"A confiança fiel em Deus é o centro da declaração."},
-{level:"Avançado",cat:"Sofonias",q:"Que convite Sofonias dirige aos humildes que procuram o Senhor?",a:["Buscar o Senhor, a justiça e a mansidão","Procurar vingança pessoal","Confiar em ídolos","Abandonar a oração"],correct:0,ref:"Sofonias 2:3",why:"O profeta chama os humildes a procurar o Senhor e a Sua justiça."},
-{level:"Avançado",cat:"Ageu",q:"Qual era a preocupação principal de Ageu ao exortar o povo regressado do exílio?",a:["Reconstruir a casa do Senhor","Construir um palácio para Faraó","Reconquistar Nínive","Fazer uma arca"],correct:0,ref:"Ageu 1:2-8",why:"Ageu confronta o povo por cuidar das próprias casas enquanto o templo permanecia abandonado."},
-{level:"Avançado",cat:"Zacarias",q:"Que rei humilde é descrito a entrar em Jerusalém montado num jumento?",a:["O rei prometido, justo e salvador","O rei da Assíria","O faraó do Êxodo","O rei Saul"],correct:0,ref:"Zacarias 9:9; Mateus 21:4-9",why:"A profecia apresenta um rei humilde, cumprida na entrada de Jesus em Jerusalém."},
-{level:"Avançado",cat:"Malaquias",q:"Que mensageiro Malaquias anuncia antes do dia do Senhor?",a:["Um mensageiro que prepara o caminho","Um comandante romano","Um construtor de navios","Um rei filisteu"],correct:0,ref:"Malaquias 3:1; 4:5-6",why:"Malaquias anuncia um mensageiro preparador e a vinda de Elias em sentido profético."},
-{level:"Avançado",cat:"Mateus",q:"No Sermão da Montanha, como Jesus descreve os pacificadores?",a:["Serão chamados filhos de Deus","Serão sempre ricos","Nunca enfrentarão oposição","Governarão Roma"],correct:0,ref:"Mateus 5:9",why:"Jesus declara bem-aventurados os pacificadores."},
-{level:"Avançado",cat:"Marcos",q:"Que princípio Jesus ensina sobre a verdadeira grandeza?",a:["Quem quiser ser grande deve servir","Grandeza significa dominar os outros","O primeiro deve ser sempre servido","A fama é a medida do carácter"],correct:0,ref:"Marcos 10:42-45",why:"Jesus contrapõe o domínio ao serviço e apresenta a Sua própria missão como exemplo."},
-{level:"Avançado",cat:"Lucas",q:"Na parábola do bom samaritano, quem demonstrou ser próximo do homem ferido?",a:["Aquele que teve misericórdia e cuidou dele","O sacerdote que passou adiante","O levita que não parou","O viajante que o ignorou"],correct:0,ref:"Lucas 10:25-37",why:"Jesus define o próximo pela prática concreta da misericórdia."},
-{level:"Avançado",cat:"João",q:"Segundo João 15, que imagem Jesus usa para explicar a dependência dos discípulos dEle?",a:["A videira e os ramos","A porta e a cidade","O pastor e a moeda","O templo e o altar"],correct:0,ref:"João 15:1-5",why:"Os discípulos só dão fruto espiritual permanecendo ligados a Cristo."},
-{level:"Avançado",cat:"Actos",q:"Que acontecimento marcou a descida do Espírito Santo no Pentecostes?",a:["Os discípulos falaram em línguas compreendidas por pessoas de várias nações","O templo caiu","Paulo foi preso em Roma","Pedro construiu um barco"],correct:0,ref:"Actos 2:1-11",why:"O Espírito capacitou os discípulos e pessoas de diversas regiões ouviram as maravilhas de Deus."},
-{level:"Mestre da Bíblia",cat:"Romanos",q:"Como Romanos 5:1 descreve a consequência da justificação pela fé?",a:["Paz com Deus por meio de Jesus Cristo","Isenção de toda a dificuldade","Garantia de riqueza material","Superioridade sobre outras pessoas"],correct:0,ref:"Romanos 5:1-5",why:"A justificação pela fé conduz à paz com Deus e à esperança."},
-{level:"Mestre da Bíblia",cat:"1 Coríntios",q:"Que comparação Paulo usa para explicar a diversidade e unidade da igreja?",a:["Um corpo com muitos membros","Uma torre sem fundamento","Um exército sem comandante","Uma vinha sem ramos"],correct:0,ref:"1 Coríntios 12:12-27",why:"Os dons são diversos, mas os membros pertencem a um só corpo."},
-{level:"Mestre da Bíblia",cat:"2 Coríntios",q:"Segundo 2 Coríntios 12:9, por que a fraqueza humana não impede a obra de Deus?",a:["O poder de Cristo aperfeiçoa-se na fraqueza","A força humana é sempre suficiente","A fraqueza torna Deus ausente","A fé elimina automaticamente todos os problemas"],correct:0,ref:"2 Coríntios 12:7-10",why:"Paulo aprende que a graça de Cristo é suficiente e o Seu poder manifesta-se na fraqueza."},
-{level:"Mestre da Bíblia",cat:"Gálatas",q:"Qual contraste Paulo apresenta em Gálatas 5 entre a vida dominada pela carne e a vida no Espírito?",a:["As obras da carne e o fruto do Espírito","Dois tipos de sacrifício animal","Reis e sacerdotes","Templo e sinagoga"],correct:0,ref:"Gálatas 5:16-25",why:"Paulo contrasta comportamentos destrutivos com o fruto produzido pelo Espírito."},
-{level:"Mestre da Bíblia",cat:"Efésios",q:"Que imagem descreve a armadura espiritual de Efésios 6?",a:["Verdade, justiça, evangelho da paz, fé, salvação e Palavra de Deus","Armas de ouro e cavalos","Coroa, cetro e trono","Pedras preciosas e moedas"],correct:0,ref:"Efésios 6:10-18",why:"A armadura é uma metáfora para a resistência espiritual mediante recursos dados por Deus."},
-{level:"Mestre da Bíblia",cat:"Filipenses",q:"Qual atitude de Cristo Paulo apresenta como modelo de humildade em Filipenses 2?",a:["Esvaziou-Se, assumiu forma de servo e humilhou-Se","Exigiu ser servido por todos","Procurou poder político","Recusou obedecer ao Pai"],correct:0,ref:"Filipenses 2:5-11",why:"Cristo humilhou-Se e foi obediente até à morte, sendo depois exaltado por Deus."},
-{level:"Mestre da Bíblia",cat:"Colossenses",q:"Como Colossenses 1 descreve a posição de Cristo na criação?",a:["Todas as coisas foram criadas por meio dEle e para Ele","Cristo é apenas uma criatura entre outras","Cristo não tem relação com a criação","A criação existe independentemente de Deus"],correct:0,ref:"Colossenses 1:15-20",why:"Paulo apresenta Cristo como central na criação, sustentação e reconciliação."},
-{level:"Mestre da Bíblia",cat:"1 Tessalonicenses",q:"Que esperança Paulo associa à ressurreição dos que morreram em Cristo?",a:["Os mortos em Cristo ressuscitarão na vinda do Senhor","Os mortos não terão futuro","A igreja nunca verá Cristo","A esperança depende de riquezas"],correct:0,ref:"1 Tessalonicenses 4:13-18",why:"Paulo consola os crentes com a ressurreição e o encontro com o Senhor."},
-{level:"Mestre da Bíblia",cat:"2 Tessalonicenses",q:"Que advertência Paulo faz contra a ideia de que o dia do Senhor já chegou sem que os sinais mencionados se cumpram?",a:["Não se deixarem enganar facilmente","Abandonarem a fé","Marcarem uma data exacta","Deixarem de trabalhar todos"],correct:0,ref:"2 Tessalonicenses 2:1-3",why:"Paulo pede discernimento e adverte contra mensagens enganosas sobre esse dia."},
-{level:"Mestre da Bíblia",cat:"1 Timóteo",q:"Como 1 Timóteo 3 apresenta os requisitos para quem exerce liderança na igreja?",a:["Carácter íntegro, domínio próprio e boa reputação","Riqueza como único requisito","Popularidade acima de tudo","Ausência de responsabilidade familiar"],correct:0,ref:"1 Timóteo 3:1-7",why:"A liderança cristã é avaliada principalmente pelo carácter e pelo testemunho."},
-{level:"Mestre da Bíblia",cat:"2 Timóteo",q:"Para que é útil toda a Escritura, segundo 2 Timóteo 3:16-17?",a:["Ensinar, repreender, corrigir e instruir em justiça","Garantir fama política","Substituir a prática do bem","Prometer riqueza imediata"],correct:0,ref:"2 Timóteo 3:16-17",why:"A Escritura equipa o servo de Deus para toda a boa obra."},
-{level:"Mestre da Bíblia",cat:"Tito",q:"Que relação Tito 2 estabelece entre a graça de Deus e a vida do crente?",a:["A graça educa para renunciar à impiedade e viver com sensatez","A graça torna desnecessária a obediência","A graça serve apenas para prosperidade","A graça impede o serviço ao próximo"],correct:0,ref:"Tito 2:11-14",why:"A graça salva e também educa para uma vida piedosa."},
-{level:"Mestre da Bíblia",cat:"Filemom",q:"Qual transformação prática Paulo procura promover na relação entre Filemom e Onésimo?",a:["Receber Onésimo como irmão amado","Punir Onésimo sem diálogo","Enviar Onésimo para longe sem reconciliação","Negar a fraternidade cristã"],correct:0,ref:"Filemom 10-17",why:"Paulo apela à recepção de Onésimo não apenas como servo, mas como irmão em Cristo."},
-{level:"Desafio Apocalíptico",cat:"Hebreus",q:"Como Hebreus compara o sacerdócio de Cristo com o sacerdócio levítico?",a:["Cristo exerce um sacerdócio superior e definitivo","Cristo é sacerdote apenas por uma semana","Cristo depende de sacrifícios diários de animais","Cristo não intercede por ninguém"],correct:0,ref:"Hebreus 7:23-28; 9:11-14",why:"Hebreus apresenta o sacerdócio de Cristo como superior e o Seu sacrifício como suficiente."},
-{level:"Desafio Apocalíptico",cat:"Tiago",q:"Como Tiago 2 relaciona fé e obras?",a:["As obras demonstram a realidade da fé viva","As obras compram a salvação independentemente de Deus","A fé verdadeira nunca produz acções","A fé e a vida prática não se relacionam"],correct:0,ref:"Tiago 2:14-26",why:"Tiago argumenta que a fé viva se manifesta em acções concretas de obediência e misericórdia."},
-{level:"Desafio Apocalíptico",cat:"1 Pedro",q:"Que modelo 1 Pedro apresenta para responder ao sofrimento injusto?",a:["Cristo, que sofreu sem retribuir com insultos","Faraó, que endureceu o coração","Sansão, que procurou vingança","Pilatos, que evitou a responsabilidade"],correct:0,ref:"1 Pedro 2:21-23",why:"Pedro aponta para Cristo, que confiou no justo Juiz e não respondeu com vingança."},
-{level:"Desafio Apocalíptico",cat:"2 Pedro",q:"Que advertência 2 Pedro 3 faz sobre a aparente demora da promessa divina?",a:["O Senhor é paciente e deseja que as pessoas cheguem ao arrependimento","Deus esqueceu a promessa","A promessa depende dos impérios humanos","A história nunca terá conclusão"],correct:0,ref:"2 Pedro 3:8-13",why:"A aparente demora é explicada como paciência divina, acompanhada da promessa de novos céus e nova terra."},
-{level:"Desafio Apocalíptico",cat:"1 João",q:"Como 1 João 4 relaciona o amor a Deus com o amor ao próximo?",a:["Quem diz amar a Deus deve amar também o irmão","É possível odiar o irmão e amar perfeitamente a Deus","O amor é apenas um sentimento privado","O amor não tem relação com a fé"],correct:0,ref:"1 João 4:20-21",why:"João afirma que o amor a Deus não pode ser separado do amor ao irmão."},
-{level:"Desafio Apocalíptico",cat:"2 João",q:"Qual equilíbrio 2 João recomenda ao receber pessoas que ensinam?",a:["Permanecer na doutrina de Cristo e exercer discernimento","Aceitar qualquer ensino sem exame","Rejeitar toda pessoa sem ouvir","Substituir a verdade pela popularidade"],correct:0,ref:"2 João 7-11",why:"A carta une fidelidade à doutrina de Cristo com discernimento perante os enganadores."},
-{level:"Desafio Apocalíptico",cat:"3 João",q:"Que contraste aparece entre Gaio e Diótrefes na terceira carta de João?",a:["Gaio acolhe os irmãos; Diótrefes procura preeminência e rejeita-os","Ambos recusam toda hospitalidade","Gaio persegue João; Diótrefes é elogiado","Nenhum deles aparece na carta"],correct:0,ref:"3 João 5-10",why:"A carta elogia a hospitalidade de Gaio e critica a atitude dominadora de Diótrefes."},
-{level:"Desafio Apocalíptico",cat:"Judas",q:"Que responsabilidade Judas 3 destaca em relação à fé cristã?",a:["Batalhar pela fé entregue aos santos","Criar uma nova mensagem sem relação com Cristo","Evitar todo discernimento","Substituir a fé por poder político"],correct:0,ref:"Judas 3-4",why:"Judas chama os crentes a defender a fé perante ensinamentos que a distorcem."},
-{level:"Desafio Apocalíptico",cat:"Apocalipse",q:"Em Apocalipse 12:17, contra quem o dragão faz guerra?",a:["Os que guardam os mandamentos de Deus e têm o testemunho de Jesus","Os reis de Israel apenas","Os habitantes de Nínive","Os construtores da arca"],correct:0,ref:"Apocalipse 12:17",why:"O texto identifica o povo fiel por sua lealdade a Deus e pelo testemunho de Jesus."}
-];
-  
-console.log("TOTAL DE PERGUNTAS:", bank.length);
-
-const niveisParaVerificar = [
-  { nome: "Iniciante", esperado: 10 },
-  { nome: "Intermediário", esperado: 15 },
-  { nome: "Avançado", esperado: 20 },
-  { nome: "Mestre da Bíblia", esperado: 25 },
-  { nome: "Desafio Apocalíptico", esperado: 30 }
-];
-
-niveisParaVerificar.forEach(nivel => {
-  const quantidade = bank.filter(
-    pergunta => pergunta.level === nivel.nome
-  ).length;
-
-  console.log(
-    nivel.nome + ": " + quantidade +
-    " de " + nivel.esperado +
-    (quantidade === nivel.esperado ? " — OK" : " — VERIFICAR")
-  );
-});
-
-let questions=[], index=0, score=0, locked=false, playerName="", selectedLevel="Iniciante";
-const $=id=>document.getElementById(id);
-function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
-function embaralharAlternativas(pergunta){
- const pares=pergunta.a.map((texto,i)=>({texto,correta:i===pergunta.correct}));
- for(let i=pares.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pares[i],pares[j]]=[pares[j],pares[i]];}
- return {...pergunta,a:pares.map(p=>p.texto),correct:pares.findIndex(p=>p.correta)};
-}
-function show(id){["start","quiz","result"].forEach(s=>$(s).classList.toggle("hidden",s!==id))}
-
-const ORDEM_NIVEIS=["Iniciante","Intermediário","Avançado","Mestre da Bíblia","Desafio Apocalíptico"];
-const QUANTIDADES_NIVEIS={"Iniciante":10,"Intermediário":15,"Avançado":20,"Mestre da Bíblia":25,"Desafio Apocalíptico":30};
-let nivelEmTransicao=false, temporizadorTransicao=null, inicioMaratona=0, historicoNiveis=[], acertosPorNivel={};
-function prepararMaratona(){
-  const conjunto=[];
-  for(const nivel of ORDEM_NIVEIS){
-    const pool=shuffle(bank.filter(q=>q.level===nivel)).map(embaralharAlternativas);
-    const quantidade=QUANTIDADES_NIVEIS[nivel];
-    if(pool.length<quantidade) throw new Error(`O nível ${nivel} precisa de ${quantidade} perguntas, mas só existem ${pool.length}.`);
-    conjunto.push(...pool.slice(0,quantidade));
-  }
-  return conjunto;
-}
-function begin(){
- playerName=$("player").value.trim()||"Participante";
- try{questions=prepararMaratona();}catch(e){alert(e.message);return;}
- selectedLevel="Maratona Bíblica — 5 níveis";
- index=0;score=0;locked=false;nivelEmTransicao=false;historicoNiveis=[];acertosPorNivel={};inicioMaratona=Date.now();
- if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
- $("playerLabel").textContent=playerName;
- show("quiz");atualizarBloqueioModalidades();render();
-}
-
-function desenharFitaNiveis(nivelAtual){
- const ribbon=$("levelRibbon");if(!ribbon)return;ribbon.replaceChildren();
- ORDEM_NIVEIS.forEach((nivel,i)=>{const chip=document.createElement("span");chip.className="level-chip";
-  if(historicoNiveis.includes(nivel))chip.classList.add("done");else if(nivel===nivelAtual)chip.classList.add("active");
-  chip.textContent=(historicoNiveis.includes(nivel)?"✓ ":(nivel===nivelAtual?"● ":"○ "))+nivel;ribbon.appendChild(chip);
- });
-}
-function render(){
- locked=false;nivelEmTransicao=false;
- const q=questions[index];if(!q)return;
- desenharFitaNiveis(q.level);
- const anteriores=questions.slice(0,index).filter(x=>x.level===q.level).length;
- const totalNivel=QUANTIDADES_NIVEIS[q.level];
- $("counter").textContent=`Pergunta ${index+1} de ${questions.length} · ${q.level} ${anteriores+1}/${totalNivel}`;
- $("bar").style.width=`${index/questions.length*100}%`;
- $("qmeta").textContent=`${q.level} • ${q.cat} • Nível ${ORDEM_NIVEIS.indexOf(q.level)+1} de 5`;
- $("question").textContent=q.q;$("answers").replaceChildren();
- $("feedback").className="feedback hidden";$("feedback").textContent="";$("next").disabled=true;
- const proxima=questions[index+1];
- $("next").textContent=index===questions.length-1?"Ver resultado":(proxima&&proxima.level!==q.level?"Concluir nível":"Próxima pergunta");
- q.a.forEach((answer,i)=>{const b=document.createElement("button");b.className="answer";const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);const text=document.createElement("span");text.textContent=answer;b.append(letter,text);b.addEventListener("click",()=>choose(i,b));$("answers").appendChild(b);});
-}
-function mostrarTransicaoNivel(nivelConcluido,proximoNivel,ultimaPergunta){
- const area=$("feedback");area.className="level-transition";area.replaceChildren();
- const totalNivel=QUANTIDADES_NIVEIS[nivelConcluido]||questions.filter(q=>q.level===nivelConcluido).length;
- const acertos=acertosPorNivel[nivelConcluido]||0;
- const pct=totalNivel?Math.round(acertos/totalNivel*100):0;
- saveLevelRankingResult(nivelConcluido,acertos,totalNivel);
- const badge=document.createElement("div");badge.textContent="RESULTADO DO NÍVEL";badge.style.cssText="font-size:11px;letter-spacing:2px;font-weight:900;color:#f3cf70";
- const h=document.createElement("h3");h.textContent=`${nivelConcluido} concluído!`;
- const scoreCard=document.createElement("div");scoreCard.style.cssText="margin:14px auto;padding:14px;border:1px solid rgba(243,207,112,.55);border-radius:14px;background:rgba(255,255,255,.08);max-width:300px;text-align:center";
- const scoreBig=document.createElement("strong");scoreBig.textContent=`${acertos}/${totalNivel} respostas certas`;scoreBig.style.cssText="display:block;font-size:22px;color:#f3cf70";
- const scoreSmall=document.createElement("span");scoreSmall.textContent=`${acertos*10} pontos · ${pct}% de aproveitamento`;scoreSmall.style.cssText="display:block;margin-top:5px;color:#fff;font-size:14px";scoreCard.append(scoreBig,scoreSmall);
- const p=document.createElement("p");p.textContent=proximoNivel?`A seguir: ${proximoNivel}. O próximo nível vai começar automaticamente.`:"Concluíste o último nível da Maratona Bíblica! A preparar o resultado final…";
- const explicacao=document.createElement("p");explicacao.textContent=ultimaPergunta?.why||"Continua a aprofundar o teu estudo das Escrituras.";explicacao.style.cssText="font-size:13px;color:#fff;margin-top:12px";
- const ref=document.createElement("small");ref.textContent=ultimaPergunta?.ref?"Referência: "+ultimaPergunta.ref:"";ref.style.cssText="display:block;color:#f3cf70;margin-bottom:8px";
- const small=document.createElement("small");small.textContent=proximoNivel?"Avanço automático em 4 segundos…":"Resultado final em 4 segundos…";small.style.cssText="display:block;color:#d9e5f2";area.append(badge,h,scoreCard,p,explicacao,ref,small);
- $("question").textContent="🏆 Pontuação do nível";$("answers").replaceChildren();$("next").disabled=true;$("next").classList.add("hidden");
- temporizadorTransicao=setTimeout(()=>{if(!$("quiz").classList.contains("hidden")){if(proximoNivel){index++;$("next").classList.remove("hidden");render();}else{finish();}}},4000);
-}
-
-function choose(choice,button){
- if(locked||nivelEmTransicao)return;locked=true;
- const q=questions[index],buttons=[...$("answers").querySelectorAll("button")];
- buttons.forEach((b,i)=>{b.disabled=true;if(i===q.correct)b.classList.add("correct")});
- const ok=choice===q.correct;if(ok){score++;acertosPorNivel[q.level]=(acertosPorNivel[q.level]||0)+1;button.classList.add("correct")}else button.classList.add("wrong");
- const f=$("feedback");f.className="feedback "+(ok?"good":"bad");f.replaceChildren();
- const strong=document.createElement("strong");strong.textContent=ok?"Resposta correta!":"Vamos aprender com esta resposta.";
- const explanation=document.createElement("p");explanation.textContent=q.why;
- const ref=document.createElement("span");ref.className="ref";ref.textContent="Referência: "+q.ref;f.append(strong,explanation,ref);
- $("next").disabled=false;
- const seguinte=questions[index+1];
- if(!seguinte){
-  nivelEmTransicao=true;if(!historicoNiveis.includes(q.level))historicoNiveis.push(q.level);
-  $("next").disabled=true;mostrarTransicaoNivel(q.level,null,q);return;
- }
- if(seguinte.level!==q.level){
-  nivelEmTransicao=true;if(!historicoNiveis.includes(q.level))historicoNiveis.push(q.level);
-  $("next").disabled=true;
-  mostrarTransicaoNivel(q.level,seguinte.level,q);
- }
-}
-function finish(){
- if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
- historicoNiveis=ORDEM_NIVEIS.slice();show("result");atualizarBloqueioModalidades();
- const pct=Math.round(score/questions.length*100),duracao=Math.max(0,Math.round((Date.now()-inicioMaratona)/1000));
- $("resultTitle").textContent=pct===100?"Domínio bíblico extraordinário!":"Maratona concluída, "+playerName+"!";
- $("resultMessage").textContent=`Concluíste os 5 níveis e ${questions.length} perguntas em ${Math.floor(duracao/60)} min ${duracao%60} s. ${pct>=80?"Excelente domínio das Escrituras.":pct>=50?"Bom esforço. Revê as referências e volta a desafiar-te.":"Continua a estudar: cada etapa fortalece o teu conhecimento bíblico."}`;
- $("points").textContent=score*10;$("correctCount").textContent=`${score}/${questions.length}`;$("percentage").textContent=pct+"%";
-
-}
-
-$("begin").addEventListener("click",begin);
-$("next").addEventListener("click",()=>{if(nivelEmTransicao)return;if(index<questions.length-1){index++;render()}else finish()});
-
-$("quit").addEventListener("click",()=>{
-  if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
-  $("next").classList.remove("hidden");
-  show("start");
-  atualizarBloqueioModalidades();
-});
-$("again").addEventListener("click",()=>{if(temporizadorTransicao)clearTimeout(temporizadorTransicao);$("next").classList.remove("hidden");show("start")});
-$("refreshRanking").addEventListener("click",loadRanking);
-loadRanking();
-
-let salaAtual = null, papelJogador = null, temporizadorOnline = null, meuJogadorId = null, respostaEnviada = false;
-// O anfitrião coordena o avanço automático para evitar que vários participantes
-// tentem mudar a pergunta ao mesmo tempo.
-let avancoAutomaticoEmCurso = false;
-let chaveUltimoAvancoAutomatico = "";
-let avisoNivelOnlineKey = "";
-let avisoNivelOnlineDesde = 0;
-const niveisOnlineGuardados = new Set();
-const cabecalhosSala = {"Content-Type":"application/json", apikey:SUPABASE_PUBLIC_KEY, Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`};
-function novoIdJogador(){return window.crypto?.randomUUID?.() || ("j"+Date.now().toString(36)+Math.random().toString(36).slice(2,10));}
-function guardarIdentidadeSala(codigo,id){try{sessionStorage.setItem("bb-player:"+codigo,id);}catch(_){}}
-function lerIdentidadeSala(codigo){try{return sessionStorage.getItem("bb-player:"+codigo);}catch(_){return null;}}
-function obterJogadores(s){if(Array.isArray(s.jogadores_json)&&s.jogadores_json.length)return s.jogadores_json;const a=[];if(s.nome_anfitriao)a.push({id:"host-legacy",nome:s.nome_anfitriao,papel:"anfitriao"});if(s.nome_jogador2)a.push({id:"p2-legacy",nome:s.nome_jogador2,papel:"jogador"});return a;}
-function obterRespostas(s){return s?.respostas_json&&typeof s.respostas_json==="object"?s.respostas_json:{};}
-function obterPontuacoes(s){return s?.pontuacoes_json&&typeof s.pontuacoes_json==="object"?s.pontuacoes_json:{};}
-async function obterSala(codigo){const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?codigo=eq.${encodeURIComponent(codigo)}&select=*`,{headers:cabecalhosSala});const t=await r.text();if(!r.ok)throw Error("Supabase: "+t);const a=JSON.parse(t);if(!a.length)throw Error("Sala não encontrada.");return a[0];}
-async function atualizarSala(codigo,dados){const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?codigo=eq.${encodeURIComponent(codigo)}`,{method:"PATCH",headers:{...cabecalhosSala,Prefer:"return=minimal"},body:JSON.stringify(dados)});const t=await r.text();if(!r.ok)throw Error("Supabase: "+t);}
-function mostrarAreaOnline(){const a=$("areaPartidaOnline");a.classList.remove("hidden");a.classList.add("online-active");a.style.display="block";a.scrollIntoView({behavior:"smooth",block:"start"});}
-function iniciarAtualizacaoOnline(){if(temporizadorOnline)clearInterval(temporizadorOnline);temporizadorOnline=setInterval(async()=>{if(!salaAtual)return;try{salaAtual=await obterSala(salaAtual.codigo);meuJogadorId=lerIdentidadeSala(salaAtual.codigo)||meuJogadorId;const eu=obterJogadores(salaAtual).find(j=>j.id===meuJogadorId);papelJogador=eu?.papel==="anfitriao"?"anfitriao":"jogador";desenharPartidaOnline();await verificarAvancoAutomatico();}catch(e){console.error("Atualização da sala:",e);}},1800);}
-
-function contarAcertosOnline(s,jogador,nivel){
-  const qs=Array.isArray(s.perguntas_json)?s.perguntas_json:[];
-  const rs=obterRespostas(s);let total=0,acertos=0;
-  qs.forEach((q,i)=>{
-    if(q.level!==nivel)return;
-    total++;
-    const respostas=rs[String(i)]||{};
-    if(Object.prototype.hasOwnProperty.call(respostas,jogador.id)&&respostas[jogador.id]===q.correct)acertos++;
-  });
-  return {acertos,total};
-}
-async function guardarResultadosNivelOnline(s,nivel){
-  if(papelJogador!=="anfitriao")return;
-  const chave=`${s.codigo}:${nivel}`;
-  if(niveisOnlineGuardados.has(chave))return;
-  // Marcar antes dos pedidos para impedir chamadas duplicadas durante a actualização periódica.
-  niveisOnlineGuardados.add(chave);
-  const jogadores=obterJogadores(s);
-  const resultados=[];
-  for(const jogador of jogadores){
-    const r=contarAcertosOnline(s,jogador,nivel);
-    if(r.total>0) resultados.push({jogador,...r});
-  }
-  try{
-    for(const r of resultados){
-      await saveNamedLevelRankingResult(r.jogador.nome,nivel,r.acertos,r.total);
-    }
-    await loadRanking();
-    $("saveStatus").textContent=`Resultados online do nível ${nivel} enviados para o ranking público.`;
-  }catch(e){
-    // Permitir nova tentativa se a gravação falhar.
-    niveisOnlineGuardados.delete(chave);
-    console.error("Ranking da partida online:",e);
-    $("feedbackOnline").textContent="A classificação do nível foi calculada, mas não foi possível actualizar o ranking: "+e.message;
-  }
-}
-function mostrarClassificacaoNivelOnline(s,nivel,box){
-  const jogadores=obterJogadores(s);
-  const resultados=jogadores.map(j=>({j,...contarAcertosOnline(s,j,nivel)}))
-    .filter(r=>r.total>0)
-    .sort((a,b)=>b.acertos-a.acertos||String(a.j.nome||"").localeCompare(String(b.j.nome||""),"pt"));
-  texto(box,"h3",`🏆 Classificação — ${nivel}`);
-  resultados.forEach((r,i)=>texto(box,"p",`${i+1}. ${r.j.nome}: ${r.acertos*10} pontos (${r.acertos}/${r.total} respostas certas)`));
-}
-
-async function verificarAvancoAutomatico(){
-  if(!salaAtual || papelJogador!=="anfitriao" || salaAtual.estado_jogo!=="em_jogo" || avancoAutomaticoEmCurso)return;
-  const indice=Number(salaAtual.pergunta_atual||0);
-  const jogadores=obterJogadores(salaAtual);
-  const perguntas=Array.isArray(salaAtual.perguntas_json)?salaAtual.perguntas_json:[];
-  if(!jogadores.length || !perguntas.length || indice>=perguntas.length)return;
-  const respostas=obterRespostas(salaAtual)[String(indice)]||{};
-  if(!jogadores.every(j=>Object.prototype.hasOwnProperty.call(respostas,j.id)))return;
-  const chave=`${salaAtual.codigo}:${indice}`;
-  if(chaveUltimoAvancoAutomatico===chave)return;
-  avancoAutomaticoEmCurso=true;
-  chaveUltimoAvancoAutomatico=chave;
-  try{
-    // Pequena pausa para que todos vejam que as respostas foram recebidas.
-    await new Promise(resolve=>setTimeout(resolve,900));
-    const atual=await obterSala(salaAtual.codigo);
-    const indiceAtual=Number(atual.pergunta_atual||0);
-    const js=obterJogadores(atual);
-    const rs=obterRespostas(atual)[String(indiceAtual)]||{};
-    const qs=Array.isArray(atual.perguntas_json)?atual.perguntas_json:[];
-    const todosResponderam=js.length>0 && js.every(j=>Object.prototype.hasOwnProperty.call(rs,j.id));
-    if(atual.estado_jogo!=="em_jogo" || indiceAtual!==indice || !todosResponderam){chaveUltimoAvancoAutomatico="";return;}
-    const proximo=indiceAtual+1;
-    const nivelConcluido=qs[indiceAtual]?.level;
-    const nivelSeguinte=proximo<qs.length?qs[proximo]?.level:null;
-    if(nivelConcluido && nivelSeguinte!==nivelConcluido){
-      await guardarResultadosNivelOnline(atual,nivelConcluido);
-    }
-    if(nivelSeguinte!==nivelConcluido){
-      avisoNivelOnlineKey=`${atual.codigo}:${nivelConcluido}`;
-      avisoNivelOnlineDesde=Date.now();
-    }
-    if(proximo>=qs.length){
-      await atualizarSala(atual.codigo,{estado_jogo:"terminada",estado:"terminada"});
-    }else{
-      await atualizarSala(atual.codigo,{pergunta_atual:proximo});
-    }
-    salaAtual=await obterSala(atual.codigo);
-    desenharPartidaOnline();
-  }catch(e){
-    chaveUltimoAvancoAutomatico="";
-    console.error("Avanço automático:",e);
-    $("feedbackOnline").textContent="Não foi possível avançar automaticamente. A verificar novamente...";
-  }finally{
-    avancoAutomaticoEmCurso=false;
-  }
-}
-function texto(parent,tag,valor){const e=document.createElement(tag);e.textContent=valor;parent.appendChild(e);return e;}
-function desenharPartidaOnline(){const s=salaAtual;if(!s)return;atualizarBloqueioModalidades();const js=obterJogadores(s),rs=obterRespostas(s),pts=obterPontuacoes(s),idx=Number(s.pergunta_atual||0);$("nomesJogadores").textContent=`Participantes (${js.length}/10): `+js.map((j,i)=>`${i+1}. ${j.nome}${j.id===meuJogadorId?" (tu)":""}`).join(" | ");$("pontuacaoOnline").textContent="Pontuação — "+js.map(j=>`${j.nome}: ${Number(pts[j.id]||0)}`).join(" | ");$("estadoPartida").textContent=s.estado_jogo==="em_jogo"?"Partida em andamento":s.estado_jogo==="terminada"?"Partida terminada":"Sala à espera de participantes";$("iniciarPartidaOnline").style.display=papelJogador==="anfitriao"&&s.estado_jogo==="aguardando"?"inline-block":"none";$("proximaOnline").style.display="none";const box=$("classificacaoNivelOnline");box.replaceChildren();
-if(s.estado_jogo==="terminada"){ $("perguntaOnline").textContent="🏆 Partida terminada!";$("respostasOnline").replaceChildren();$("progressoOnline").textContent="Resultado final";$("feedbackOnline").textContent="Obrigado por participares!";texto(box,"h3","🏆 Classificação final");const qs=Array.isArray(s.perguntas_json)?s.perguntas_json:[];
-function certosNoNivel(j,nivel){let total=0;qs.forEach((q,i)=>{if(q.level!==nivel)return;const resp=rs[String(i)]||{};if(Object.prototype.hasOwnProperty.call(resp,j.id)&&resp[j.id]===q.correct)total++;});return total;}
-const ordem=[...js].sort((a,b)=>{
- const diff=Number(pts[b.id]||0)-Number(pts[a.id]||0);if(diff)return diff;
- for(let k=ORDEM_NIVEIS.length-1;k>=0;k--){const d=certosNoNivel(b,ORDEM_NIVEIS[k])-certosNoNivel(a,ORDEM_NIVEIS[k]);if(d)return d;}
- return String(a.nome||"").localeCompare(String(b.nome||""),"pt");
-});
-ordem.forEach((j,i)=>{const desempate=ORDEM_NIVEIS.slice().reverse().map(n=>`${n}: ${certosNoNivel(j,n)}`).join(" · ");texto(box,"p",`${i+1}. ${j.nome}: ${Number(pts[j.id]||0)} ponto(s) — desempate por níveis avançados: ${desempate}`);});
-if(ordem.length){const empatados=ordem.length>1&&Number(pts[ordem[0].id]||0)===Number(pts[ordem[1].id]||0)&&ORDEM_NIVEIS.every(n=>certosNoNivel(ordem[0],n)===certosNoNivel(ordem[1],n));texto(box,"h3",empatados?`🤝 Empate técnico entre os primeiros participantes.`:`🥇 Vencedor: ${ordem[0].nome}`);texto(box,"p","Critério de desempate: pontuação total; depois, acertos do nível mais difícil para o mais fácil; persistindo igualdade, ordem alfabética do nome.");}return;}
-if(s.estado_jogo==="aguardando"){$("perguntaOnline").textContent=papelJogador==="anfitriao"?"Partilha o código e aguarda pelo menos mais um participante. Máximo: 10.":"A aguardar o anfitrião iniciar a partida...";$("respostasOnline").replaceChildren();$("progressoOnline").textContent=`Código: ${s.codigo} · ${s.partida_aberta?"Partida aberta":"Sala privada"}`;$("feedbackOnline").textContent="";return;}
-const perguntas=Array.isArray(s.perguntas_json)?s.perguntas_json:[];if(!perguntas.length||idx>=perguntas.length)return;const q=perguntas[idx];
-// Detectar a entrada num novo nível e manter a classificação anterior visível por alguns segundos.
-if(idx>0 && perguntas[idx-1]?.level!==q.level){
-  const chave=`${s.codigo}:${perguntas[idx-1].level}`;
-  if(avisoNivelOnlineKey!==chave){avisoNivelOnlineKey=chave;avisoNivelOnlineDesde=Date.now();}
-}
-if(avisoNivelOnlineKey.startsWith(`${s.codigo}:`) && Date.now()-avisoNivelOnlineDesde<8000){
-  const nivelAviso=avisoNivelOnlineKey.slice(s.codigo.length+1);
-  mostrarClassificacaoNivelOnline(s,nivelAviso,box);
-}
-const res=rs[String(idx)]||{},ja=Object.prototype.hasOwnProperty.call(res,meuJogadorId||"");respostaEnviada=ja;$("perguntaOnline").textContent=q.q;$("nivelOnline").textContent=`📖 Nível ${ORDEM_NIVEIS.indexOf(q.level)+1} de 5: ${q.level||s.nivel}`;const nivelAtual=q.level||s.nivel||"Nível";const numeroNivel=perguntas.slice(0,idx+1).filter(p=>p.level===q.level).length;const totalNivel=QUANTIDADES_NIVEIS[nivelAtual]||perguntas.filter(p=>p.level===q.level).length;const numeroEtapa=ORDEM_NIVEIS.indexOf(nivelAtual)+1;$("progressoOnline").textContent=`Nível ${numeroEtapa>0?numeroEtapa:1} de 5 — ${nivelAtual}: pergunta ${numeroNivel} de ${totalNivel} · Respostas: ${js.filter(j=>Object.hasOwn(res,j.id)).length}/${js.length}`;$("barraNivel").max=totalNivel;$("barraNivel").value=numeroNivel;$("feedbackOnline").textContent=ja?`Resposta registada. ${q.ref?"Referência: "+q.ref:""}:` .replace(/:$/,""):"Escolhe uma resposta.";const area=$("respostasOnline");area.replaceChildren();q.a.forEach((op,i)=>{const b=document.createElement("button");b.type="button";b.className="primary";b.style.cssText="display:block;width:100%;margin:8px 0";b.textContent=String.fromCharCode(65+i)+". "+op;b.disabled=ja;b.addEventListener("click",()=>enviarResposta(idx,i));area.appendChild(b);});}
-async function enviarResposta(idx,escolha){if(!salaAtual||respostaEnviada||!meuJogadorId)return;const q=salaAtual.perguntas_json?.[idx];if(!q)return;const rs={...obterRespostas(salaAtual)},porPergunta={...(rs[String(idx)]||{})};if(Object.hasOwn(porPergunta,meuJogadorId))return;porPergunta[meuJogadorId]=escolha;rs[String(idx)]=porPergunta;const pts={...obterPontuacoes(salaAtual)};pts[meuJogadorId]=Number(pts[meuJogadorId]||0)+(escolha===q.correct?1:0);try{respostaEnviada=true;await atualizarSala(salaAtual.codigo,{respostas_json:rs,pontuacoes_json:pts});salaAtual=await obterSala(salaAtual.codigo);desenharPartidaOnline();}catch(e){respostaEnviada=false;$("feedbackOnline").textContent="Erro ao guardar resposta: "+e.message;}}
-async function entrarNaSala(s,nome,msg){const js=obterJogadores(s);if(s.estado!=="aguardando"||s.estado_jogo!=="aguardando")throw Error("Esta partida já começou ou terminou.");if(js.length>=10)throw Error("Esta sala já tem 10 participantes.");if(js.some(j=>String(j.nome).toLowerCase()===nome.toLowerCase()))throw Error("Já existe alguém com esse nome nesta sala.");const id=novoIdJogador(),novos=[...js,{id,nome,papel:"jogador",entrou_em:new Date().toISOString()}],pts={...obterPontuacoes(s),[id]:0},dados={jogadores_json:novos,pontuacoes_json:pts};if(!s.nome_jogador2)dados.nome_jogador2=nome;await atualizarSala(s.codigo,dados);salaAtual=await obterSala(s.codigo);meuJogadorId=id;papelJogador="jogador";guardarIdentidadeSala(s.codigo,id);msg.textContent=`Entraste na sala de ${s.nome_anfitriao}. Participantes: ${novos.length}/10.`;mostrarAreaOnline();desenharPartidaOnline();iniciarAtualizacaoOnline();}
-async function criarSalaDisputa(aberta){const nome=$("nomeDisputa").value.trim(),nivel=$("nivelDisputa").value,msg=$("mensagemDisputa");if(!nome){msg.textContent="Escreve o teu nome primeiro.";$("nomeDisputa").focus();return;}const codigo=Math.random().toString(36).slice(2,8).toUpperCase(),id=novoIdJogador();msg.textContent="A criar sala...";try{const corpo={codigo,nome_anfitriao:nome,nivel,estado:"aguardando",estado_jogo:"aguardando",pergunta_atual:0,perguntas_json:[],respostas_anfitriao:{},respostas_jogador2:{},pontos_anfitriao:0,pontos_jogador2:0,jogadores_json:[{id,nome,papel:"anfitriao",entrou_em:new Date().toISOString()}],respostas_json:{},pontuacoes_json:{[id]:0},partida_aberta:Boolean(aberta)};const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia`,{method:"POST",headers:{...cabecalhosSala,Prefer:"return=minimal"},body:JSON.stringify(corpo)}),t=await r.text();if(!r.ok)throw Error(t);salaAtual=await obterSala(codigo);meuJogadorId=id;papelJogador="anfitriao";guardarIdentidadeSala(codigo,id);msg.textContent=`${aberta?"Partida aberta":"Sala privada"} criada! Código: ${codigo}.`;mostrarAreaOnline();desenharPartidaOnline();iniciarAtualizacaoOnline();}catch(e){console.error(e);msg.textContent="Erro ao criar sala: "+e.message+" Confirma se as colunas novas foram adicionadas ao Supabase.";}}
-$("criarSala").addEventListener("click",()=>criarSalaDisputa(false));
-$("entrarSala").addEventListener("click",async()=>{const codigo=$("codigoEntrada").value.trim().toUpperCase(),nome=$("nomeDisputa").value.trim(),msg=$("mensagemEntrada");if(!nome){msg.textContent="Escreve o teu nome no campo 'O teu nome'.";return;}if(!codigo){msg.textContent="Escreve o código da sala.";return;}msg.textContent="A procurar sala...";try{await entrarNaSala(await obterSala(codigo),nome,msg);}catch(e){msg.textContent="Não foi possível entrar: "+e.message;}});
-$("iniciarPartidaOnline").addEventListener("click",async()=>{if(!salaAtual||papelJogador!=="anfitriao")return;const js=obterJogadores(salaAtual);if(js.length<2){$("estadoPartida").textContent="É necessário pelo menos mais um participante.";return;}const escolhidas=[];try{for(const nivel of ORDEM_NIVEIS){const pool=shuffle(bank.filter(p=>p.level===nivel)).map(embaralharAlternativas),qtd=QUANTIDADES_NIVEIS[nivel];if(pool.length<qtd)throw Error(`O nível ${nivel} precisa de ${qtd} perguntas, mas só tem ${pool.length}.`);escolhidas.push(...pool.slice(0,qtd));}}catch(e){$("estadoPartida").textContent=e.message;return;}const pts={};js.forEach(j=>pts[j.id]=0);$("estadoPartida").textContent="A iniciar a Maratona Bíblica por níveis...";try{await atualizarSala(salaAtual.codigo,{estado_jogo:"em_jogo",estado:"em_jogo",pergunta_atual:0,perguntas_json:escolhidas,respostas_json:{},pontuacoes_json:pts});salaAtual=await obterSala(salaAtual.codigo);desenharPartidaOnline();}catch(e){$("estadoPartida").textContent="Erro ao iniciar: "+e.message;}});
-$("proximaOnline").addEventListener("click",()=>{if(salaAtual && papelJogador==="anfitriao")$("feedbackOnline").textContent="A próxima pergunta avança automaticamente quando todos responderem.";});
-$("partidaAberta").addEventListener("click",async()=>{const nome=$("nomeDisputa").value.trim(),msg=$("mensagemDisputa");if(!nome){msg.textContent="Escreve o teu nome antes de procurar uma partida.";$("nomeDisputa").focus();return;}msg.textContent="A procurar partidas abertas...";try{const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?partida_aberta=eq.true&estado_jogo=eq.aguardando&select=*`,{headers:cabecalhosSala}),t=await r.text();if(!r.ok)throw Error(t);const salas=JSON.parse(t),s=salas.find(x=>obterJogadores(x).length<10&&!obterJogadores(x).some(j=>j.nome.toLowerCase()===nome.toLowerCase()));if(s){await entrarNaSala(s,nome,msg);}else{msg.textContent="Não há partidas abertas disponíveis. A criar uma nova partida aberta...";await criarSalaDisputa(true);}}catch(e){msg.textContent="Erro ao procurar partidas: "+e.message;}});
-
-
-/* BLOQUEIO MÚTUO DAS MODALIDADES */
-let avisoConflitoModalidades = false;
-
-function atualizarBloqueioModalidades() {
-  const quiz = $("quiz");
-  const partidaIndividualAtiva =
-    quiz && !quiz.classList.contains("hidden");
-
-  const partidaOnlineAtiva =
-    !!salaAtual && salaAtual.estado_jogo === "em_jogo";
-
-  // Se a partida online começar durante o jogo individual,
-  // interromper o jogo individual para evitar duas partidas ativas.
-  if (partidaOnlineAtiva && partidaIndividualAtiva) {
-    show("start");
-    questions = [];
-    index = 0;
-    score = 0;
-    locked = false;
-
-    if (!avisoConflitoModalidades) {
-      alert(
-        "A partida online começou. " +
-        "A partida individual foi interrompida para evitar " +
-        "duas partidas simultâneas."
-      );
-      avisoConflitoModalidades = true;
-    }
-  }
-
-  if (!partidaOnlineAtiva) {
-    avisoConflitoModalidades = false;
-  }
-
-  const bloquearIndividual = partidaOnlineAtiva;
-  const bloquearOnline =
-    partidaIndividualAtiva || partidaOnlineAtiva;
-
-  // Cartões e controlos da partida individual
-  document.querySelectorAll(".cartao-nivel").forEach(botao => {
-    botao.disabled = bloquearIndividual;
-  });
-
-  ["level", "player", "begin"].forEach(id => {
-    const elemento = $(id);
-    if (elemento) elemento.disabled = bloquearIndividual;
-  });
-
-  // Controlos para criar ou entrar numa partida online
-  ["criarSala", "entrarSala", "partidaAberta"].forEach(id => {
-    const elemento = $(id);
-    if (elemento) elemento.disabled = bloquearOnline;
-  });
-
-  // Só se pode iniciar a partida online se não houver
-  // uma partida individual em andamento.
-  const iniciarOnline = $("iniciarPartidaOnline");
-  if (iniciarOnline) {
-    iniciarOnline.disabled = partidaIndividualAtiva;
-  }
-
-  // O anfitrião pode avançar as perguntas online normalmente,
-  // desde que não exista uma partida individual ativa.
-  const proxima = $("proximaOnline");
-  if (proxima) {
-    proxima.disabled = partidaIndividualAtiva;
-  }
-}
-
-/* SELEÇÃO DOS CARTÕES — BOM DE BÍBLIA */
-(function () {
-  const grelha = document.getElementById("niveisCartoes");
-  const seletor = document.getElementById("level");
-
-  if (!grelha || !seletor) return;
-
-  const cartoes = grelha.querySelectorAll(".cartao-nivel");
-
-  function selecionarNivel(cartao) {
-    const nivel = cartao.dataset.nivel;
-
-    if (!nivel) return;
-
-    const opcaoExiste = Array.from(seletor.options)
-      .some(opcao => opcao.value === nivel);
-
-    if (!opcaoExiste) {
-      console.warn("Nível não encontrado:", nivel);
-      return;
-    }
-
-    seletor.value = nivel;
-
-    cartoes.forEach(function (item) {
-      const ativo = item === cartao;
-
-      item.classList.toggle("ativo", ativo);
-      item.setAttribute("aria-pressed", String(ativo));
-    });
-
-    seletor.dispatchEvent(
-      new Event("change", { bubbles: true })
-    );
-  }
-
-  cartoes.forEach(function (cartao) {
-    cartao.setAttribute("aria-pressed", "false");
-
-    cartao.addEventListener("click", function () {
-      selecionarNivel(cartao);
-    });
-  });
-
-  const nivelInicial = Array.from(cartoes).find(
-    cartao => cartao.dataset.nivel === seletor.value
-  );
-
-  if (nivelInicial) {
-    selecionarNivel(nivelInicial);
-  }
-})();
-
-</script>
-<!-- ASSINATURA PROFISSIONAL -->
-<footer id="assinaturaEduardo" style="margin-top:42px;padding:30px 18px;background:linear-gradient(135deg,#091729 0%,#102b46 52%,#1c4770 100%);border-top:3px solid #d6b45c;border-radius:20px 20px 0 0;text-align:center;color:#fff;font-family:Arial,sans-serif;">
-  <div class="signature-mark" aria-hidden="true">EA</div>
-  <div style="color:#f3cf70;font-size:11px;font-weight:900;letter-spacing:3px;margin-bottom:8px;">BOM DE BÍBLIA</div>
-  <div class="signature-credit" style="font-weight:800;margin-bottom:7px;">Desenvolvido por Eduardo Alfredo</div>
-  <div class="signature-role">Educação · Bíblia · Tecnologia</div>
-  <div style="max-width:470px;margin:0 auto;color:#dbe6f2;font-size:13px;line-height:1.65;">Uma experiência digital dedicada ao estudo das Escrituras, à aprendizagem progressiva e à partilha do conhecimento bíblico.</div>
-  <div class="signature-line"></div>
-  <div style="font-size:11px;color:#cbd5e1;line-height:1.8;">Projecto independente de estudo bíblico<br>© <span id="anoAssinaturaNova"></span> Bom de Bíblia · Todos os direitos reservados</div>
-</footer>
-<script>document.getElementById("anoAssinaturaNova").textContent=new Date().getFullYear();</script>
+PK    x\]òÜ“Õ:  ‡Ñ 1  index_bom_de_biblia_ranking_online_corrigido.htmlUT	 óâjôâjux     é  ¬\_oÜHr×§ài°€Æ )þ'gd/V¶•œ‚]{aí-’òÐ$›ÚœáÉ‘¬·Ü[òÈc>¿I>IªÿìnöŒ´ÁÙ°4ätWwWUWýºªÚ¯—×Y÷´ÅÆª[WßŸ½&¿Œ
+mîßœo»sò£~­q‡Œl…šwoÎw]a%çýë
+Zã7ç%~ÜÖMwndõ¦ÃhöXæÝêMŽÊ[ôÁ4ÊMÙ•¨²ÚUø«éVx­¬®êF 3s/
+"¥mŽÛ¬)·]Yo„¶oëµ‘cãí·ÿN«·×wïw0Ô:E†g\“VÈøßýwm¼É±idÍ·ÿ2°ñP>`?£
+=4ÈV[×iYÁ"pj¡íÖÊÐ¥Æ}Â­ÒÚA¿UÇ¶CÝ®µRÔÀÇ'‰BZ¡ì‹Õ5hÓV»^½„^Wv™o„BUn¾
+®`ñhS¸Ñ®\ŒÏ6¾“z”
+Q,ø¼F÷ør»¹?7ÚòÏ¸}sî.¼¯ð¯'G·—ä§omÒR"ÆæßÕ»le1Â§úÑ…}ÿ5x}ÉÚž½¦ýþÌ0Î._ïoînÿþƒñó§w{wwûñÃõTaÞ~ü	¾’}ûãíµñêòì,­ó'cýRÀ}Sï6ùÒ˜^é¼¦ŠoÜØ|ú¦ ~[Z—ÕÓÒ¸n`'˜Æïqõ€»2C¦Ñ‚­7eA°µÂåýª[®‘wkÔÜ—›¥á‡-Êórs_FÛ¯Wg‡³³•k+þùt^Ã`…Ž†¦Ï{ÑÖþÚY¨*ï>Ñ#ÜS&’ƒ—Zo/¼`ûÕ4¢‡GÓðáã|hôÈÉ&ŽÃÈz”¬@ÀóÉ<_u“ãÆJë®«×KÞm]•¹1Ë#”¡°¸¡QÂ—˜îàycžÙÛT«™
+€,¶É}ƒòVqáúaŽïMà‚ç/¢>xNˆî\QAÿŒs[›zƒ…¹j»xæ±%Œ¼‡†›°·ÂZ™LÖÄ•B¶kZ2ì¶.{6§õW«]¡¼~á¡éÀæ>E.L:ðM`¬i8¶Ò™Ó
+_ó·dŸ‹ºYÃ×^kõee÷DŸ¦-QÖ™yÇ_0é÷4–5ÎŽ½Hæbï¼l‰ñÊis>LÖCqM›š(QU?âœv.7Û]gžµ¸Âü&J†Œ(ê€UŽóSî¯–òŠ²¥ü3åô 5_E9¹£òdYb_'4G#´#ò’÷ò Ó½Ì¶â ŸlXð–ñç7pÁzlÐvi ÍÓã
+7˜¶˜maØÊPýqC´Õ<›	ÙÿŒš®Ì<oê5nÿ¡¾‡—
+nÉS54ß6õ=¼o9Rôù´þŠ–…ª#ô¬pšL÷(Y	˜„¶-°^°šãŸŸ‘$9ìâ¸ptÓÔéFÊt£qºâ
+ù®Ôí ‡ëõñÙ«ö“ZÖ\pƒh[
+¦•seÄ’Z=!u?¬q®éBPúÈÞÏëz×".k1t†Ü†dµ›^‚¢öSÌijÔä@æ¾lêºÛ[Ö=<-9<»²¬´ÚaxŒ{ðx_Wùr†ã4	RxÌ`×¯—³"*|Œà<iì…~Oë]‡¡uÅa“Î
+Æ›åÌscúðÜoQâg~v8{µìÂh„k{®Î• ~ŸPŸÀ§¿óÐ‹Á®Šþ¹}j;¼¶v¥i1Â^˜wø¾ÆÆnÍO5ìýÚdn\pÝLØ¨¹ ‹œ_	Ü‘<¬®z®z ÑÃ™MLÄ~”[A÷Ë0Ð®«v
+æ9ß3Òd/]	Þš;ëž*õHŽA‰Û@æË,÷¶BOË’ŠØPæWð`y	+j{|xâËøtég¾_];6,[ðüJÞ±dT‰¬‘l,©&÷ÓMúiíÃýžÍjîÈ²ï®ú¤U}9ØÙj× ¬PŠ«½ôÝUÏ¢0_$ùÕhàé˜î`¡VKœá”M´ZôÐ»œwè–ã¼7Vî¨Z#YŽ‰`&DG‘2¥§²í‰ÄTHN?ß<ÁÎv‡îUq±uõR&¨¬›¤
+ÿ‹…À[jÝ~ŒÞ \ ª·ìYbhäm€±Âb²¤[x"qO±ƒ^3 vøÄ ]	–ÙaF9$›9‘yQl€AM½Ÿ¨4ÿ í~\€Ž»#¤LL•#fiÞ÷ÝîÅ¯¨™	0ô:ªIëª˜O7É=øn×ÇóèÖ:ØE‰«ÜÐ©Ÿ¨Lí	ŒFÆó}½`´8>âO4‰{aØÛ¾°!ä“æ~ŽÁPÁ2¤fƒÌ°HÙM,Õy•½ÔHZœ"øèŽ:š¨dšÌUsXØ#]µŽ Õv´ö˜•<$¼º¡)C¦öbÑOu ¥ûÚa?¦€D½“œê4³O|pw42þ`·T#WºÎpˆQáè´öÑ®A-Š
+½¢J-ÛÏ»¶+‹'‹Á—ÄXÀ^ÇÝ#8>¦xž¼q}EÍ¹.+¦5 :ÕãÃ=×ñDÑ„<ÃŽ&¦Zõ¸u¹*ó&"S'¸‘º‘—{ÑJ3¾IžWd² |ÚÒ°½°=Ø"ÁŠ½b¡Ä…\1Ÿ˜ij-FÕØm·¸ÉP‹'Ö—î²?í b—\·%Óí[e‡`­¼˜oÉ6øS÷Æ`!¸Y˜Å#ntÖCøZÖ	ú-Ù¢å,!ß‚BN6ôÔäqŽq0…!"jlÆ(yÎX@fK½!±æ½W¦ŸýQ”ç…[þÉ:ÝsLpÓ€
+Üsªˆ hp.S‹ gjg£_ÔT‰A
+]›zs¯µ!ÛKâ÷/p,w<>"í.ŽW`œ“V{ÑýF¢Ù&L¥›AZ÷ãÂS=ØHÜ¾¯ë|¯ãÔÐ"Erƒ~Y
+.tÞL¿)eëC–’(X*&:FLx½i5ªï(8„â@ÞÜèQ=Œ0ˆýT6ü°@UáMGãÆ»õ¦]6x‹Qwá›nÑÌéXÁƒ;ÌƒSŠ LöúýtÔ«Mq÷HËh;ªJÇxH"g:—1öÜ%BWËóƒ
+ž­Ì°j2•xFZ4d¥YÔ/°XQGE„7öåŒ¢ÏªñÈÀIzÔ€:»
+­ªl»©	M¦€•u±šúñ%
+áÓpZÑÐ£Ô ³ûŒ.ˆ§ú ƒ;>©mÝîU_uÄ›±®'AVhok~m¹ÜD-=Û	B^ Î;É‹iwOÓá4É<¹{ ôdÚÝ×tOóÄ
+'£;8äÝ©^ŸäS‡ÇHúk œ†6ƒƒtI4öwåšd˜Ð¦RVÕ‘s’hùœâB3b/ÅˆÇYµ‡(e{©¦Gp.Èéžùg¿Ùg	»{¬÷z•$ÚÿžuøéæÇßütýÉ¸6>ÜþrûþæÆûÆ»ë·7ßþr
+_Ñ|Ã,ƒ àUý¶¤y#A6cä”oótavMÔ,:wöú¨™2›(oý®kðt‚œ|Pæ$EÅ,*N÷@?~×W‚b0iŽoÁ©FÒh‰¹S£õé‰)á¢ø8®C$ëE~¤§ÈFGÉ‚r®ÐûzÊ¥™=xwóá—O×?ÞþTáeòŸfm¤Y¾D`š8æß€êÊ5_ <]ž™2Ýôh*
+à„•—(Ò¼	Ûï¯?ýòí?nî`çÝ¾ýõ×›Û»#©?›„ãËÖÊPÓÕ¸¥Ä{kdPO/ô;ßàðÄ3ITv¾^Àî"H…fuˆs2Ü@ŽqÜ`0í²Éˆ¨¶6C z–"+rüšÇc”yNM¼áa×™$KúÌÈÄŽÐÓ×5X44“Øý³ß	
+Uéè±GŸ*“’¨}”â™ŒØhæÆ¤˜ÄËåŠœ|ÕLËªƒøþéÂòy®S¶˜QŸg˜9ôNiÛ¨+j×N€ùt,¦TÉ_ÂfÞÀu|ÔÎÆÂëúsùÿP	5!f}ÉNiW
+	Ò³ô
+W™€g:‡lB"¥tÕ4“4g8zRònäÐÍ–AíÇ©eÛ¾\¹c¾kÜï‘0ƒèjbºWUmz\î¿FU%¹†ÈÝ$V³‰ž–` Q¼¢Îv­õP¶`§XÚ¥Þu¤Ÿ”5…kÕEÑâŽ6:–P
+½!¡¤³XGM˜#–7bFÃFS$›dÈ.AsjVß?ÆÝíÝ/7?]¿ÞÞýáúG¹¼â×€7ËÊRK@ Ï.9©[øHÎ.%üÑ[Î¼$JP8f›‚4bÆdL81‹3&œ	§ÜõÇ„“Å>MWÑ„Sêû$µEÉQ‘ÈYˆ	µv×°Ä¤Çâ&FdŒŠM/6Cß$
+¸Bj¬öm ±²R¼B%¨Q»†e¯´¤d¯ÓI€Ê³ Jh8}ÜSd»¡jÌkáª*·-6PgÀQ‰Qsæa#Ãù®ÏwÁÜà³“¸/§>`~$XÄì-±
+æ®´Æ$—y,;vÞ§ÇÎæÇ&Á÷‰³>û'©2×	¦¹²3ž,ƒƒó
+®ˆÆ“àæ‡#£‘BÎ §ßI”JÖóÓM<3^˜vN#‘º9R˜Â ¶oú¡¹&)º`¯¼ÀŒÓ…oìE4W²(4"ŽIþÚž7ïW¿„ƒ9}õ¶ýüüjàJa
+ þ<¬è%B\=<¿\×W—–h(
+Ë¥g*rX·\’ê‘çNÛš‰:~87YƒPßÀ.s(`áXXKudX5*H(îä¢û &M ‚^?oò‰ºOf‘› ~L!Ê-¾'Ò 	XÆè$ùL?+úÈúÂV†fÿÏvÂPÒƒr€Ãwà—Ô#™_MöÌJJ *'%~®ËQ5šNöIbé5Uâ	‰œòÒ–k»“À•“ÈÙ=¦KÒRšUh“
+7¶“9ølz0—Æóûk†“Âƒn$Ãz:-l'Ï
+"´Ÿ‘×šƒžk1p-ÒeUõüép±Ö´(nkúÔMø‘’ueêÉˆNj²ª<â"CâV¬j4Î0!eÎ+ZÕÐ§_Gk-&ÖµçQ˜EY"eKCJ„Æy¤™ùºœo¦ËD8,‚«Óšmûa¯Zš<>‘ó‡ÅÀÓñœƒË@£iÊØgZˆÁCg‰µ©Ü<D¨¡ÇøWâR“4+œ"*r“èÕ\œ?©’Å¿!Ñ#*j¨&9	Ê„ê!èíOK,¦¬Õ‡Î{)³#%Ú:¥1ÔVørmEäè‹ÕTªšAQõG"wÃñ}8½³Ã»*wV˜fxLEÔ¬&b…=‹Q®AŽè§Š´’gt‡×BØàGR "WÀ
+Ÿ{BT0ðÍØaîúXF?i
+›È­¤ôz8/6½ÁŒáp?NxÂy,èïD}~lWàÙ,Kòâ‚ÆoÏ’Æ
+„…IÈ@ò³4Ì2ì)%1„·žŽÁ‹ùAJ“•³<F?x¡Œó"¢¿cÌ5¸L‡ºÜˆ 26ËP3ËD?Ë^€Ï")à|’¹LËÍƒ8'Ô„O¡ RÃiÈÞ
+Õ<)*Üb!¢H¢zðäSÐí‘e…úeÒädoŽó4;Hƒ=±‚·îóe]XBÄ%Ñ»˜ýS{@Äé`Ð‰]
+A„Â%sþTKMª}8Âä¤&Ö'™ré{Çú2ïýÔHeiº÷œK!N¤_~à¡ÀWj‹ˆ;íã$4W n[Ùæ„­lnÂöÀªÒYè…O™?ôgÊFÒ$JÓé®ñ{õ	À8 ?QHOH^:¿WKÝÄhò"ë#v4ÒÌþeQV$>¼èÇcF‰@]Ró=k½L©Üà¶½pÙJZO,§€|ºËYðb /…¬ö½ÄhÃ(¡*Ÿyíi%ÖÄ\yÌ.0\A"Q†±˜âÔœ…=ìÓ4K18ä“ãqø†4ðQŽ#±*ŒÄŒ”Í)aZ'Ìh!—Ÿ'®éú9âó3ú‘ª2 Gpë£0ÕCDgÌ8åš¦…´0÷Å0`Q¤³ÿÑ\=‹„üAÀß\
+à)+õœ®x¦¯‰W|ý¯”kAB5++Øõ¦fsFö3¿ZÁŠÛûð›Z~¢ij×,¹ÌKÑ”—nRöþvcØ¾ÇvŸ‘ÒÞ_ðSÑ 5n¾Í¾hêõP¡è\iÑ90ºzhæê›9óÃA¹/¢ê¹~¦Õšx<XPÈ$\êðò8DùÉêBë”`»õ0¹¼¢ÞV1¥Ë,êe>cŽîÎ±™ç”{ø-u<ž´µºr®Î‰’+ù
+OƒÖçŽûÝ¦ë•I[QHµ?ÒÔ†Ê©Fª,f‡ÂÉ±›"fÀC@ÀjùÁ”ŠçR!-ú‚ÂBÁ…Ò	5èx9åØC_¯f>Æ¢å îY®ñh ¼LÀÊ‰êšìœAÝ,‘çëÃy&?EwZ>G2	¶ÓbÐúÑöµt\dÍzAÆ0†‡^„Ÿ9 þŒ—ÆºÛ­(òTôJW’ÈîÉÿpü.Ô‰ý(•‡¡JýÙ±0l„·šÒ3ßQ ³7F ÔÒ36­‘Bq3ºi™f‘NO•£¯˜†Z§Õs»ifê>Zà„D´…|½B»‰³5ˆ˜6ïªÎj›Ì—ãƒ¹†èôHÂ­›'Þí8œu
+†eF¤¼AÝ®A7ù||½Ÿqýapž¯ xö’ÌÊ\AºÚ+ziJ¨½:^wu äŸé¥ïWä6ûXç$ÎÿEª|ÄÝuÇcš¬æKÊÛ	·††wÔ¾Ó¸Ÿ¨Á=6s'WCXA¡<ˆƒñüO-Œ'ßTšHD‡‡Øð¡EOg!F˜/‹ˆ‘lñXê.Eº÷’¨…ÎÍ!?äóa‚Ob]ðé2»A«—`ŽÀö­ÊŠwa-—î¥åŽÅÊJ¡k3)Nn‰Š±mp›–dwÎ­uÍ}äq¾×æ~iÒò•ùŠÇKàËb
+XÓÊa[Q:¶ã®[ÑÃMÀ»²6°"À&KWh5-R:X²þæ¾ùtûíß>¼»½6®½þðí/×ï¯—Æ áL^fóí?¿ý \lŒŸFU¤i5ešÖ9^N™J¡ùA5&VÀ;K0 £í í¸¿Ç¦‹ôçÇÚÎ#Ð%t#€ª§Ê;Yˆzœ‡ÍÑ¿ófð­?’úYuˆË¥~PhŒ0ùÁ	xÊH9	ÔKx>*Bœ°+JƒXg‘æ~
+tFqKÖç·†…}åŠläq"Á§WPØ|NÄw4s”½´†¢>†^§ä*’Ð*8‰á:zÛ½â1û.8Æ¸ˆÉ!oâ«ž/ÐÜatÆ;Œ¾#r§LbÙ7×ºh6^G}òÜK”3Š£(ª6§*&lé'9’3oAtdšØM(8š0ØªåGn æ —a¦êYÉsY'y	«Ÿ_¬{<¤K÷X¿~i­`}ñKïØ2ÞôªœxË6æÀJ²e,:Mú‘Ý>>zMÑZa¸“²S°­`ïu×ÅþÖÆ§÷Í{83Þ»>m¦E\¤ˆ!F«Îy}Éÿ¿×ì?p2Ú&{s¾êºm»¼¼Ìòý¹ÍqU>4öw—›íúò‡v·E)0å²ÿ`}nðÎ¿Z”»äÿUAbôÿò¡ÿwnŒ2s®ÔÿÇÛÕö¶qeçïþ7ƒ4ŠII¶)SMq½öZ/‘dm°/É5ÎÃÌp$K¶€ ºÝ¢ÅèvÛî—¬´…
+øS°m‘å?Éh~BŸsîËÜ’òŠ ‰LÎÜ—sÏû9÷ÜKrY‰vÓ›Ä©ïQŸ;ýàLpÄÒô’`Ø®éðã7ÿð»;+èRìš/„æ‘Ñà´º•/$ÈUýnlºË£½­w‹=óEÓÞVK]pi®A*‹bÐïñÓ“é«Šgî*Ü²uÂ47Qhöã­7Ü¶dÑ5ÒõsöG
+œö¤n<A‚HD
+4zyC¢éNß0êÄy`úHŒ¤È0#Î‚$•¡}RfÂú†èÅée™n(JrJÌÅO+Ö  „äl è¦²»Ñ³¦Gbz³†ÿ<ñlŽÅ„àÁóóóÊy½Åƒ•Úêêê
+z-â=î@œ!@'½êqäô%VÇ•„ ­î3SO•Ì5½Zå¦}D¢Õ“ã¦Ç’–{üzÛ<Ïæ#ºËÉ© gïÔ7D}ãquMìÔn‰ZíçkkÞÊ‚–ëð¡Úµ›b]Ô  ª¢VÕÛí¾®‰:Õd	4©Wö¿Iý×ÖÑ½Fý×nSÿµ›Ô­Æýo^Óÿ6µ«Ü@ÔoÓlkk7L°ªb}MÜë·þbÑu­0 ¡1nê1®
+ ÿ¡Ù5ƒ cÜÅ}ge`™„è­YÖÈ±B&Ã¾nõ$ôÞAç¼åíÇÝ£û‡G-:ºs8ýõÑý=±MrN}-ðN—“eºÁˆrE´ãéëŠxœ¿ª.Ó.ˆ9ð¶öötÚG{âþîvg¿ƒ?»GñÃ×ÿ*î¶j» g°f’ŽÏCØ‘9t42¨‰•,—(d²æˆ;—¹òâBJ%>ÞÖ¶ŸÈ“ ]ÆJ/04“4˜D.ök[å0JÄ„’à±ˆð!¥›ìNý^0„¼EŸöšÓc¼ÕAüžú"æÑf3Œ¦o(¤,ÎÁbú‡D˜ä.žÓsi8IÇuÓ×£^€/HV5ú"A4ŠðñŸé¤o£Šø<…EŽ˜y&GÓÿ ‘ñ5ŠE‚_þ“ÐøCÁ.†›¨Îeu=l	M3š¾ÚdÐsgtwù4§•óÑ»ÇDRÏÚúÑ•tßQñ¬¾¯O}ñ,«»åÞ¼ÿíñ¤}9‘êiÓ»?
+€€êÍaD'Èg“ùÏ9qÈ±l¶»íhlÎBmÙ)È{à'¶íƒoÝ•j€®ØwB¨X>ÿó_¢ºš‘ƒqo-ìë+$¼væáô¤¼ÀôeDï‚œú@ä¸ó,ÀP;Ž©Ä=g‘úá‰OaA§ßÅÄ×„žõŸ=-%ýwÂÌ¿|fìÒÊD5'mêG&ëÀNí§cžh·ØÇ#çRÎ·bé?K3S-ÀÖý¼~¬ôàèë¯`ª1æ’0#ë§c%c=ZãîïôÍxòûÍ_}ÂæN·ˆÅŒâÇ\î‰ÒO€ÁQ„¾Ð1ºêïÅ[Zå#ˆâêÖíœ
+ñ„rR¹}Ä÷ãŠ3¦~NO;úTµ™Û<¯¾ŠjfaGG°\Ø|§ÏáÈ…ÝÐ~Ì0@*#®È˜íƒ™pKG±ãGÑ¼—P^ø±·µ
+o	ˆ1Q0V¸å†º—1tºª/ôG
+ê5O³
+gHN£®WÓë<«4àJ±#G©fD‰)0>Ž5ú¼¥DAÄEW…ÚPcÁµŠF·àGJ9Ðý)¡SB¹'Énúœ¹nü$>š±¨Ãƒë+U
+X˜…”&€§Õ•äe}•’šèÆ<ØÆ† ÀŸ2ÒVD®•&È¿@w6QäÇey@òwû´‹˜†r::  ‚á+bžTÀ®5ûaêq=iO@RvEL$Ñ%…·´ 	,ñ)y_9§J«#ã¦ªcåEqE)ß-”(Å³hÍ¤U
+˜g4÷D²{PÙ6	åÿt\]Ûúá÷¿ýßÿþØ0r×Z&µ¥j¼^ø»m˜s ëD l­À»¨ÓïúÁ Q*üs»j¨)©#f„Ô{ƒò'ÓWì<9žØ‚#Tý¡aô¶öØ9§GŽ08¢à6ÖŠŸoQ6
+R‘ôb¨:íùÓÞ¤·-;QŸÍ“ÃB.8Ž
+Í÷S‚»P‰ZŠ›Ý ™ŒÑ>qÙ(¶9+ýxŒøñ[´+}­Ÿ®çÄ(‚NÄ¿ý{A”sdwÙðº‘4´tÊäÇoþöïÄ~õÒXÆöÈ
+9æÞÐdù‡wš3
+téEÄ}b;Ê*µ57j^›á& /3×;Ü¢N¡f³¡žÌQ¥w«µö¶z«eoQþ•½
+e>Á£°Ÿ÷Zç@=¼sL,ZaÎˆÏ Ïâ…‘çdŒò Æ3%jÞ\â¡Ü|7C	M¡‡ÎŒCQ¹¨•»õgdTä€6:(OÄSSúU©X1¶âžU†Y&ÑoubÅ×NÕì-kwPTÍ;2¦·/m'sK+l[8ãA^e%Óôª«Djµ9×*aT=žÂV]Aœ«2h(}9}“HÌmA;­[Ç‚úê’lšÕ®9_g4ƒ°|é\öÚŒ¿¨úÆHó75”)›Ï]–óóœþÃïþ“¬’±‚v¥³JG“ø†y·¡÷ãéwÔÚ:Ù¨Æû±¾¶ÎCéu›WÈûæˆÿÀÍ*)‚æ_S€ t5Ñxú=g¦ßâxÍTÚ)GŒOÁ.&bè‡§$BUÞHJLIÚ6éùC!¿J¸NÌI>Ó@ÇXÓ?Úþ`cÆ=èVCº¸¦ü$p²Þubfô—-<ö4ž`úÓƒ¯|ì5#àp0\\‚ÒUE/Ç2§~È¿\á±¤Ð‰‹Ã`’»YÊüª+´Ò¤f|ÐoUä9¯s¸^ÇUŠkìƒ"-·à™fé¼?jZ
+Ar™BøETö`ÓN /ŠisLƒmPTÄžv‡O¢@HD}T‹L*`øqÞ?6yÐd“sY°}¹œPfâ,Pþq?˜Dt´žóÓ7£ H'ÉiŒ,iY "À+Ü}ÄÜôJÀ!XàŸ ‡Êï›é»•ZÙ²Dsq¹$0øöÒ"_E¢ù”°
+T¸FÄ¶uGòûAûÆ,Ìæn‹u7áÔ=¬hÁQ}w=TYûý\ ÆvÖ’kh(¬Û×ØU¢î-ÓpÑ¤ÆF`V³VXåÂn|ªHõ±Ðô´f[êkLucómËÍx»#ë{IUsóe ®­±$1tFa®Ð.\“.–BGýƒ;2ÑÌTÑÖ¡b«HÜ#ŠfÂTí^c!Ü­›kØUéÞköý÷0°¬^˜Nßôçm^8Ój+³CÛ¢ë?*î[8mw|Î¬Y¯¶ ÷¶,Î+hI÷}7zFÂ¡îÃQÞÖ‚­ÚL¯qko÷hïpë¿Ë¨úbÖ6IÆ^)Ž~Ð9Üß;<jŠvç ÿ|è<ä¶“ê%­þIa’ÖþÁÞãÎý£ÖNk™+Å¹/×øür )ô''^}t¦2%E+¨i—È3ÿ= B6Ÿlmjù£3ò£Ì=0ÉŠ¸à,PÌwVh×ÎºJwL¥ÄÊŠhïíþìþ½G­é¯¦¹×IÚ…™Àå€>•ëGABn2»'c?ä|
+)ß¾
+¹¡æžò~Ê¡.Ç¨Ð¨³±?‚éÙW
+Ä£ƒ‡0Cû)àLNIdÅ—þ…XŠR!—ðè_x7¥ŠØMG°¡i‚)}øzÅôûaÇT+P¹A;rqøh¿E˜Ç4|SØÚ‘ñÓË³S9è“ópÜMOŸ^\TLÅH¥y›ÅöÑèñ/:Nã$Ýãqêqky¹Þ½8¬¯^ž$Ï.êÇ_´kçÇ»·ýÁ­î¶ÍÌÐÉöc ó >Ì¹33"¶‰~½Ê¸ð—Ýï87J›7N€VTvíùý¥]‘¥ñ(7\…7a“?&§K/^I|ò	3ÈG¹¶©©¾Ÿ,yí½‡{íÖqëóG÷³ÆsÀª¨[lÑNÈÌ˜N»CÓEU2¹õ„]\É¾v?Õª4RYjš/üHý«MÔ„\:§»}ü:8YúhÎJÏuàO#ñaÚ¶ùý³ŸIÚçµn'	`ž‡åHV¼&Šq$~~´ó°â©k³aÔ5Xóçk	ëÐÑ™í¤2øúß=u¡Ý…‚X­WmS'~SžË`"NüIïtéÉÇÏ]š^­ Õdå¬º¢‡=îrÓg*›Ô¤ ¼lÃÆò$šÈð8Ûòæ»L9¥~tì?á¢·¦>üœô²žúù½¬!½ü$†Á¤¹¾ºú¤ü\«AUB4žËq œ5æ°J¹•N!¤àZÈ'w}„@±p–•µ½zrÅ_•ž‰Ð+•èË’˜œÆÑ9(s.:qÅKÞ.¹¹äs#ÌN¹pÛãL‰VÄcº“Š¼wNi‡Ó7N©Â#ž£H›59^¨xzrM”è<Ñ±<M¢Ñ’nELZV§TT›ÊÎcß¾cðÑ_KUéù\N2‘Ê]?¾tƒÅ‘³ŠÃék€I†Š™QfiÚø#oSóã•·ªhR¼ˆ½ƒíÎÎñî}ºòò£fÓKG}ÿÞsßûÌ}Õø¢R©výÉC>”ã¥¸¹óIðÅOåe¼€¸ìG^©ôK
+Ÿ.&ÏíD	¥º¢æªzqbe€…ˆF4„%ÃJÎÛÂ9O¯Ž4(Í-úû0šMÅË%ëWT’(ž,-Ér·ÔÜÚM‡]ŒÖ­X6ñbµ´¬Ëüã/ì P•“˜ô—¬X‰ ^©Rv×oó.©¿¤[u­JšCØ®àø.¥þf$Z­Ùz)¹ ÚÊtBŸ¾Aù¯yv\Ý6ÇX<O±ü•^’¡¥Ý<ârç?³â™!˜Ñåö¿Ï|¾¤Ç´@dKàµøtqÊj©Âw$ôQ¯€Ï-ZÕ:©Vxá"áÙ`•Ô¤ÂîÕ.ÿâ¥9‘eacÌwê¥¬åC·ß_z¢m}ü<ø´zõ¤´Y˜ŠcáôäFz|ÁÖÌôxæLO-\äàÄÕÏ¼¿ù·_y
+úRå/­¾ÔøË¯½ÆTåI¨`t½
+ªBþ1Ð…]ØYF'j•ƒ”…
+FœêFÌ^qø>ÂÖ \<mgc|ÕLó™NQÓO˜F;ó/™Óšž{}½3©nêB
+d°“Q½Êr""	…š_—hÕe5äÞ8Úè\³2…mÝl†ø¹g_ÏØjÀ9ÉAHÌª!•	â²ˆŽäš—6sÚõÓOÍhÆb^-ò€žÌ¸!¼•õñóÜˆW™ZJJ\ü–PÔÅ_Ÿ^õ$9&>à¹&ßT†* _‘©2Ê<¢Ì®y›W³#U„áþCN#©¦Öû7JÕ”iç2ž qÊä˜TŽ2)}ÄYbÏºhlNà_ÁSJ¶Ï`ÛÈõMßÓW÷VôþÉ±J[®0ÎÔÐ‡›Ôox,{åFkÿ¿zWeOÓhù~×àßÞ…í¤¾+äÕxWjf*²o<8ÜÛ…°’MN.–ŒâÚØÍÓ¥
+Þ
+—JÖÔk¥²ímWÞ0†W‘±ô§ÕÕ¬UAÌMÛ¥³öê²&þ«]ÈF*Š^¤ës“ROý¢‡Gìø§/Áj	ÏhÜ"ûèØ'™ñEÍ¦™Ô»B-^×Ž2_rÕ1¿Ê)~ÎÑçy‡Æù£ŸhÎ[ *ó¤äíòQŒÂœLF)›(Ì\'“*íJou|aæ-L»¹P7íÌ ‡²±?çá®8U"ûra~DëTi.ÞœÕW‹`X¤´ì¶g¦MH(¤¬…¯ÔˆQ°äŽžýT†
+¯¬fµ&+¬wÑR4Å7ÄsÎŠ7œ¢ƒ2 mx¦PªüUÃû<õ‡Š\q¤à÷4.ª»9ãý!IE°áôû³ úÌ+ËÆ^«K`Ò+{;QL_%ø´M_áŸm	 ½_–uî®Q+ÇþIÃ»7}… 7HÄF£Z_®Õ¼òùéEÃÛöÓ„Îj¨ùi!-@q 6ñs|’‚­åpú†Šà¹:ˆO³bx:¤ÊÕGä
+)žwFm¡uý”x„aƒt‘¤(®	.aˆÅý$–A(ñÎ OZ2dÊ!Õ\•½{AßW˜Úõýa 5«
+5Ó¿yF5&õÆÍåêª‹:’¥Bª°@iïô2àŸ€¡¸ ŠÞÁ–Lï±n²nq‚ÀaÊAÌ»fÀ›	Wµr"‘cçŒ6èçèu„åéõ·9ý‘‚¥ü-ùÈ”Fàéô%Ø*ÕÏ‚Ñ)½„„cà^@ø|8}y)cæ'ÈAÀ†ƒ—8ž~ë»(«*”ñ¤¢Ö¨.W«c¡hS¡;Eß÷d„>ZRÀÛ
+`3•Ó«_¡×Û¥ÄYƒkšÅh;JÉJ÷ÙV]Âø<ô¡”0˜eùZ£¶\/UÏvâ_*Î"ªé«JƒÁ8 Œ´p?xæ'mûIÐGi™
+h É#*¿¢Ÿ{ŸPîZSí¯–£ˆ_§ªö²ÐU†–|ún œEiÚM¡¹²¶Ú¸•!yOñÍxÉ«á•ô
+ˆ…5Ñ’]˜#êŠØËaÎVÝ›
+l½m›mÒÐ/»’wx1þÐª-L*NÃe÷®%™Ëô`®.T§Â@Æ„ž¹ESbW‚#Y£=ðã4‘áôÕ_îúúC[žÈx$Óá¬®ÛŸ"«›âaJ¡Zcmù¦Áa’	—;êæ¾n›€Tr("ÊœA0bì(Š+Í•Ûªå>jàs~›cL%=Õz£¾¶\_/+|,AÒ›¾§¡‚KÍH÷®Ëav(¢íS†+€ÆKb?|¹A‘Ž@ZŒA%æbe?¶i²H=f5>‡ó jÌiŒ’`~"òé	‡Óï'i¤@%ÍFƒöºÙQ¢|WÂ|š­ïÐ·XÀYa²¥‚OçÇª*´Ç]¡Ö°–©Š#²ûa^ä~"ÖÕåêMcI¬è+1--.)¥ÌÝçï@Š6Q‘ò y:
+ØaY'ÁôUÀµàA%÷…ìÑAMÃ×Teò™ˆ:0*hgæ4…âcâ´Œ½µÎ8ß†Á‹îŸ¡ÒÂÅi‚íKàšÕ×\JþH\	&<ô¡~ã2¯† ã ÀHkˆ˜Û­³žEvåï@Î…–£lC'ïÀ ð~œÊŽÉw‡  )õ JRÖ­¸èútÂ¼a¯å
+{µQ½µ)êÐëËÕ¢*µ§ÖÔ)UÎ'“Ï’	uè‡>ó»L‰@²›J½­F?ŸŸy<dµôïj²:½6@òFÞíTÃW–ÕÉñ˜¥Ó–J|i§O2–ÌhóIÊm¾äc2=âKpN“ÚØ³cq„œÀ`K$ÐˆØ”}.€
+ø®”‰®1GSV2è‰&÷èî…©ÏÒ™eÚÂ7:•àN¬wÂi%U$Å
+ç­ÐnŸC»}Ì…v-¹'»TÚÝ!Ç1¢µVñüZù,˜à
+µ§dY†QIP¯§ûBC°CÊ›om4nÿÄH&(
+H%kU­-ŒÞ¹ÊŸüpþ L1ªP4 %ÜƒÿÔgÏœ„Š»aßW4#‘%·€)f# ™·qåÓ”:kY“£Ü›ªÔÛÄôÿ8ž~7æÓgpîètä¬sí.ÑJ§¦uE–RA\K™óiü§²á¬°¸4µ(É¥árôgQ‘3^wf‘À>ƒ(µþêô5ø×¿$æñ®:f M+àiÁc¶:I©¢}¿ÏÞskÔW>ËQ4Ä¿3¼¯½‘Zc}myÃÄ`ÜYÏ¯}°x ~PŒiwÀÀ3£CÇD;.Sç‰W±÷ð—Øž6”¸æ‘3{tçmZj›5H¬<@]þÎ?YS]kl,ß,s*DUCóq»£5z©óý*ù‘$bO_3Ü””µy{%&\ªG+éP=èRŒ0’Îµ.+ÿRû£h–gÀÕØoe0+a¨	:âp]8(Éó½Äš ƒŒ—žú&N!1S°¶2KAa=}EqƒR¶$á$¥œ¢@ˆ¯ð‘#¢‚G4ÿ`”"Ð>I•Gz!ü¬Z™gÂTS‘úÅ½ënW¶&ø_OÊãr3KIŠIR·¤S-Ñ.Õ‘Eµ.ô1+23H†œ™‘ŠÈ¤eQª1À4ƒFÿ¨ž`ÐS®ž™†ð¯Âà õóðMê	Î#ÌúÖeï—$S*÷tãt™ŠŒË¾®½.ßúmè!x„Q÷IÙJÊ®ÎÁÁ"ÇA?#ñBµ¾€ƒƒ. áÂçy6}—Dš„+Eèÿ„¶aš7è‘Ö´ÞNw}gÛ	€C~µk¯'þ*ì©þ5ˆ”’)L™“t”Ž²"Éãö>
+7.SÑREëÒ¦šbø€vºø[Ð[æ2Ï2ijÚ†=Oæ›_[úz§”â@ÇyyrÄ5éoê-¡”Ÿ…ê'[ÒSVá‚•¿Esµ­¬ô‡þû {Çÿý:•œik}RÃ­D‡ö.ÉÄl·lýõw¿·yÞ+‚†È0§yz”òþ"F±†Ój<ÿ·EÕæÿ ]¶Ê¶Âb|Lû–ô§“T ´Å\Õß"ë8¼ =¯7N
+Ö)‡ÌùŸaúbHÈLˆ9éŒÊ³xpþ£\äc‹/>I¡Lrù0Ë­¿Ir’J
+Çb©±½îúM/¤)ìAËã#ö;Çïh
+HÄ<pôy©;p¢N GU¡M_+ÉM“Qâ\P	’ÿ2éwÝ8ÍEV¼àíì4]9œ?ú¬‚ÅW—Ú•†Ò@€~=¨6
+òŠûùDN›mgÍß°ù€Rø
+Ç¦smÈØp ýáÒªì>2§»·u»[MüïÍ›7ñŸîÎN]ªTwý]”ögnÂ]¡-¡·}|Ä&Î†ÙD=²·ØUw»çÖÁÖöæ&)ÚùˆÙIE=>ÿ¯…ôJÿyk3C—:¸Eo,š¶Cðj·4}âûØø¹]%Uå=OhQç8ß£’îþ·í1TNÎÿÄºq
+~$g|UÌvwáqv‡6<ïÞÌ#Ãxv¾&XJ\II­˜¦±ìÀ¾pwl‘$^7Ò74®6 Öt’+Ñõë‘çÐ>IyÈÓ¢SÒs¡‰ÝI3ß Ð.ª·ñ8¿ÇªªãP¢ÍÐVÆ	0;‘y‘À!˜¬d;'ÿÃ">ÿ¹ÉúÐuu^‘-;–ôbãGÑ[Åì°žÉjè}«û6¹O#¨8sRÀ¿ÌàÐ><‹c¤AÆd(°	¡ît3êÞêíÜX¿á"xE”LASå>#0Hö¥OÍø†‹¢:"Õé'$<õˆÌÎÿ\Ì³±sEŠAêþ—Õ¼M‹ë2M¬ D9wLå3#zGð™û$g7äùõ‹Š¾#@¸áØXpÃ÷dŒ,1×º½­›ëÛÞÏÎ—ñ Ç*’““ÝüNð«Š3´Ô†ê
+ÿŠóY†fÿ¾$ÉéaÕ…t&A±
+®ÁÓoNb¶õ9’CVÔ»$Eâ3þþ*c-sÿÞìÝYïnWýeNK6Gˆ8q?áDõDèÒ„÷¢‹ç?2öLcu‡gHÜbMåõbD±@ü(~Ív?d8Õ¤ [MMÈƒh@†E8ÇS¶ÐÑÖwôp®V%õ‹Óªê¼AÝÕU°ÙÛÞ\ßö
+ˆ-½qÂš›ÛpÝPp–02f‘²7%ÓNHk?x`HÕ0¯	W2=ÉeÆ‹Cì	uç›IÞ›Ð.bÃ²rï(YÔ%ßmÞ÷“Ù$Â8- YqQqÊƒLGØ‚q»3\âoE6=–¤…CÔü™ãžÍ±^;Ì/üy2}OÒ¹‹±íPOwÖ·ýyIoÐlÁÒç9/–
+”ŒF<XLGçdu¹òÓ!Mðv]Ã`ô£jƒ˜´wñIè*±ˆX:F÷ö‡du'Òó|$}~Cji$l»wÃYÕÏ ‰Ì_çW}Ìº4‹îÂ‘8ôÉ.ÂaÈ%’÷æç?
+2ö@?IbçYÌ^RƒÒq“LÂ…Ö?	ŸŸIS_’‰#¯XÑI_òÔ>Í8\C"qkÛ{å¡DMÛa´ƒO%2§ºÆ~`6Jâ ´Ââ~ýB|°O*aºÚ8„M)Åy„fãcž3öÃ%Có±47¸Á lhÛzS†ðL•M§ Th”ÍÅ¦„%.WÉGÈœfìÒ¿Tæ^iúM:~³`U‘úß FÐKeµTÊëm+zŠ²’[[aøÜ^O\±˜mì\Ð@:éâ"ˆ™}È¨@‘è ˜:P
+y(kÐFXÈ‘–ž!˜'•ˆ	UÁ5«7¦E9@^"ûNHÞ:åÈEƒÅÍk%BÌß’	ÔpÂÛ*ê"H¾=Oé”˜'þíN€j£8Y™4Œé†fá;à#g£Xƒf—’}ÇmZ}ØàÌBíZŒ“e9Àˆ’>GÉ fŽ$ºy…‘CCD+gŠ•½m’økš¡Å\;Bw8º9=IÀ‰ ZQOM)É“”¯Â=©BDV
+#gÚ+˜jwÜ0#åH*…–Ú âAò6=2K#6â ¥ØbEâOVmq¿Iè¬£Ã¸Žpkä‘ÞA6JBýžé«@?.Áø	ÇŠÑöæ:Œ¹çz#‡îN’dÂVý›ÃN${’	Žè§ÐàÚŸÈ|€á‹MúÃÅ|Ážß Î02Ø¦Å9}”6ˆ…°“&ôR&G×y»®3ÎÊ=’r7åg‰K&°¾W‹·ì¿MŽ’"±•/Ú&Çñ·ºâÆtž±Æ N"ƒ©£ìˆçEÁ2:5jG7Õ'xáwÄè¤®áðð
+†£6X¥¦ìFÕ×vš$LTÚRj“Ý.:ioÅìüçœ§@&e|Ÿº!sRÛãb	ºÅjcø,€[5,éÛhpÇ\8¶Òi
+}]ÖtÀµluó÷—Imgïƒ]H¨HD›£¡lõ†·Ó.qL$ë”Uæð…Ü¯ç»”Åæ¥	ÈmÄ‘qTvvËËùv0#vÍÇ´ßÛr=_Ú^üRÙ¾€§éÜ[6Ë¢Swz[;]oø\ôÿ0˜®åÚÒ0Tlô‚ì:Œ¸³óf8|Ü†¥Ž¾A6€!£Px×—1ã¤pòÑ¿öæ:qbUÐ•ç$o—ûÐþåÎ×KÓä¤9%I¼cõ“e_\à¯\E‚¨¥˜âH™¥¼ØÓñB@0™q÷sŸOêE.sî_&K\«sÁ%¡ãéÑ4Ë•)ÉšÊ+6}K·"k*v£#„õ€!NÒ1á„š5ß…Gd3Z§|(å™:a°ª$º˜lÚ§2	´uŽŒÍÝ¨ÝÏòóŸåÈ$CÂôgIòã}¶´Ùq$C¸Ø(‘, á<Jn,!µþ€)l¶:Jí%µáFwýÆNÇ¸…<þŒ!g)CËÄý-.9C@šÃVV@_x*æÐ©9÷—ñÄÔ›É á­ô8„CBëÉ4Ö˜+¡
+}Ú:{ÞöØÐúÎjì^É¤q³€¼3{T€¿«7[Aka??R„•ž[›Õñ±ê‰	ªˆ_9fô@‰M<YÐÎXÁŽD „±PœÐøgûÅ¡ÉÝÕ4sw 6O›„V¥Å>¨¢ˆRk#Å¹Vøö³,Î–5òcÒVµ”wÝHB—GÒ ªçÉ¢=QáY°zsðÅ„a\LBlž¯oÍÅ
+9±¿åØe
+VJñK6GéŒ;¡Ëö­„Ñ›3vuä!
+rU¢˜Ëà
+·X¾TƒþB9däÙ¾Bû–²¹m­=ÖÌ¥}_mÀk&9;) _>–£Ò¢!ìÀ	Ö½iþBÖäXIP_^ÙDæ4+¼óDÑS6¹„.Wµ[‘eUk«IÙáÛ¨×ª/:%D`·ê1Z®Æk*ç²×|Vè÷1hºñ
+Æû¸^%w¡ùy6åM|„£óÂ)°yK½§YáLÿbŽìõA$‘§‹Ä‡[^H)³pÙ‹ý(Q)G˜’‹ÑùØa÷A‘òN90P´©yýeîæ$nƒ„-&EóNu¡ÀÙPÕô^±wÔèÊ‡¹”êK|’ÎŒ{#…³¤bãqÂ¾Æ˜Xc‰Ë¼Ž¡ÉæéÏåÔ ËNR´^ <ÕVVRƒVq²:1£›Œye‚´ÜË#‹ûïqŸÕÜÃ]q’Á=ÜµÞ9SD¾†1i$Š»y$ßÜ´^¾†ÒüÐŽYì¡#‰– ˜>eç
+L~¤iÿãÍ@Z1AÐ—D–¤v™°çÓ”ÆW½ä£Ññ~‡è“h^ðÔ˜ßc1à (Kôž“,W)zbhOçæŠ»ƒô(:û9rp'ü'mªéùOãty¤ê-VÓ£ä
+Á×£"•V$[³|æ±
+éSFrÖÂ‡
+2 Í™­}B‚	#„¡&‘$=ÿËDÒÊÝ°G¥·ˆöY¨ò ©VñãÛy¼~¨gôcŸtþÁˆ,óglí8×ÏÞEí›°‹œ¤{¦›ÛöÙù(yÜÂÚDf€HŽ'—åû-…Afï¬a4o*áz`Îú¢¼Ô†¿ðaJ­:‰;uµ
+
+ë	é#Å¸YSÇš6\ÌXÜŒG¢÷±O_fú
+X@çsäôx8¾Šç"<ž¥c"ÅüüO'.õÑö¶¶×·L±ç+mó`ì
+b˜öoºƒ©&YAì/ÍøòüG„_:€·¶Ö]j”°'³}W +h†,:Ìâns¾7gÕŸ @¼P2ÀÒÌÖò£Å˜SD¿N§GÜ‡¦Pj¹An-ªo„v¡7*74á(›×åÁG&…ÙH•ó&mœR	›LÑgkT%†÷({œu¥‚ÕI÷/ŸY)ð–1£Ì8ÁVÅÒ$¤jçÄ¥;•÷\ð‘R#;%\^Y9DgÀ„H£å`;ë'bøS¼h¼Aìðsg~–âÊü8æÅêæeªÔ–C2!†k@~œ½%™ù
+ k«`é2ºbuÀX?çZ©•¥ÕsiX®AÐ8*Å\%ÌÃbÓÚ›'°©É¸9!«] fº^Ì”åˆ‚¡p,© 
+DË˜è±ª'©òDØPØ>e‚{@â1 š¾/%@h}Ï½Ïh° Å„¬ ‚±5÷Å ø<>°ê™§
+@mdX–HúÀ‘ØG©¯ê@?hªØìHuÍý°wø:ä“ÅtÂmóóŸ³ÖÔLÍ´ rQ	¬ê™îÄ]2½·9f½–øf°ÇÅ;bbPd ‘ÁkÑÆVžß×‹ô·x80©l®¡±YÊ~at1(NlO{¶„g1Wcíúp.ÌŠØ¨Íðoç?#C©Ûeˆ”OÆƒKÛá«Ã(„dUM7þ©uRm.ÞŸÓï’É'‡tÁÆæÐm\±‹Qj‚Ià¦j*”=mßêùŠ{aÞ@6VÜóxxÛurf>#[&.½\ÚÒëÅøŸt¶ç Nß:þZZêœúwì„ÁA~•æ)	óº¬3¼ÓÛñ›Xf5V& Y˜Õ–|ØöÊqÓTŽ™Ê`,î^Ëå±UDwrtÀ™GKtä2>b™\ÞìÝYßªyôÞMRöÔê÷1ÿ%'i¦’)¸È%ÿ;ÙÅ	é9‰?lˆyn..
+LKN`QˆGÓìùÃÅ©—œUUv%c’cpFóÅPÂ`i-8Õr$¾ˆ=á ƒóøÔ_fkm÷¶ïøÄ/ýi/“çHÀ:±àY6”C@¸ å|;tòYµ“ŽÚåêb)q³×Å´wXbs–^ËÀâœBŽHº³bE{@3vŠJQxöˆ²cYïÑ¡±×P?žqÉQNÃ {jÈ_]¾.{]-‘?æTQ»ž
+hS/¡shêe)ÐÂ±,Cw®ÜÈpˆŽÆ™±^>š^6;Š9.!S&Ù‰*î‡:ÄåÀJÉ°V+¯ ·<w€
+õaüŽu5Z
+}š
+²ÆðT	B¶½‹ÅÜ]·¥,oŒ²Å	ïB«'1ª€Ç’r7¬íy2Nh.Vßó¶^U>ÑÙÓõË5'èc@—ø1œèa® Ê)‚íEyÍ²n	øsá×hò6Fð]ƒ#àüYáCÃ…s\é„kæú!ÿ&K²$ð"ü’—•g›úq\.€‰‰¸T8#rä–Aç5¶w1a••^áã¢âs0™˜+ˆÝQ&à§Øvƒ__€ppí|äÏÎ@?ÞÁ©Ñœ‡Æ®=FÎÍ-#ˆã[Ö>cŽ9Š&"Á^¤[GÝàºuPW–AJ]»ƒå]N[ÕÖ+¶ï-07+83Þ7´1µÇ8xmv Ô÷ÔÔžOI¯âs·{[·ýà³[Z¿ØD¤ÀN8lÙK?f<ŸâœÿÔÙ[ŠNôT6ÁhÉí%žX|cÒ	-‡_¢½ËqìÛ¯„~·nªÃ¨¶o¥Á­`§h[tí3rlYVc;8gN¤z#é”ïàÜ=th-§^Ô¡û‚2†75Î–ëòíá›Óž1lËQPÚÞj4Ð³‡™à|9–ŒôD’þë\RmâJ#¹út‹3vl!4ò@&á1àoâ2ÏÅƒÖ	xpØ¥È¤”)ÈCå£^œ9°L!C›¼=ÿ)B
+å¼î–‚œ´¥K#ÙÕ+DÒ	ë­vü’‰»Ò 6zû´âÁìÐQýÒ[€Q(¥ VTï4ìÌ¤Xp“™£ÇçŒéOÀêîqª¹)ü
+:–^I“„õc°×Ña˜oÊÝp£.¥Ê—(sÄd;|üÊ¦—€©P/ñÌÔ{>+÷e¥1¯È6ào”ó‡W81˜kj«wcý¶sžÆlÒžÿ!àeáZT1<j£Ä³hÕ0ÓJò^`µ/Ç”ZØ]/‹W¸6c×&åÅ	¾ô|¬‚dÛáÚb*þFuÍðB&Y`ÿFÕKOECº4
+N ÀÂÚ¯e;íiÆ§ ­2~VŽ|p)¨*‘ª•Ašˆ}˜n(ç–ÌµN´7ZU®bw5Q—™ˆtDUÎ%Àsø¹š‡F{e¡ªªq—åŽèÊésæa3¢Œ2U,õÚ°zhÃQûe12"—¾™¾å•ÇêOšÀ4tØæŽ%+n¦ms¸·UhÛY¯šz•‹kBªc‘¯ÍFkšI
+¹Ÿ‡ø€+œüQg[…ÁâVGól9äé¹s>í©ïCØw™)lp¿ñkÍÏÿ4‰Bv5ç` b¡9çSsPì=±’\òkùžçâ®ÆOÇ$úçî‡Ç8µNb¥ÕÖ‰	JÅBðduj„Ž6-;q'á¨¨SŒTyôbæÎ_÷ûn×Ig:Õ±‚¦5–ÔUî*yDô4þ,—K©Çd+Büy
+žû¤!—œŽ›e&])SÒ®[Ì­7ñß3Á³e®4ô§ÁÏº¢]§i”7x™‡ÁpÐ°
+ŠÝÌýŒhÁmêÇ×ó1|Â9sñ!®ŠKÃÅ„&b„ÉÅç —™¨£CòK¡+3(A0ÑfVp-ËŒÁðu©4Õûx´±	0×±÷Rž-“öKò«u ä¼…µócl‰ZjÑ&»ž¶JžCÝq’GÞ­KÍP[e#6 ­Èû0|¬r§Åq&5®5kA‘PhÓð,+ÔPcê–qù€÷Ipr)à²³ô5þü¾¸ ëHû_µP„8lªÃDÜ‹ÜW>‘x H‚6ºEc1»¤“£”Ñ×DÁIšCCªúxŠ£ø5h=<… ßfž„Õ¥Ú©†|Àéð¼÷½‰| qKœ” »)§·rË†±©Â%òWc¢íè©9™¢¤\Â
+[ˆV‹Ûþæok³šsežïýˆY[Ç±æ8·±D‘Å7o;ÖI!U¾¾Ù$ïÏ,jÄ1|ò˜´Ø¡Å}b‹¯Åˆä|ì_N·„.´TAf—Ù‚Ö7îÇ¤G¦<j,¤l=û…HõYíÀiò¤ÚAà÷J\ÆçS!ã3Á0ÉòaZÐaÎk\Gð$CþÕù"ÙÄ?Ø0ÀrÌêßp*ð2öUÈeM•`gÙEYó\ê’Û	}rÜîØVnRŽvkª´M?èàµUæå1Ââg›uUôê&…› ¤Ìá‚Z*N8Èºè48cc'R5_úŠ*õ!Š8Øó\kô÷R†µRsK‚Ä'b…­Mœ€Ñu;•#"¨Ã1\n øÑ¤wmgõAFÍ}CóÏLM‚ºÔb‰ÃLë‰dFÑn@`bQF`>m3ªö„êµšÙŸ/CÜxÂ´œÖ î¡9{:L)siTB<·á)
+Eî$Õ<®úÐŠ
+ÑíÞmGä¾ÓÛ2M|_"%n^ƒWÄ¾ó–¼¥žšÒèa8Ò"3”0Úäø­¨ «>š‰°gîh>ÇŸ…np§œïå;ÿý$9’3Rýù%'ŸRÁu8H‹‰øS†®Ä5Ø«È….~MQ5•>óJÓ:!Å)NaÃË9äP|ù„ýØÁÓT·yf¤é|Ð0KØ bH[k‚F‰»Ó1\:z*S]”Ý †ÁÛKŸJÝYiJ­
+¿H×ëžKúSPbÁÞ¶ŸTá5¢OÅÃÖ$ã]q˜LÏÿ,4m’…”HÖHC
+2ç¾«Ö1
+xÖ{]vjÆ1Ç Z_¸ønöº[ëÁPÐ7ÆÍ­GH„C˜Ñ³Œ¬=’PC„9¨-aí#‡ÝÅU};oõÂ…']K	e¶ÂÒAº¦•Ä>°¦ÐÍnmêÝý†r<Ò·Ý
+ [°ßÝØG Âä×Y«:8Ý$ãšÏ¾™N3ýè*¯KOSÎ}V¥âV—®Ë‚äMö0rÆƒMK·Kè8=0R5QN]ÆiAâj!¾¯BdúQÉD£åí€ïD$¢[‹«¶øX`çÌ,ft…PáÀC²`o‰:Á˜uÁVïb9¶MZ{7ÝßÌ–i×77•†óB2_jÃô›îå¸Ñ§u ñå›*D´;oïŽã–E—É§¾µ0 ‹&ÉèÄsG¨_áàNãDÉ3Ò	§‚bº/GNZU-õŠÁ	á¤^/ç^æ1ô/.4ªá”RŽ…z•©ÒÊ_N¨Ážî0’³ ‘îkþŸp#?–Ð’UÈß!!)_ØÃ.’m·Õ<?)CP¹¿NsMBüeVÑ6£d*¶â.üYGf#çvÑúÍ›^$™ï«ã_»¬³]à? BâOŸŠº=¯ùˆ?ºó;P=r
+eáWéw‡1ø¤\ºL i–J.™‡‘¦	‰ÞKišoG¼,DÖ[d:öA<ÿÑ_p¥ïô„ÿ*ñÆÓÏ…Ô:öL«ê£yB–¬˜w_!pYŒ‚}`ç`4Î·¤¡ÚÒƒL¬WN ({i ~NÔ8¹l¤]d¯ì Q?;{NBT€t´³¼?q©G¿ÌB¼Ñs¿ñáMÌt³»T~Ä;ö‘´j‰dñ¾é˜Ó–+BL˜hÔ«Eb‚{Nâr•ØÝ/ñùUÜ¹}@ÃË…ï…¬Ïx|ñPçjB-+µ¿±§|¸EÇq>‹Ýðÿ2£}“½3lqA?–TÂ½#7Ê&•°KG‹§Â ‚ˆwVX\³$äRo
+¤‰.ÆG¿ÕÛZ8	a¾é5í¬”ë„œÿ{:/å2Wp“rR)OÅ]™ZÊ`m ~™¡¾ð	 }¬†­ ™ƒèWÙ?^¸sµûòq<þ	€¥$e~@Ûv¨Ð¨a|‹•æñÀá¥·\Bãâñ»å»òÑ«­³æJoõ¶ý‚ÒùŸÉ¦ÚÙÌdÒGîù¡0(yJ*ç9|"enž	ç(ynü
+.’¢
+CäÞx:•‡K€dÛUO@è+¹ ¹%¬cä“ù8+½øEÖâÖ¦øÁk„i’Œ,¢æ»õsÞ>î ÄÝf<|åCÏÊ\\š²Ò¤eÆ•k—4Šñ0M‚¿e@´
+²íägeŽEÃkä´GŽÞ–„òõ=+)•»ÉDŒœvÑ‹»"³ EGi¡ÇlÀØvÁÚ»Q]{NÐéÇ¬#‰+tViö/·e·º>ØÅjÂ!A¦À“œ¹¨–\4}¡W ô®²Éð¸ñùGyÊäk‰:…é&eÇhqAZÎ•ÂÕ’6j…Uñƒ”›sî§§IÊ4êü“+9|y¥„ Ì„9£–%á†uÓ¿@Àþù1|³o”ý2f
+¤G¶dÌ™"-äó%{F€ku4">aÔäbŒãüéÑB|û÷Áj:fSfYÎCç$³]¸¤ƒÔ‘véØÝX°0Þ¶Mš›ö.Ì-¯YÒÔ¤¿pÊ;Aª
+ë–pçˆño;Ü_ËŒ”A5:ŠMÛœ0B g7	Ð¤	08p¢é]|
+¨¢¬”Ú0’[£LeT¥Êšg£Å;×pr?ÀpñšÉ	ÆÇLÒ•ŸH± †.rNJPËì—Y°[=
+¯cKæyüNPŽüÑ-¡4®Ó(%ÛaB‚þáF’‹a>ƒZ›^}t0h‡@ºl´·–‚a0`[NNh,õ 
+üÈá+aj™?‹Á…>,7ò–NsXjL†¥§4ŽÌëKñÁ•îàœ”eVNš‡…˜Zá´Ãµ„·©<nþþ<pø_6ÈÞ»o=•ÚKoJýAkóÈÅÅÜ¡0Kâ1_^IÝ(l]2pÁC«A¬q6Ì¬hÉ8u¤PÅAsvJÀnæÁR,7»bk'‹Ïš¤ÕÉP4]œH¤SrÆ‹)â0;Êô¢IÖ²èh
+Y+ïJ¤¤ò-vå¸2ÇFf!+*.õÓ¡§š<KÕ‘¦Š Þ?íëŽ ‡ ÙK¬ÀÑþÑ‚Á×Ù&bà]ÁÓÎ«q1aÀ›
+d÷œ09¿@E¾“Ô†Í$ ¸©êÃeå}ƒ‚ !5—5r;‘Ó@›v *îµ:\¶”­+t%žÏ=ÀG@ŒibP2ïôù¢Ù"rvÊ4»Û‚ßÇüŽB&´ÿv–ºòÓ_°é¡ý\‰,–á'øÜ0Óø¢`•
+é·Ö|ØÎ[wÖ·Máñ?úN­þÆE*à¸q2å˜}©sàcñÌ¸}©ŒRŽAÜÝ\žœÁåÓÂ053Ð?"”!®°ŠÇÿq-2Lt‘&\lU¦7`Ê~l!y¬xy¡|«
+™5˜«žƒ,Ñ`sâËë¢Äß¤5@Tù\xüÒ:
+ø¨.Ý{ôº)C6Í*gF˜èIKOD7{7ì¨øÜ‘”—”ÞØ˜^Ç¬‚KÅÞ–¯ë‹Ø0"ˆ‚Öý|Ûß
+^Þr,¼.ãÅ’#’Š*MôÜ64ÞKcB LƒŽ…ñäÒjT~ºMU#þ€zH¾ò˜µ#èˆ1¸ÔamH6 c	dÄç(P
+HÀÎÿoâ|sŽ#S’NB§xÉTYê!×usZŸÏüQGxØDŸÚ‚á™"ë^*ÙÛ.!jp£Áœ ‡éÐ•N
+™¬ˆ,ó<ÎHVO!¥ŽÈ1€|™+ÈÁÜJ°	)H½›F²ƒ’3»ì¹³sL_è|Í_'¡ñQ.«£æ)©ö\,Ê€ù ÷?;ÂRÏ“‰å†?1„ëÂ\91ã™h.Ö¥"
+×Æ¿*¨=èK9~ ãÍêƒÆé}‘\É¥à5àÜÑ´n)„/¹bhÖÚÜp)8<cÆÉ½DîAƒ7©:FVKÎËdÉ_wÇæùëLöÆÑ]êÐHè=¨·ž1ÂUÝSÆÉ½"EZÃ•|ò]”ø	GµË{ÓkÒ‚Ì	‹D½‘Èþ•ZÖÞ…ýÜªô“„²JE:kª’w€Ž >ã\d÷ª'D7‚Í½¡T-ÒQ(Ó#5p	hwo±jWÒWÑ¹p|WÌ§aeGjÓ:gÅ8=‚X >(hüã¾…¯/ƒ§I 0/§m$ütËÀe~ƒ‚”ß&çiZ—Ò¨JùF™OÆ>~É´‡ýZZ´ã”™U·36÷_„uôŽïçÇñŽ–û·_Œò R+;\q£5ÅÆsŠilÕP;\à›’‰f›[öÇÈN_G$ß3 f‹ë&ré%Å?dy6`z$‰ŸdŠoë¿\q:JâàÔÒ<Í7©¶îbeÓ¨CÃÉåÌèl¡%È4®mEº’J¦©?‰½ã±š…z•t¨ê³è~]ýÔÖÂˆ^ïÞÞ…ª`ê’ý6É þÞñð±Ì7°·3ôëš„ö÷p?‡3ŒËRAÜzˆ&KfCpŸÕÇ}t=˜QPB0S[Ü¸Šƒ2ÀV$«+*K¾àúÕ\c¶ÂL_¥2´•6‰çÐËSæBÎ›æ5±€Ã¶!+sùUf5v“z9;åÖ’q¼˜Fj£ª¥AúýÇ‘@W"·yôä6°ÏI«Bö’åYÏÈ”7~L·™\}»Bxãe:{Ö›°]âq Ï<u´ãí¹|•ÌÆNp!ñž™²°“=V!Ý Ï5ñKU"³ˆL8rNY,ˆ/qJXh»ú‹ÅQšÛÊu:Üó
+(¨}÷y)ºÛ$ÿÐÜåÜtpÎlo¤‚ƒ2¨”çÆmÅg1aÁ˜s>tPC".¸ßÂ2)kÀ<]ìO a@&…0üÌÇ˜Ôòe¨§âÅ@8ÓáÔ(q•Eg£ÍiU/v#ð?¤Œä}Öÿ“›xÙdÂI&Žiù`1š)0qÈ%©Ö^n°0¨Â_ìºte,P–…lí©ù0;“è·‹ñk¤*+¬B®’U=Há¬.ÂÃ›7‚ô/æ×Cº¶Š,+§rD[ÿ‘ú‘ºÁ³Ànbã]åQç,ãÛG\ì6Ï$!Ä#„`%Oô
+Á,n¬ ©CXê‡³E-,ŽˆÍÍÝhÊq_>UP(¯JhÂ'yvBVÏ ­Œcp¦òVXO3ðuT1n-Îá¥/-0É7¤AüçÁÈ1.Ï.ì’-¹cŽÔ78Í*í
+B×¥/6*\Ë¾‚ÀŽ×y„Pp¼PÜÓ¡b{·rVú¶Ëód’8·OâÖžáJ öjÖ\(šU¬ë”ÂwÌ%çÜA±eqî‘F†@"6zÁ‚ÑÛ& l­u•bÂÒ§T„.›˜’T+.|®Ø‹Ëõ>Bâç¤ÇíþXæš(’ÑËn¨dœ¤FV–Ì
+Átïñ´'6r`Q„¬^$õ÷Í"5ñë|G«Ð›^¥Ú077)ºÝ»¹î-õƒ«¾p¿"ïë¡¹˜ˆ×s-¶q$ÉãÙVÅ
+ìMî\L4#Éìù}â…+À¡‰)iaCç0¢IX·Ëq}NŸ}k_X¦ÓWÍn+÷EV‡y»õãQ‘MŽó×ßýçRþú»ÿ±[µ»ÂX^„n#Èæm E6ŸÃŽMÖ[*Um¿Áîˆ¶»½íîúöŽ_G‘¨=!Aœq’F™‡3¡ô (Ý]rç¾@Hx(ùÅ©å­ÆÑé‰?çi\}¾fW,1Zjý¸ V!­wî†^ðâ„âa(>¡¤YaÄñ~5Ð¬
+»B²CC#KsN7kéUàg»½i’$ˆØŸ¾:1æŠ+q›Ý1S¢‹æÃz
+º•É<6Hn@‘š…e>²R*¢Ä dÊÛµ!ÄÓÔÐåÜgõfûM>º _’ C+^ŽEù
+ÈÜ’1ÎŽr¹„²æC9F…ìcb´:¥µcOÎKÙþp»Z¦;,yŸjñ-¹f©íÍâ#~¼Þ–ZÛ YW&wþxjçæ²šibò"?ÿS½Î8Ø+„žc¥å
+Gti
+Ÿas¢ìŽ´ê„Á£—n”£L'ú*)bÖþ£=;Ö'GŽ¹1r¤ mhq
+Â§ûÃ5}’]XH\aœ¤Ráù/sÉmÃÓé’u
+íÕ±ra;(ÓpÛ£ Ø-]ž‰qîª·¯6”Æß­C©ï”«LÿÅ²Í¤R®ŒŒ•÷¬–ºN¥öiÙ˜ÄÍ' ý	ØˆlŠÃt”86¹‡d‘šžðW*àØÐ½°ã…gŒé‰L…\/+W´ëcªíï†Ø5½M,˜T°.tñ¢Á@ ÃšÃt¤
+Qµ¦ƒ,e‰X!ãrÂ[·×·î°ú”2~˜Ù¸˜›Äzªÿçu2æB×Ó
+‹œ¶ÀbœO“–¥ö!¹TÊÊ(ÍrùMý$G^ËžUvÖJ†&Kà";dš‡¦Øœõf{kWv·¤ê±p§B–h­‡ Î_äû!gkXQ _¸|¸…qÞã/øß(°²ï¸VÊÍ•’	JÆk¢‚go¨HÊŒ‘”8ˆ¥,.I35ë"’À©àTUd©~Ð ô±Æt}å u¡½f¢¬¿ñÚå»TñQÔÖgjÝeœÇƒxT‡M•+r@ÊÕ™Ö'ªã T\û£l"üRÕHí4+ƒÞÄ„Ó
+Šyàó©r‘†‡‹;óTi»ˆûM[Köå¶GùÚÅQ¢ZtæšKä.$zxYHÓ1Ñ_õMVÇT++ê>Ž\`ã¸ÙáÜŸTR„Ñ³²³zæ
+íî„ûXJ¤{©‚š[)»hŠMæ=?EbÞÆÅ<uÚšÜžAÎuV\uMwj …vûw*uÊ}Ur¾‚p–×:¸ì7+@6gEÆÅ­ û…½M¦±Dˆ%¾á¸~‡BŸj£›½Û%­'O¤\P±EdüÖí¢ª´¤“X™+=øÅò!pð ÈPb®Â±2YŒ\¬S±‚÷Í<Í‹Sž”¯—¦Ö& ìsõ*Y´ 'žæokˆ}ô³ÚAÇzáØ?Ž-c>XTfC!.	Ä/n¶26·aÉãAž¹¯æ¾ÇW!X¿ËÁl_Äˆ¹¼mó–E~²ƒD‚rŒ4[]vð7ñ .h\+l1
+\uZ§»Ž¬([2´q#BôgTÙ†¡Ï„†
+\FÂE^ |Í“òÏâ~”tø
+þIŽáè4Ÿw.Gv,P6$QëDhacwYa7¤W¼Ò¶XlÿjÀ‰ç7‡òYv˜MC•Ð©öC4Js®¿.oØW…¡­ žD•¸¨b£ìj'Ø¶Â;ƒ|_é'ò˜4ZKMùwÆ¯
+%`©®pÞüÎ¾¯ûp­ñ[½íÚ–ÌmØØ:@¬ÐT2g›‹wVGqï1_[‰I.ÜI!¥g§¬ù(‘:Ko!ó]­Pƒ3_401?ûB-OwƒâB'ïý Ì;\©5BØ‘W˜Hó;ý¶3ZÜ¹AµAc»½-Ïýr$LG\"Í‘{2ûƒáP¶”Ò.¸­…Ç-¹èqçO¡“zI•²ˆYÍ-G¥8¬& Ì½y9¨-Á‘™¹€„-o{D‚P‹Ž;‘‰Oxˆ5™®ä:@¶.'j*@Xoä8mm0­ÑÞ]cÎD
+QP7ØÉfŸQ§%´¯†€ HŠûádYd»vDÇãXŠßÚˆªê‡£ûÑ§¦+¬Vù¬lû“ðaIC¸ç1Ni.V"|ëfüiÒ1zÂHguÍ	<iû³¡”Žoæ6ÎFÖ¹Â”Õ,JÔŽt·Ÿ0¢*%£Q8*L_Ž¿ãâõ)Ó)®ŒëžX1_i)zÍì´O£S<|zž±Æâ).ÄqV×ô ±B%•|y8"OÀ¯„šóíIª-ÉrNÈ ™¬Ç wZHý”jó/¢<Œ3q!]»RàÁ|’Þ,R^“w>Ù+ºÚkŒF{ÂÔ4(-û¥>x¸GÊ3€†3ÂZ¬;WÛRŸ·QåW2Fc-¦é(.ÙMÃˆ®‚Õtgk}çFi,E÷™‘2ùÚ BZJß;ÿol’ºÝ/‘IT¨„…C¡+û…ƒÎäpæô$‘»•þZŸ™Ö[`å	|÷-ÝÌ„êQÖÔáRÊ3FWVœ	ô&-õt”\aÄ!…#Ü ÆTt>	ÅJÀ0_³ÜòRTMÇOKªkÑÀoÝXß¾UYÄ‡éTj²h¯X…£ýƒcpÌ}8ªØ—˜¼·êü›RÂÞÜlÒçes\|\­) M,3rF£ý±…Æ÷\PÄ¥‰ñ˜¸ÄHYÕq1WÙ6ÉUQõôe÷Æ¸Ñ—amJRV¨ÜarBJè"/•ƒ@½mpa!@:b	a¤‘«PÃy ”ØMá1l¥…`êÎ«ÖÛjô©UÚÍ9: —DcÚrpynÇÔŠíŠ*eót]²üÜ’/•/`üO"¹Ú‰ã6·˜©m©š7Ä˜S-¬xÌbØ¹ÐO—j †mÁ&)bÉ¨æ¨–ŠÙŸ0AÝ§Ô€o+3}«	ÂÓÂ4OAÙ„0v…Nõjµy¬0#‘yçk…Åd‡¸J‹dêL9õ|ŽðÚÅXù—1èsÅŽ5ƒBÚ„½ ™fyDºÔ˜×‘[N¬®ÿ½eÒ|Æ…JÊàã•;dxÌ±€<ÔWé¨	žüT‹XAxßÉ¤xí§‘T¯C;¹‚;8ð&ƒ<³=Áa²£}ap‚V¥JN‘„J\Ë²{[d‡¥&@bÀ_½U
+ú¯$ÒÃ!úú¢Ql¥7¸7+
+îVupMRoUÚuÇÓ¯Ósxèb!4ê˜Nf’¦i¤ãA
+Ìm)QnLÍ>Lp¦3ïÞÔ¿4DâèûQUP-¶Tó(ö|CænieÌEá/‘ÐÐux9<LÃS*åÙ`œLšAÙåQ¸å3´ÞÆ¨;%s±[ßK4ÜµXQpsš[0 Òÿ•æÍˆŠKÐlà¹•uðz­_x]a'êXµŽ/l\ŽžDîÇi½ü^P*Ìînªg’¥€aj‹Þ³¨¤7‚×àÒtŽ=	AZ;‡¡ðeG¯®Š<Â-7JbÃ üÂ8þ]ÛQé‰ÔùpÍ–ìxÃqø.¬ÆÍ¬Å™ª‘ÃàˆXhš¢ª0¦¬¬ÓMWñuúNàäLH8JØ¡Ñö®#$öAå§¤Ý|E…%ÈBÓd A¦çŒ­dÎ?p6¼È‚²‡ß—+š±^ÔQu­æjŠžöÖõ’V<s%óó‘5R9Ês=	ƒ¡pÅªÚ…|ã2gKb·Ë¦ÁWo
+ªWKHÕö
+Ú‹ÃJPMJ«\b©ëÏh’H?§Ûžƒáæˆ>æ»ý~›¥µœØd²ÂqR‚Ýk™I„øí)"ÝPm,É0FÒK*WÝðš’v:hÇÈS~£È£•¶é@VÊ)©iŽÉÛXÊ~ÐDÜ‡;²ð3ÁÊQp1*©G¾†Ÿ¤iæ9—Ùc4-bW¬EÌâPO"{ Òt=!×÷BXa‹œ#EÏ1þ\ñw¬öø›€¦\Ž2h•„üì_
+Onªû¨;²ŽÄÇÔ([õ3EVhX_,Èšp§9[0üÀ‰Â
+iI4ø¸—+X•ÊRA²iÓ´è-.%žÅ6Åý-uÄ˜æ¯Td‹ý.Sçl
+\¸þ9¾õp1_(±¿¨rCøCP3.è‚NP 7êc
+e¶¶½¨s§àÃJ4²J*£‚ÓQ1Œ­U:¶¢r¶lbPß"7iª¦–°ÌYÚÂvœÇdôšFhxœ±#cbu”.ÛW%)˜ÕØÇÁ$*ËUÍ JžˆQÜÖœ¥·ºXD¢_$lÈ8MÈ0CF<°—1ÏP< FÉDdƒBVž­€0LF‚ÕÐrN ˜«»sZHøØ;(ááéª¶Éótrþçy’yqç¯EÛ!û›sQpÞ(Ù­”¼EJX‰sZ1Oî»€;4Ñä(gV)uŽ9šàõ‘´˜;9eÌ¢‚üøËa8×œ?ÙmERS%{’ÔŠ½EáVTÃ¹ðúAÊ4øIÂþÑÎR±QË²h>€t*ñÉÚ˜Çè_×mÕÎÏ#ïÁ¹÷—y:6ëÙÕxöÉ[¥n ÍÚQ•q‚ac­Õ/:Œ°I81µS°ö&y®izÔÇl»ÚËM(¤DI ðÑÓ*X:yãî¨´Ù
+¾ëa„ùŸ	Å T–Rö‰Vôü•Æø9¯%z²S—iaà’1g"¨åá­$Ç{b~ã0áeÏîLF‹¡ƒKÈ¤°8ÓDm{)Õ
+‹“5ž'ïXüëÄ<$ÕCª‰g@,ª^
+îf:¬Rª	8GÌ‡èîT›7pPÇÞ‡ZŸNðò(Qû(´ú€™/èôb¢#„îVë¿_ '“lâbOto¡W]i*5%Ôki‡œËágSæNßI­<˜Â˜aXæd²Ë"qeq y1Mƒ[˜<+%[N8öAòüÌ='9”(ž¤¤Ø ¢“:—‰µór­ÕF5™›³¥R2“m_Öh†ÉÌé£®!••Å ¤IØ7Zæ.è¦SkVæûÒ
+oþè°’oêÝŠŒ8þüÏÃ4T’E“suÚíÌÐ¢Õr¸¸’îrs¡î?æÊ9L§)¬â’¾ì£¶2‰…‡§¿7Ð©Jà!Å(²Êö~ZÕ±]þ¥à‘•_ly¼[½­íõ­Û»Z°ÛöýÒ¬.´R×Å:&ôó×¬<Œƒö³(°è­ ù)EïØsRs¤hT)í1;%"©¦lvr7{åùÖÀ	°Üô0X/TpœPÆCç¿ßs•ùDÒ˜p0 žëLÃi‡‘ù»eAf¹GN80Ç¡ö	otþ/ìk‰‹4‰ÃËç(¹ ðtÑät\ìCùbðëå`Ýèù"™Êloü«
+¤d€–w—±!¼PeÔ„Ø ¤ ÚZ´,]MG‹œ‰cÊ©8JtÓ	@D¤ ; ä§T0Ó×œpä#®ifM
+™tu‹a¸Û%tr<Ë\ßÃ^1žJ*Jæã·àÒÐc™cÅ5qå)ÙªLIÉšÑIw†EcoÎf”¥Ít‹£°f×œ­¦ƒº8vŽW0Î½v9-‚<Î*™ç%M
+zbÈ,+ö9‰+zX»Ê¿Åùfç?åå¢Ÿ{>qD·e5›´8|÷|ÒÕ!Àv•H‡•f˜¹":&Ï4ªŒPºì
+=ÿ‰u0Æ X!‰nä¼jùHŒt'}šK`éÔ|pÉ¯(…ØÇKldPÅ¸P£,–—F÷üßG.*ÊF)cÆì8–§$ÌàY"87"t
+	¬E9dòô$VÔß¸Ô-tØDhå‚SÎËLÂ
+Ý¥±‘¨~62 …`p,ããÕ€Ú¾x›ùù iþtÏ æ¢þ(4¥	œ.±‘lùP¯È+˜;æp¼W¬Ž´àfpÊ&ªsäeœ3‚N"DÞ6ƒšùÍ¢&oã‰°9¿N<Qœ4ƒoà˜mÕV²T=Á*¶lÓž’îÞZ*¬u	ÙÌª–ŠÃåëÝR2©f(‘
+¥™ºP>MÎvirÌ/Q°Æ¥‰Û¬r³mÿ %³U%9•‹5'&æŒ’R~$f0´NVM±¾Ã+û ‰™º#VÓ2ÖEvM™¥\MdFŽÉ9uqæ4³ò°ÚˆÒw8ü–¥²—“d-*×ÕµnNµõ9Ó!Šnø ›Í™¼4ª4¡ãc—3Œ}@B]™ÆJ\Wž±ß.F%ŒeÅ!Â?Ó©e•TJ²‚GÅÅ:qÅsæâërQsžrŒ¤¯/#Zs,Ú7i—ÆRÔÄ‘ó{zºÅ¬¶K[_epG% ÑÀÑÇÝsydòo‡6/(÷P*‚êËu›¨‘Xœ(ƒ¨@—ÑB^½°†ç
+n.ÿ…âêàcßš¯”]BÒå¼;­¶€ÉòÚ6œàú£ÕT2ÆåÐOÇ´8æ
+Mdñ²R2—”ë†Üµ’`6fè;¦Ðü1J‘ }©xÐ\Ohü¯¼Ü½EWÄ¯lÐöZk=?x¾÷(z°=Ùúå‹ÇÏ÷žõZhO¿Û“È›·w¯ðó=K¸×¾N„ë5úÑ7ôÊS¦véE!}”:åGYÌñ%SÃÛÊ9ná½7*÷X©à¶­ê+<$áíÕ·.Y€Á#ÛôØ•†nofù~<<^Ãoã¨7:¥—Ë(1Ô[¤E_Æñ0Sw×èŽ;åÜ´xÆþÞàMõû}âñÚHw·u¨
+QN¿Éß]‹ZÔ%úOðík|SÓ_änëþº¶Õ}ÝÝtžüëïþStð÷­¨§½ÿôáïï=mµÑÂÝ+gXãý¦ m°èó²ÃæêÛþf'*h¹'øcœ
+¿KFýÃx\$Ðmýäi+ö[-øcÇ´%’Ñ#ŒD?XF»ºö>é§£þÝhØ¼GÉ|Ìvðç?<­¥#jÅ!iÞh@T/ÇÉiûíS2×ù4úfccƒþýr£ÈòùÚZ»÷«x~¼Œl6Yk¯oÜhŸù7$“AÌTiù¦nJÇËI\¬Ù„µi¶¥Y8ÞŠ¾›ÈxcÏÖÖxçvRúÈÚ©ü­µƒ{)
+³»[ÁY›xç†1íó;uê×»»éÝÍÝt}½}*_|Ýç†Ž3z Ô‡_¯¥×ºô®oøß¤/;òÇë—/ûßØŸûñåîÙ•Hç”ÇZErS€žÌúwgÜƒ¶[òë!MðCÌ±Ü£ýkŸÑ‚'"ûssúMys‹¤œÂg‹Ì¯ñ¼õÒm¤¢÷“µ¢½1ÇEñˆÎŒyvtD“Ø:NG(Õ)®öi
+´ištI<}°ÿÕ·~½ÿðYÿ›PôÔäK(Dš$ÅqðÒVß¿~±÷øùÃ{öŸÙOƒöº›µoöº7ÂÏ’ÐôåÞÖeïmoÒhbIð¶ÜŸ0³IŸÌö—ñÉÓwÐwüÓÅxŒýGË¾Š‘R>±ÿŽù ¦7?fyÆ».4:	Ÿd9.Žû§gÁ6²2òö’µ¶rô¿\OƒÞ‚#‹×Ÿd¥–f‡´GgY6îÛ
+åã›þÝ7"
+i“ð{Úm^…Í»›&ªÝ~}®¾á—½”ûÓÃ5´@÷×gþÁv4?Î³ï£iò}´ŸçÔ£Wd®±ÕùÉ)¿âLà3bYrêŸ=s²\‘{Àç	f`B7<ÛxåÎC¸1[ÇkØ¸« S?YÛìíâûi³ÚnµK[m¥Sž¡@²~²Ö’µÚ'ñx‘lÅC’âý{Éh•¥3²Ñ<ÿáÔKðúÔïž‘nFû4iŸÆcZ4kÉûŽ’ö®´ò¤"Æíq]îÌ±óŸ¢2ªiïê9±«ÇÄnxJì6/üÝúJÞmXÈ•ð µÊ¦$0œ´7O{HúTþœ´h2—ÜB»q}ÄÜ7m‘÷ÚžÎû~üéN–€"ôÚ»1°Pôºüó1ˆR©qdm‰aQ¬a¡Q£}$âÜÄÂ§~ç/HË”þŠÒ±‡—ùƒ(OƒlŠçô”ÿIß¤ž^•ßÚ:Mò¯
+šá1Úýãt<¢/ó°„{ÖIfùŸfz
+ÓYßÅdÐÐêi¼Ö*hIÑwqs9ã¹Uë¸ŠYÇTfqƒ“¬1ºõýø8ˆG£µÖ(›&ôòdŒ¤ñC¹Ó„…HÓS1ä	žƒøÂïát]ÖŽ{­¿þçß“~Õð1úéÿøôýçZíö5þÉ8žÁiÈã»†¯âógíÒ¦µ§Y\eÝÛ\¿é»ú
+ïŸ—<Íol†¯4-­m÷ì|IHq¯sâ‡_Û6Éü¶÷­“Ìö"§œêûæº²ûD°>õRvÏ0[àë•óê‰)ÇŸœr®uÏLÒZUŠFÿüO¸,/=£?}oè¡ëŸœúÖœ½’oÒBß+æ?ý}:š÷_ég®W_ÿëîææÙ¯ô¹7Rlª-
+¾ý×ßý‘›BòQþñØÎŒÒvâ/ºyÐ¾Ý°¯h*z³ñf—~¥uð}’ôcÓ¶¥“d4ˆ‡ßµÚá¦³«‘êP»å;ÃµøÇ)]¡ÈfcZŽd½úe§´¤ÕÅw­«“ª‡oéÞïWx½{PØHÔ@ÖÖôõŸ~ªÈ8]uîò|Á˜ë©Ü-#û–cwüò&Cz¸“^2t¡ø,•]ƒÅ|ÎRsŽ¢¼¡µ+O“BF+í2ñ'w• ®´ì—p”žÁy´q˜g“û´iïg£díæki[?‰{/û î)½TZM=9´&ßíàôã>ò1³íñÖ¶þw­L£áq–ÉZÚòQZ~¡PRP–g“1NVòþÁ©s7Ê:2½ò[‡fŸ¦ïIÍ®"#î—Vë..ÕOÆ;¤¼säŽ¦
+²Š€*·òåû÷~Í.ÕOÝí5a¨úH¿¢—Ô¿²é·×pÞ÷M¼'¦ÉÉÑš¾äºÿªÝÃ³E|’°¶õ”4iZEOyGUÇ\ßÐñoðÃ2ˆGGÉÒå5JO°pOY^<ÝöâÑó½ýßãóÿðõþ£–Þ'2vXÏ±p[‡ôÈz‘¾KzÝîì­n€õq¬éQo‹.ñß'éÑñ¼wgssÅ¹òÞßnom¶\K—¶òx›y\ÑåA8Ópè®¾r/eÅó~œ.w_µ{“8'Õ»×Ý™½åì“Ýí-ôWv(Ú›÷¨ã(•”Ž¢üh¯mílw¶6ouºÝ­ÎÆm½m=Gé¢Ð'iÙñèÉ37ntìÿolÞnïNâ·ë|‘¥¸I ÷ë¤OM{€CØ”:ùyz´\Š MàÈºIwVÇRWPåhu$ÒE„ßãâ•Ae˜P¤ƒ4ãÞ šÎ®_[X K&œßõlÇ—‰?ç’†ÓŽ!#-c¿/ë´ÝÎ~ÅÀU·àaö*|Õ…]y_Ÿg³Þ ‡‡Aç0‘­`é¨,¶1êøoùý¸\µžQGËÊk(Kï½ÚcXcš÷Ð½à—³èÀçüªI{3{rþß†-gMm¼êéa{þ3‚U€•BP»‡‘Ö_µí®F{ÎeÀE3ôh—‚†ýÝÿãçU#ÚÐl/ê«¿­Ôéò™qoãûãÈ Å¯étÁÁ P,˜	žð…!Yl´Â,—YÛåÉ
+¦½»…ÙuXr¸|•bŠ[0ñ/ì
+ý~¯õ49Lr	Öõ¢Öµò=3hñ›.\ž¥-e­d¤àLz·Ãvï/myQÛ[¥µ§ž®LV£Š+·cHÛ ×zZ^õ[ôC«tmt'¹q¸¥Ç¾î,>€:Ç·å:³ŽŸe\:…m·åZwë_þñ?þ/Ñú×Â“º©Òy™:¾L‹ö×+Ö©êæhQ³C¯Hææ‘€rv
+[ïs*oCL,N§…e÷†óÔV»êZcsò˜Ð EÎ#q‹û Ââÿ<;ëìl’
+RvU¨ÚHÿ!#²#Ê4T:j„˜·ïßW-[3YÕü-Ùu3WßYôáÍ/Í ?<cïS–ïÇ^—‡q¢y£` öÀ 2GÔÐ”-\õu·ÕÉÒZí3/°³ïúÒåðQ¼+û®}Ê‘Æ»ªš=Ü_[öé†d$îJÛ—·ƒ}!Í7}¯gº5ô°¢Q6ÚŠ­kÔð{­£,Ñ†¥
+Åw.W«EuXA³à?Jûßyje(4„p•>ú5²¨-ëVpv!4mc£|”ÄðgÓKÏ½¯b`Óñ±šM‚76úg«&Ö«"ü
+¤6
+¢ÿ< ILí’ífÙõÃ<}¤Ù‡d°;Øç^s$Ù2¿ºÔëeþ‰võvS^¤¦Æòë›­@}²Ãá‰7Îi|žmj5»jõÿëýtqOÊMFŸÐ™À6yyú7;œ«ï’gI|v´ÁØ×¬‘µK½Í¡ÙØš,¯bíR1ú|;Yk›àÉ5ïa_/ûÞÛ×»8,tKŸ§óqRõœSSú}º÷^ëe>YÑµJ-ÈbÂ© Î°‹;´Û¼þZëj+üèW±¨:óJªnáãQ³ëÑ…z"îáX ë77ÛgÑ$Ò¯zéW7Éü(6Äî¸Û¿M]Ü‹
+õ´ÎVÔß|ƒnþœE ó%dÑÓääüO³89ƒÖr…aŠ‰Á¸x{/Tµ”ZOØèIÜÎ˜2œ: ´D[+”¸ñßh™u–Ñ¢/*cÈË†VÉî'îlºoÝoÊwÂŒ¬
+ì+<<è·6K4×Z¿¢é„Êw.^ðH-sdñ
+´æüþ¾Ðçujñ„íz¤ìgu?¦×¨LY’Ùö>Ã#D[»¼	ù[E´’^G÷‰°¨<_¸L\œÉPÆGñÅÃncùñ½X©¥ökÛh7Ð>?VOØEgñHo£Gƒ­š¥ˆÇ1y¢~$õRˆ~›1ež]»p0ƒ^Ë~š$½ûáÈ]4
+†ó hö#=ß¯_'=ž¦ó< <B­n0­„çD¡¶ÊÕ$§.¬[à¥L[/¿œxh–8ÓÂ^Üƒ
+î3>4ÌöÌíOîƒ¬Á77
+ã“ä{ö*÷Ód™ê«ÒBŽK•¿O~¸à×IÁh©ÍÝÒL~ü’Á{€Þ÷96ÿ,™c–4’anÀg4atÇiKÆúóf		?Ò¹`ýa×^]EÐ!Å2ý.ù¡÷ìÅ“½Ï÷žíûäÅçÞÿöï÷ÿM'¢Þó„âÞ«Ïi¹’úÉiÃÍg¯B´€öG:ãkwô=‰‡ì{Ò%˜Í³{ŠÕyñâáƒ{kíèýûh­õºuÍóLÂkÛ7Û×JøžÒOzêouº8X¥C+#=dØ v/fm˜Ò£¬,"ýÊódÓg¤TÄpØ&ó‡´H¨Öåôìµ®ùG,öÿmûô,øÒ8iþŠ|Bû_ùÒÑò/…ŸÑ‡±gvÃOfƒy’ë“X*ØÀÝËóø‡´àÿ®¯í÷o1ßíO?­^2`£5±ò³F]bà
+ ™2Æî[Ý›$ bÑ!OÓQ¯Eo¾>NŽâá­C«·wXnÐ:´­³vðZýôVé­³­ÆwÚ½öJý7^¨]‰w«ƒeæ–uŽ&½Ì=þôÓ9m–ì†¢ü©c­lð–æ½êo½Ó³Ú×Äe2Ì’Êçfîzõ{•_Ê¬ü(_Œ‹¦Ã¨üÝÒêSS®§dô&XS¯‚üâé£³ë(Ñrý¤{r¾øvuOÞÐOÞl|r
+B‡QòâéÃû`šÂÔœ}*0—þ¯_uNZüyÑ+¢3ºÓVHÀoMñÙwm	ÐTmñ . L½6o»øÛg7H¤ÉÚ\mí–‡ì“2ŠZtD6²_ßl¾¬œ;ðCÁ‚öÿ‡!¤‘›$$ii±?Ù{~ÿ7­Ž
+$°ˆåÁì<a5·×’îôI±fj©³Î ýÐãA*X0¦‡?¬IþÆ	¨Ç4÷ò$–óhÍ†‡”p>2–j¤?ÃòºHq‰«^šŒ[w •XŸêóì·ØéÙÂõažÇI-ÿ:M¾_;$Ç`
+¦‘¡ƒ<›“Î‹[{ª•úÁ&õCg4-×Š¶&×EUcPãI<nºa·~
+¾J÷¯7ç±t
+•)Õ|ÙE%¿™Ý/v:„úT¿~öÔxÿ>|B—C²èWÏ×.Æ´®½îß}½‘ŽH…·wCõ¯Ÿ,H¦áä•—ì÷‚¿½xÞ54NiÐR”>Ÿ¨¼ªN•@wÿNd½Ú4º2èF¯ÕIàœítoÃ7[rÍÂ7œï‰«QPt´…A:ö¢_=TÑ+‡ê½ê•ž AUpýÚáƒ¸¯„àû›î#‚M_óŽÙ7â˜5¤æç’&:§ý?~Ù]
+ÔPý¼øFu¥´ýòý{àZõ•|ºlÌòŒ^@§ÐÆq\|?}’g XüdÏx¼æ^dCD+‚	wùùeÉa¬“f±Øa¬K1xÆIW²jn.DR2M–Ÿ$8õƒÕxµ´ƒ12´)ìlyëÎ8ëœõ•BñÕmÌ?ÜÞI&…°ü8Bt$ÚŽÒ‘ÑÝ0YFêª'ÓM_ÅŸ’&DæÇ°´€‘®þgÔ£ßPw_½9–Òß7§¸Õvup“‹D5´²>¼²{U	¬œ÷WÙ9nqÑ)ƒÙ½»Ù¾ªŠ=Bç[~æ0½‚ü´o7Ç?®í!Å ðmP¹i²¬/Jã:ù†­<m6÷ìŠiÅÆt¶áSÏæ¤'T½=¯üäøò2•NØÆÍ\Ù\>`Åx³
+^~^Äñgi}!û4‡Žf+ÓøÏ•M€ieŒá!á.¦¾dƒ8O‚UãÓhTŽj§…z‘¥³vHd©„Gìˆ/{û÷">Ò†\?àâ#‘2\Œcx']	jæLvYÍn;ä~œ Š8µ,—ºZrß}ØÜÓeyA*ÒÛ@°è~q÷3ÿ5òY^c/ÙºÎÚm8Nåý»~cÈ/’…w$í¶@×cûëý{•ÞñÆk^Ëïß·hÔÇÈHî3oJ²¦·Â[:­Ù¼%ˆyN[Y£þw ê¼â˜îýÊDî¤¡Šk·oÝ©$ðÁà…3zß'§éµî\º¹¶à¬Çÿh@œ¬×áûÔá¨ãgÚ¯ÚT­œ
+(	z"x^…åç~õºÂj£–e†Û’	ÿÉ7-ñÕÎRšû|¼˜h®ý«M?ø–
+
+D3W‘ÛNó7;E£ª”Ô>å”“%¿¨’‚Ñò+[*ôøª»;¸(Ý»Û¯þV¯|Tu×'§“ð;½bRnjOþ€Íö¡ª
+””öçEC† -qŠÀÎ=RsDŽú÷/Y!.|vÑÛø·Ýð dÉÿfŸç,v4ß\Z9œO’×ñÄ¸=ü¾žPæ4 ‰ýFpªÁ[^µ”ìgÐÓiîh
+½Ö¹£Á)wêÇ+š$Á#2bËèVˆ/Øn#Ôv@ìVÿrm:nXM²Â]w‰*7î˜¦«º[ìM<O9'žô_ÛV¸»}ú)uåCW®-Y§>Å—É¤ «ÈäñÎ­6Ž¦ã§,gÉ'¦	P¦|äZ72ž´ÿ†cïvëË{b«Ôxf!{}ÿgolÜîÑô¢=Ýc—§GùƒäÒ¯Ö`ÈeUñBƒ‚ÇºSy>Ôíû+|­îìgäeEÖTà¸¯v—<ÎÑ€r¾VØ(±»}7Ž•n—[a+:§ÁÚêµ¯ÉÄè¤ëñõðÒ™}—¡O+ ¼Ý{ÚØ³R'–{=âºxYæ<¨«Î—¬ø&õ·µ÷!ŠïãMV2^ëÒhÏ+1¬ÙËå
+ÆòDgëQ°ì`1,LY½Lx“:óø¨ÃUÑÍK·ÚNw¶wË v~pWÞTJupIŽQúÔ–Ì~¹è»‰f¯caGç%¡Öe'CÑî49V:³¹^-yß;éè­SÊšN!„YÁå>PËÆ
+c‰PaÀ?»ÞÝl÷¢W×^‹a°öšä@%V…Ô|i÷ZÑÚ|ÑnõZ-Ò¹ÉdM§k$Ý£·I}þæž¬.¹”	å½emxÍßqí;Î7hãé¾';_g°ŠjÏ¢~pÝkéÌjçj…ôjxyâñ×zâ¹wÕR G/EpmªžÛŠ—¹â%.¹'K
+?â_•VÅr2LGèI*þgñ2÷hMÐÛy"$
+kÉ÷ô>M!ÉÞÂ>\bŒ"${Û!ä8ØÒ!kŸF‚á¥Û¼©[Ù«Ü§$ºGáºÔQ.=¹dÅU Ë¥$ºæ'9Î›Oú5«b•¶­RùI‚õÆzç/Û¾fVúiàÝmðÁ.w¿z{§ÁÏú!.VÑÿÄ¯*›´äL5¯oò’À
+¼ÍGÉ„±À¯‹—%—‚Ë#¥‡‡ý@L¬c»ˆÆã	‹ãï]OÍñ]wç:¾»K#ø§èõË#>è„Ï}óÝËözù†¸v·Ä5# êp~‘K½"Ÿˆ xxÈüT¿ó"qšÑ;HSm‚n œ"‘ÂÉ0eq;eI[[_¡œýçŠ4=±Ñwr™À
+g,í]…NVaz±±lx»32ÒmÓU1ÀMìå
+½ÛýôÓ !üÓ7›/­=´>k¿vÝ¯Ÿ~Z91‡h¤Êdï¤q‚QÝð[¿µ«²Â5øÞ«ùÇÿë¿Dû2óóŸ†Ìù.Tr\êH
+:Và@¯zôàÿýï¢¯QHŠÎ	Œ–ë OÃ«êL–lÎ|—\eÍ†¶Í‚sXv¥Öq¤"ÄÀØL à›;˜/¢V/=v¹´˜,¥t:¥J·.ŠÇ‡ñ€K2}8ZŠèö™³ášŽ‘àŒkŸ^vŒ,?=õØs)WÄ(Ž˜uRÞ.d[tø3³XZHb?æÑWç?Â   ˜{ö$½ÜKÏøÈ¹¡Y1þ¥Î°W÷¥á˜p’4¸bC?øm<€Ò«)òoÓQ„+3n	Jóâó/°®/ñà­tAw®zßÞ¿'õv¹SÎHÜïßÐí/e÷ ™ÓÙÂChñ`”D|Ë–+³Ï™Ü®êØ7šˆlV¹‚(ÓW
+—Ç´‰ö±_¤Ô†õ®Yúˆû±ºê”xÀ|v
+Ö÷UóÕ6™æâz»Ôê†Õüú
+ÆÿS:gTˆoë«6:àÀ?òÙm Á}§…Pwö?Æç}D'úZ· ô/‹‚ðË9ßºS_BíeôVô—Îë¸¿ªþÒ	­>jw+øÎþëx÷2Ù£ÓP_.ïÞùÇßÿïÈ*Ñóìïßî
+œÕ{¨5ÏMï%Ó9—1
+v›£	½¥™°83-£	1'â¥9øâM{ÿÞmõ×Kk÷kï7ŽSÀs­»‚àt£¼ùîæ½à_=ñ0”Ä Æ¡míyÍšfN“0šD±3é1u¯]§½3U!¯;q›:c<´ÌY<b¯üê´µ·¯@ígæ…êÍ»T¾¿Žï½rY[¨·Šƒ7Þà×”ÀúFsVI>Dvz­]ï}r½C;¦×Ú/„ÄÔ§A‚×°ÄQ;—‘=”¸?²Ùó~`¿÷íB™jUœÿ€«¦§JN~wsóWšv‹|ÛhÏ­Äúq­µA£–ÍvƒôD’#—pvp´Ý9† Ð¨ïí096dí¨OOxbâv¾õþ}EÆ½µ„”ªÁËbq÷6äL.1¹€P€KÃhg:t-!šo]käíÐÕÍ<WÞ.jÜðMxÃË¾ŽÆnåKýà	m>üq®ý¡OÎw`ÖCùýYQúÓ@×ôë¡y|¯Û#‹U ÖåC‡ãoM®êj«ãUm+/:UÌ-5ˆÖË‡ õ–y¬½»ºÚ`ñë^ªW«‰ÄÓ í5e¤ÄYÃÚ†’ð8–ö2¤º3)Ž£f"0)®–­	œ••Uhk”`¥ûÅÜK¸"3. âãB½UÙbChÚ|8­ßÝlx
+šß|ŽîfÅ¶sï(è85t‘Š}ÜGÙ÷I~?†þQ¥‹íò7K_Òª‡PoÁÉ/y¸¨cÒÙib­Úp®ªtÔ¯äAt¸ :i:§éH†¿‚`ï`Š²Å·É¤‡ -4HÎwxøì@ûÑ>{ÙYº±Ú’%/{›g‚_îŸº`º¬anCãÊÇ|Š/à¡Ò5¯æ=µQ‚N_´Sš¡¬é¨Œ-õ¸ÑæT÷AdfÐ2.+,ûF0?ÕÃºF5)ál#*y÷¡sð þW»
+Øç¥»{9¾¸~Ø ´%É:8tÜˆ­imíkxBï¨XŠZß7µ¹r67~3u÷3Ï6ï‡ÓêÀA
+á‚¥’É+Üü(b‰—[sHª„6Š¥«ö› ßWHÛ¹ë/è\ÖÝ×©oÚäjEÒ\6þöå|–õOui”g» -Ðˆ¬N)(þP	fnvjÆyÇ þsdEçŠî \4Tpç¦]rwmv*{÷›ªÌð¾™Õ¤F-k¥&NMz”]!½Ï³lœÄS[g¦ž|xZD˜îpðìù/—íÀÓÞ>kwVËs˜_$ŸV“N~ø—È§‹¤Ó'§+z™´ðïÕ(ð\©—á”KKÐõIÃÖ3ÝÃoÀ’Öq­ÝG1¥|"8Uÿ(9ƒP·¡”âQ*eWQé8‹,é„62)- ™\¼,Á¶&@YƒjK¬¨;—½Ægg”Dçoã¯}qŽUoEh­ ©+²Ø½öeñeB'³,úWîâ¿ÚðžF¼ÍÀ.xŸypG¦¹¸4[­ŸR‘·²mJ:å’ä5Í`©Õ¾Ó ¢—WÕZ™Ý%Ñàæ¹bÆ]žB°T=ö ÍPoýl‹íÔQËÉçÌ.uŸ·*ç«˜AÀùÊÙ¸”y|x1éxÉ©´éxçÍ|tÅx•]|>*ÉßKÅç£F*ñfq?K8Äç ×ùµwÉìøÅVuÖ»Ïv_û1Ù.L×ß¼GúÝ.ÀQ'by•]v™ùZÒ\œátwá2=Æä
+ÚÂƒø²ñ³ÓGG±Y2T—R4xÄ8ÂKC`í fU"^ÊVq`ÌÔ?ÊÓë
+1¢<Ð®õCÆ`O4ƒ8Â>ü4úXËÀÕûqG¼—º[Á\¸è´Ñ×ªMÿc²rËŠ-²sá#ú4™Ò5¯ú¯’á¼ºÊ©p84¨œÒÜˆœTËxå yk>îÏº›Ÿ~zµþ«9;ÄË±’“ƒ=;í¦S¼ÏkF}6ŸÕÇç?Öæe®h%«‹ÌPså¼f%u—gTZPÓä01%¡½T­-˜±påÊõ_GŸ?:ø×/öD_ÿŸÏ_DöžE_<Ø{$GXôëëž•Zì8‡DÏÿq¥ž<Þa,UCJßÑ_aÖ!­~8EË½n³¼úŒ åÇH*]ÅrºâHî"£Â·]½Zué/\ ÉüÖë×£gITÍó¬©–Î˜Eü‚Ôõ¤#sñã<›L¬ßS¢p¡E°¦XÕØàðn´ÖÐ+×M£'#ßÀîùòL(ÙeµPÞ~
+ÔLþŸÂÉÌ¾ °£µ«ËVŠ}>Š¤Fˆþ#Š Þš1[l :UÓ}ÁHA9vc™ŽâÒÐ•/c‘Nãùù§	È´ô®v	vÞ¼Ü-E ÛgWt&®Ö§Âz|ùÞÑ÷h(Šw
+Òë]'û
+Ëw·ö€qñG—ì Nÿª¿JÖä}ú…K0k1Êlœaö£vºßÅËêôš\¢1[ŸjÑ4ÃAFW­ Zñ?]Ñj=·LiúÏ7BêÞêDV·†þ¢/_)*ù×«U q¼Œå—³•j¿´Ý=+·cåˆœˆôl¡§‚ÍUÙÀ}ðV<µ>0ÆÑ«’jóß³O2õåþ<#K¢H¤úl
+pd³ÐòÏÇÙâ$ÉåÁ°£Á¾±ÏA> ¿Ù±a-µYwu[•°
+Uºv°yÑ»ýUåÑâÎú¤„"`ïÓO³|Y9U¹=b:*dš	§
+¢ ñ²A`aí{¯J¸ô»¢‘[‡õ²uÕê]¬ØÉ3>ÓŸí?Ú?ÿwçÿ3è÷ŸE÷÷ž>?ÿßè(áóƒ¯PÏñóóÿðù£‡{8Ý×Ü¹]:›ò¸¶~´¬¬^KÒª!32äxyýpÎ<hKŸ•­,‹¥§~éZúx;²dB€’oÑ‹åöËE?ìKÎáNøØ„MwMîm—ö–x
+úRe–vOL«!™ &<æÄ¶ÑÞÍ†q¶/Ñ±~$ 6ò×´cÙŒÏÚ¶ž5¢¨òSØèü‡&¾îb;ütð¨š—òû8Ÿ®)N§Bûƒô÷:y*äÌ8“OX+µQØs 'šüÒIçÉ¤Ü˜9¯~È(üÆ]‘1ÕwE|½¡¦?&6ü×µ”o¦™Ø›Óæ,æ¸‘déú dD÷ú™³œ*8ëTq(Ïl4šÂUÝøBkxOP ô4,´ãHqÆ‰Ooºâ49¬—ŽEeYÉBº°é-ÖZí`˜é‘¥¶mTÝ²ÖÃ†ÅíÇÁF°Ð¥Lá¸¼NµgÊy´Ë³i_ðä–ÖÍ)ÝÜá—œZimé•em&\üì:HOgó»W>»º¾í={öðñÞóO÷¢'O¾xHÿ<x¼÷(Z_§³ÐÌtÔoô7Á•º?‚åšµ"æXM&éßA}	+É±½9{uo—«k@8ÇùúŠo`t·oŒ’£ÎßmÞéÞÚºmþªówÝÍ­ÁÎÍèÆþîÜºµßãêvàCÛ®ÄÇßnvn+E=¶ðmþŸMÒ°kÅ:j$ãI:þ¡·GËhÜ)âi±^ n·u—†î3:œÚoôŒB²NÝþ®ñÂó¨ßÂÂnÝÝßûì:=ážÔa*×¨Ôi©e©ÔmAY„ZUj\ùô)¶ÖàažŒÒ¹›¶ð“·7«UnñûÀ™v’ORM°Ñ¹öÆ‡ô¶ì’/’>‡ñ-ÑûÏÿdÅ8ñçód8Í¸ìxã€ù’+;·6Ý ô6¥ð‹Õ%$7·v+%$8ÉêXúÖÝ¸yƒºò‚ô„ä-sßHiöQz„2ç¤€Œ˜1V~cíŠrÆ„Œp”	7# .o?3Øú([Âè{ÉH±Îr·q*+Eû=Œn$ÝJGoS?Ÿä@Xlý&@¢	ëqb}³}6ÈïþóOÑg`Z—
+>ÍöÜœÄh~½™ÞN{aÍ¤y’ÎÅ»&2º¬½øìºHúKÎRí¥þé²Ï38Ó£_,ÆãCB„¤™—eÿPK    x\]òÜ“Õ:  ‡Ñ 1         ¤    index_bom_de_biblia_ranking_online_corrigido.htmlUT óâjux     é  PK      w   ¥    
