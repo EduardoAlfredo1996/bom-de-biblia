@@ -610,32 +610,32 @@ async function loadRanking(){
     status.textContent=`Ranking por nível — ${totalMostrado} resultado(s) apresentado(s).`;
   }catch(error){status.textContent=error.message||"Erro ao carregar o ranking.";}
 }
+async function saveNamedLevelRankingResult(nome, nivel, acertos, totalPerguntas){
+  if(!supabaseConfigured()) throw new Error("O ranking não está ligado ao Supabase.");
+  const response=await fetch(`${SUPABASE_URL}/rest/v1/rpc/guardar_melhor_pontuacao`,{
+    method:"POST",
+    headers:{apikey:SUPABASE_PUBLIC_KEY,Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`,"Content-Type":"application/json"},
+    body:JSON.stringify({
+      p_nome:String(nome||"Participante").trim().slice(0,32),
+      p_pontuacao:Number(acertos)*10,
+      p_total_perguntas:Number(totalPerguntas),
+      p_nivel:nivel
+    })
+  });
+  if(!response.ok){
+    const detalhe=await response.text().catch(()=> "");
+    throw new Error(detalhe||"Não foi possível guardar a melhor pontuação. Confirma a função SQL e as permissões.");
+  }
+}
 async function saveLevelRankingResult(nivel, acertos, totalPerguntas){
   const status=$("saveStatus");
-  if(!supabaseConfigured()){
-    status.textContent="O resultado foi calculado, mas o ranking ainda não está ligado.";
-    return;
-  }
   try{
-    const response=await fetch(`${SUPABASE_URL}/rest/v1/rpc/guardar_melhor_pontuacao`,{
-      method:"POST",
-      headers:{apikey:SUPABASE_PUBLIC_KEY,Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`,"Content-Type":"application/json"},
-      body:JSON.stringify({
-        p_nome:playerName.slice(0,32),
-        p_pontuacao:Number(acertos)*10,
-        p_total_perguntas:Number(totalPerguntas),
-        p_nivel:nivel
-      })
-    });
-    if(!response.ok){
-      const detalhe=await response.text().catch(()=> "");
-      throw new Error(detalhe||"Não foi possível guardar a melhor pontuação. Confirma se executaste a migração SQL.");
-    }
+    await saveNamedLevelRankingResult(playerName,nivel,acertos,totalPerguntas);
     status.textContent=`Melhor pontuação de ${nivel} enviada para o ranking público.`;
     await loadRanking();
   }catch(error){
     status.textContent=error.message||"Erro ao guardar o resultado.";
-    console.error("Erro ao guardar pontuação por nível:",error);
+    console.error("Ranking individual:",error);
   }
 }
 
@@ -963,6 +963,9 @@ let salaAtual = null, papelJogador = null, temporizadorOnline = null, meuJogador
 // tentem mudar a pergunta ao mesmo tempo.
 let avancoAutomaticoEmCurso = false;
 let chaveUltimoAvancoAutomatico = "";
+let avisoNivelOnlineKey = "";
+let avisoNivelOnlineDesde = 0;
+const niveisOnlineGuardados = new Set();
 const cabecalhosSala = {"Content-Type":"application/json", apikey:SUPABASE_PUBLIC_KEY, Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`};
 function novoIdJogador(){return window.crypto?.randomUUID?.() || ("j"+Date.now().toString(36)+Math.random().toString(36).slice(2,10));}
 function guardarIdentidadeSala(codigo,id){try{sessionStorage.setItem("bb-player:"+codigo,id);}catch(_){}}
@@ -974,6 +977,51 @@ async function obterSala(codigo){const r=await fetch(`${SUPABASE_URL}/rest/v1/sa
 async function atualizarSala(codigo,dados){const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?codigo=eq.${encodeURIComponent(codigo)}`,{method:"PATCH",headers:{...cabecalhosSala,Prefer:"return=minimal"},body:JSON.stringify(dados)});const t=await r.text();if(!r.ok)throw Error("Supabase: "+t);}
 function mostrarAreaOnline(){const a=$("areaPartidaOnline");a.classList.remove("hidden");a.classList.add("online-active");a.style.display="block";a.scrollIntoView({behavior:"smooth",block:"start"});}
 function iniciarAtualizacaoOnline(){if(temporizadorOnline)clearInterval(temporizadorOnline);temporizadorOnline=setInterval(async()=>{if(!salaAtual)return;try{salaAtual=await obterSala(salaAtual.codigo);meuJogadorId=lerIdentidadeSala(salaAtual.codigo)||meuJogadorId;const eu=obterJogadores(salaAtual).find(j=>j.id===meuJogadorId);papelJogador=eu?.papel==="anfitriao"?"anfitriao":"jogador";desenharPartidaOnline();await verificarAvancoAutomatico();}catch(e){console.error("Atualização da sala:",e);}},1800);}
+
+function contarAcertosOnline(s,jogador,nivel){
+  const qs=Array.isArray(s.perguntas_json)?s.perguntas_json:[];
+  const rs=obterRespostas(s);let total=0,acertos=0;
+  qs.forEach((q,i)=>{
+    if(q.level!==nivel)return;
+    total++;
+    const respostas=rs[String(i)]||{};
+    if(Object.prototype.hasOwnProperty.call(respostas,jogador.id)&&respostas[jogador.id]===q.correct)acertos++;
+  });
+  return {acertos,total};
+}
+async function guardarResultadosNivelOnline(s,nivel){
+  if(papelJogador!=="anfitriao")return;
+  const chave=`${s.codigo}:${nivel}`;
+  if(niveisOnlineGuardados.has(chave))return;
+  // Marcar antes dos pedidos para impedir chamadas duplicadas durante a actualização periódica.
+  niveisOnlineGuardados.add(chave);
+  const jogadores=obterJogadores(s);
+  const resultados=[];
+  for(const jogador of jogadores){
+    const r=contarAcertosOnline(s,jogador,nivel);
+    if(r.total>0) resultados.push({jogador,...r});
+  }
+  try{
+    for(const r of resultados){
+      await saveNamedLevelRankingResult(r.jogador.nome,nivel,r.acertos,r.total);
+    }
+    await loadRanking();
+    $("saveStatus").textContent=`Resultados online do nível ${nivel} enviados para o ranking público.`;
+  }catch(e){
+    // Permitir nova tentativa se a gravação falhar.
+    niveisOnlineGuardados.delete(chave);
+    console.error("Ranking da partida online:",e);
+    $("feedbackOnline").textContent="A classificação do nível foi calculada, mas não foi possível actualizar o ranking: "+e.message;
+  }
+}
+function mostrarClassificacaoNivelOnline(s,nivel,box){
+  const jogadores=obterJogadores(s);
+  const resultados=jogadores.map(j=>({j,...contarAcertosOnline(s,j,nivel)}))
+    .filter(r=>r.total>0)
+    .sort((a,b)=>b.acertos-a.acertos||String(a.j.nome||"").localeCompare(String(b.j.nome||""),"pt"));
+  texto(box,"h3",`🏆 Classificação — ${nivel}`);
+  resultados.forEach((r,i)=>texto(box,"p",`${i+1}. ${r.j.nome}: ${r.acertos*10} pontos (${r.acertos}/${r.total} respostas certas)`));
+}
 
 async function verificarAvancoAutomatico(){
   if(!salaAtual || papelJogador!=="anfitriao" || salaAtual.estado_jogo!=="em_jogo" || avancoAutomaticoEmCurso)return;
@@ -998,6 +1046,15 @@ async function verificarAvancoAutomatico(){
     const todosResponderam=js.length>0 && js.every(j=>Object.prototype.hasOwnProperty.call(rs,j.id));
     if(atual.estado_jogo!=="em_jogo" || indiceAtual!==indice || !todosResponderam){chaveUltimoAvancoAutomatico="";return;}
     const proximo=indiceAtual+1;
+    const nivelConcluido=qs[indiceAtual]?.level;
+    const nivelSeguinte=proximo<qs.length?qs[proximo]?.level:null;
+    if(nivelConcluido && nivelSeguinte!==nivelConcluido){
+      await guardarResultadosNivelOnline(atual,nivelConcluido);
+    }
+    if(nivelSeguinte!==nivelConcluido){
+      avisoNivelOnlineKey=`${atual.codigo}:${nivelConcluido}`;
+      avisoNivelOnlineDesde=Date.now();
+    }
     if(proximo>=qs.length){
       await atualizarSala(atual.codigo,{estado_jogo:"terminada",estado:"terminada"});
     }else{
@@ -1025,7 +1082,17 @@ const ordem=[...js].sort((a,b)=>{
 ordem.forEach((j,i)=>{const desempate=ORDEM_NIVEIS.slice().reverse().map(n=>`${n}: ${certosNoNivel(j,n)}`).join(" · ");texto(box,"p",`${i+1}. ${j.nome}: ${Number(pts[j.id]||0)} ponto(s) — desempate por níveis avançados: ${desempate}`);});
 if(ordem.length){const empatados=ordem.length>1&&Number(pts[ordem[0].id]||0)===Number(pts[ordem[1].id]||0)&&ORDEM_NIVEIS.every(n=>certosNoNivel(ordem[0],n)===certosNoNivel(ordem[1],n));texto(box,"h3",empatados?`🤝 Empate técnico entre os primeiros participantes.`:`🥇 Vencedor: ${ordem[0].nome}`);texto(box,"p","Critério de desempate: pontuação total; depois, acertos do nível mais difícil para o mais fácil; persistindo igualdade, ordem alfabética do nome.");}return;}
 if(s.estado_jogo==="aguardando"){$("perguntaOnline").textContent=papelJogador==="anfitriao"?"Partilha o código e aguarda pelo menos mais um participante. Máximo: 10.":"A aguardar o anfitrião iniciar a partida...";$("respostasOnline").replaceChildren();$("progressoOnline").textContent=`Código: ${s.codigo} · ${s.partida_aberta?"Partida aberta":"Sala privada"}`;$("feedbackOnline").textContent="";return;}
-const perguntas=Array.isArray(s.perguntas_json)?s.perguntas_json:[];if(!perguntas.length||idx>=perguntas.length)return;const q=perguntas[idx],res=rs[String(idx)]||{},ja=Object.prototype.hasOwnProperty.call(res,meuJogadorId||"");respostaEnviada=ja;$("perguntaOnline").textContent=q.q;$("nivelOnline").textContent=`📖 Nível ${ORDEM_NIVEIS.indexOf(q.level)+1} de 5: ${q.level||s.nivel}`;const nivelAtual=q.level||s.nivel||"Nível";const numeroNivel=perguntas.slice(0,idx+1).filter(p=>p.level===q.level).length;const totalNivel=QUANTIDADES_NIVEIS[nivelAtual]||perguntas.filter(p=>p.level===q.level).length;const numeroEtapa=ORDEM_NIVEIS.indexOf(nivelAtual)+1;$("progressoOnline").textContent=`Nível ${numeroEtapa>0?numeroEtapa:1} de 5 — ${nivelAtual}: pergunta ${numeroNivel} de ${totalNivel} · Respostas: ${js.filter(j=>Object.hasOwn(res,j.id)).length}/${js.length}`;$("barraNivel").max=totalNivel;$("barraNivel").value=numeroNivel;$("feedbackOnline").textContent=ja?`Resposta registada. ${q.ref?"Referência: "+q.ref:""}:` .replace(/:$/,""):"Escolhe uma resposta.";const area=$("respostasOnline");area.replaceChildren();q.a.forEach((op,i)=>{const b=document.createElement("button");b.type="button";b.className="primary";b.style.cssText="display:block;width:100%;margin:8px 0";b.textContent=String.fromCharCode(65+i)+". "+op;b.disabled=ja;b.addEventListener("click",()=>enviarResposta(idx,i));area.appendChild(b);});}
+const perguntas=Array.isArray(s.perguntas_json)?s.perguntas_json:[];if(!perguntas.length||idx>=perguntas.length)return;const q=perguntas[idx];
+// Detectar a entrada num novo nível e manter a classificação anterior visível por alguns segundos.
+if(idx>0 && perguntas[idx-1]?.level!==q.level){
+  const chave=`${s.codigo}:${perguntas[idx-1].level}`;
+  if(avisoNivelOnlineKey!==chave){avisoNivelOnlineKey=chave;avisoNivelOnlineDesde=Date.now();}
+}
+if(avisoNivelOnlineKey.startsWith(`${s.codigo}:`) && Date.now()-avisoNivelOnlineDesde<8000){
+  const nivelAviso=avisoNivelOnlineKey.slice(s.codigo.length+1);
+  mostrarClassificacaoNivelOnline(s,nivelAviso,box);
+}
+const res=rs[String(idx)]||{},ja=Object.prototype.hasOwnProperty.call(res,meuJogadorId||"");respostaEnviada=ja;$("perguntaOnline").textContent=q.q;$("nivelOnline").textContent=`📖 Nível ${ORDEM_NIVEIS.indexOf(q.level)+1} de 5: ${q.level||s.nivel}`;const nivelAtual=q.level||s.nivel||"Nível";const numeroNivel=perguntas.slice(0,idx+1).filter(p=>p.level===q.level).length;const totalNivel=QUANTIDADES_NIVEIS[nivelAtual]||perguntas.filter(p=>p.level===q.level).length;const numeroEtapa=ORDEM_NIVEIS.indexOf(nivelAtual)+1;$("progressoOnline").textContent=`Nível ${numeroEtapa>0?numeroEtapa:1} de 5 — ${nivelAtual}: pergunta ${numeroNivel} de ${totalNivel} · Respostas: ${js.filter(j=>Object.hasOwn(res,j.id)).length}/${js.length}`;$("barraNivel").max=totalNivel;$("barraNivel").value=numeroNivel;$("feedbackOnline").textContent=ja?`Resposta registada. ${q.ref?"Referência: "+q.ref:""}:` .replace(/:$/,""):"Escolhe uma resposta.";const area=$("respostasOnline");area.replaceChildren();q.a.forEach((op,i)=>{const b=document.createElement("button");b.type="button";b.className="primary";b.style.cssText="display:block;width:100%;margin:8px 0";b.textContent=String.fromCharCode(65+i)+". "+op;b.disabled=ja;b.addEventListener("click",()=>enviarResposta(idx,i));area.appendChild(b);});}
 async function enviarResposta(idx,escolha){if(!salaAtual||respostaEnviada||!meuJogadorId)return;const q=salaAtual.perguntas_json?.[idx];if(!q)return;const rs={...obterRespostas(salaAtual)},porPergunta={...(rs[String(idx)]||{})};if(Object.hasOwn(porPergunta,meuJogadorId))return;porPergunta[meuJogadorId]=escolha;rs[String(idx)]=porPergunta;const pts={...obterPontuacoes(salaAtual)};pts[meuJogadorId]=Number(pts[meuJogadorId]||0)+(escolha===q.correct?1:0);try{respostaEnviada=true;await atualizarSala(salaAtual.codigo,{respostas_json:rs,pontuacoes_json:pts});salaAtual=await obterSala(salaAtual.codigo);desenharPartidaOnline();}catch(e){respostaEnviada=false;$("feedbackOnline").textContent="Erro ao guardar resposta: "+e.message;}}
 async function entrarNaSala(s,nome,msg){const js=obterJogadores(s);if(s.estado!=="aguardando"||s.estado_jogo!=="aguardando")throw Error("Esta partida já começou ou terminou.");if(js.length>=10)throw Error("Esta sala já tem 10 participantes.");if(js.some(j=>String(j.nome).toLowerCase()===nome.toLowerCase()))throw Error("Já existe alguém com esse nome nesta sala.");const id=novoIdJogador(),novos=[...js,{id,nome,papel:"jogador",entrou_em:new Date().toISOString()}],pts={...obterPontuacoes(s),[id]:0},dados={jogadores_json:novos,pontuacoes_json:pts};if(!s.nome_jogador2)dados.nome_jogador2=nome;await atualizarSala(s.codigo,dados);salaAtual=await obterSala(s.codigo);meuJogadorId=id;papelJogador="jogador";guardarIdentidadeSala(s.codigo,id);msg.textContent=`Entraste na sala de ${s.nome_anfitriao}. Participantes: ${novos.length}/10.`;mostrarAreaOnline();desenharPartidaOnline();iniciarAtualizacaoOnline();}
 async function criarSalaDisputa(aberta){const nome=$("nomeDisputa").value.trim(),nivel=$("nivelDisputa").value,msg=$("mensagemDisputa");if(!nome){msg.textContent="Escreve o teu nome primeiro.";$("nomeDisputa").focus();return;}const codigo=Math.random().toString(36).slice(2,8).toUpperCase(),id=novoIdJogador();msg.textContent="A criar sala...";try{const corpo={codigo,nome_anfitriao:nome,nivel,estado:"aguardando",estado_jogo:"aguardando",pergunta_atual:0,perguntas_json:[],respostas_anfitriao:{},respostas_jogador2:{},pontos_anfitriao:0,pontos_jogador2:0,jogadores_json:[{id,nome,papel:"anfitriao",entrou_em:new Date().toISOString()}],respostas_json:{},pontuacoes_json:{[id]:0},partida_aberta:Boolean(aberta)};const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia`,{method:"POST",headers:{...cabecalhosSala,Prefer:"return=minimal"},body:JSON.stringify(corpo)}),t=await r.text();if(!r.ok)throw Error(t);salaAtual=await obterSala(codigo);meuJogadorId=id;papelJogador="anfitriao";guardarIdentidadeSala(codigo,id);msg.textContent=`${aberta?"Partida aberta":"Sala privada"} criada! Código: ${codigo}.`;mostrarAreaOnline();desenharPartidaOnline();iniciarAtualizacaoOnline();}catch(e){console.error(e);msg.textContent="Erro ao criar sala: "+e.message+" Confirma se as colunas novas foram adicionadas ao Supabase.";}}
