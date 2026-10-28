@@ -1,0 +1,14 @@
+
+{
+  "id": "/bom-de-biblia/",
+  "name": "Bom de Bíblia IASD Calemba 2 Antena",
+  "short_name": "Bom de Bíblia",
+  "description": "Aprende. Crê. Vive a Palavra.",
+  "start_url": "/bom-de-biblia/",
+  "scope": "/bom-de-biblia/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1f3a",
+  "theme_color": "#0b1f3a",
+  "lang": "pt-AO"
+}
