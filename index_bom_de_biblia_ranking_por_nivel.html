@@ -977,7 +977,7 @@ function obterPontuacoes(s){return s?.pontuacoes_json&&typeof s.pontuacoes_json=
 async function obterSala(codigo){const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?codigo=eq.${encodeURIComponent(codigo)}&select=*`,{headers:cabecalhosSala});const t=await r.text();if(!r.ok)throw Error("Supabase: "+t);const a=JSON.parse(t);if(!a.length)throw Error("Sala não encontrada.");return a[0];}
 async function atualizarSala(codigo,dados){const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?codigo=eq.${encodeURIComponent(codigo)}`,{method:"PATCH",headers:{...cabecalhosSala,Prefer:"return=minimal"},body:JSON.stringify(dados)});const t=await r.text();if(!r.ok)throw Error("Supabase: "+t);}
 function mostrarAreaOnline(){const a=$("areaPartidaOnline");a.classList.remove("hidden");a.classList.add("online-active");a.style.display="block";a.scrollIntoView({behavior:"smooth",block:"start"});}
-function iniciarAtualizacaoOnline(){if(temporizadorOnline)clearInterval(temporizadorOnline);temporizadorOnline=setInterval(async()=>{if(!salaAtual)return;try{salaAtual=await obterSala(salaAtual.codigo);meuJogadorId=lerIdentidadeSala(salaAtual.codigo)||meuJogadorId;const eu=obterJogadores(salaAtual).find(j=>j.id===meuJogadorId);papelJogador=eu?.papel==="anfitriao"?"anfitriao":"jogador";desenharPartidaOnline();await verificarAvancoAutomatico();}catch(e){console.error("Atualização da sala:",e);}},1800);}
+function iniciarAtualizacaoOnline(){if(temporizadorOnline)clearInterval(temporizadorOnline);temporizadorOnline=setInterval(async()=>{if(!salaAtual)return;try{salaAtual=await obterSala(salaAtual.codigo);meuJogadorId=lerIdentidadeSala(salaAtual.codigo)||meuJogadorId;const eu=obterJogadores(salaAtual).find(j=>j.id===meuJogadorId);if(eu)papelJogador=eu.papel==="anfitriao"?"anfitriao":"jogador";else if(!papelJogador)papelJogador="jogador";desenharPartidaOnline();await verificarAvancoAutomatico();}catch(e){console.error("Atualização da sala:",e);}},1800);}
 
 function contarAcertosOnline(s,jogador,nivel){
   const qs=Array.isArray(s.perguntas_json)?s.perguntas_json:[];
@@ -991,6 +991,8 @@ function contarAcertosOnline(s,jogador,nivel){
   return {acertos,total};
 }
 async function guardarResultadosNivelOnline(s,nivel){
+  const jogadorAtual=obterJogadores(s).find(j=>j.id===meuJogadorId);
+  if(jogadorAtual?.papel==="anfitriao") papelJogador="anfitriao";
   if(papelJogador!=="anfitriao"){
     mensagemPersistenteRanking="Atenção: esta sessão não está identificada como anfitrião. O ranking online não foi enviado.";
     $("saveStatus").textContent=mensagemPersistenteRanking;
@@ -1002,6 +1004,8 @@ async function guardarResultadosNivelOnline(s,nivel){
   // Marcar antes dos pedidos para impedir chamadas duplicadas durante a actualização periódica.
   niveisOnlineGuardados.add(chave);
   const jogadores=obterJogadores(s);
+  const anfitriaoNaSala=jogadores.find(j=>j.id===meuJogadorId);
+  if(anfitriaoNaSala && anfitriaoNaSala.papel==="anfitriao") papelJogador="anfitriao";
   const resultados=[];
   for(const jogador of jogadores){
     const r=contarAcertosOnline(s,jogador,nivel);
@@ -1082,7 +1086,7 @@ async function verificarAvancoAutomatico(){
 }
 function texto(parent,tag,valor){const e=document.createElement(tag);e.textContent=valor;parent.appendChild(e);return e;}
 function desenharPartidaOnline(){const s=salaAtual;if(!s)return;atualizarBloqueioModalidades();const js=obterJogadores(s),rs=obterRespostas(s),pts=obterPontuacoes(s),idx=Number(s.pergunta_atual||0);$("nomesJogadores").textContent=`Participantes (${js.length}/10): `+js.map((j,i)=>`${i+1}. ${j.nome}${j.id===meuJogadorId?" (tu)":""}`).join(" | ");$("pontuacaoOnline").textContent="Pontuação — "+js.map(j=>`${j.nome}: ${Number(pts[j.id]||0)}`).join(" | ");$("estadoPartida").textContent=s.estado_jogo==="em_jogo"?"Partida em andamento":s.estado_jogo==="terminada"?"Partida terminada":"Sala à espera de participantes";$("iniciarPartidaOnline").style.display=papelJogador==="anfitriao"&&s.estado_jogo==="aguardando"?"inline-block":"none";$("proximaOnline").style.display="none";const box=$("classificacaoNivelOnline");box.replaceChildren();
-if(s.estado_jogo==="terminada"){ $("perguntaOnline").textContent="🏆 Partida terminada!";$("respostasOnline").replaceChildren();$("progressoOnline").textContent="Resultado final";$("feedbackOnline").textContent="Obrigado por participares!";texto(box,"h3","🏆 Classificação final");const qs=Array.isArray(s.perguntas_json)?s.perguntas_json:[];
+if(s.estado_jogo==="terminada"){ $("perguntaOnline").textContent="🏆 Partida terminada!";$("respostasOnline").replaceChildren();$("progressoOnline").textContent="Resultado final";$("feedbackOnline").textContent=mensagemPersistenteRanking||"Obrigado por participares!";texto(box,"h3","🏆 Classificação final");const qs=Array.isArray(s.perguntas_json)?s.perguntas_json:[];
 function certosNoNivel(j,nivel){let total=0;qs.forEach((q,i)=>{if(q.level!==nivel)return;const resp=rs[String(i)]||{};if(Object.prototype.hasOwnProperty.call(resp,j.id)&&resp[j.id]===q.correct)total++;});return total;}
 const ordem=[...js].sort((a,b)=>{
  const diff=Number(pts[b.id]||0)-Number(pts[a.id]||0);if(diff)return diff;
