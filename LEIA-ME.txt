@@ -1,0 +1,15 @@
+BOM DE BÍBLIA — APLICAÇÃO WEB INSTALÁVEL (PWA)
+
+COMO PUBLICAR
+1. Extraia todos os ficheiros deste ZIP para uma pasta.
+2. No Netlify, crie um novo deploy manual e envie a pasta/ficheiros extraídos.
+3. Confirme que index.html, manifest.webmanifest, service-worker.js e a pasta icons estão na raiz publicada.
+4. Abra o endereço HTTPS publicado no Google Chrome do telefone Android.
+5. Toque em “Instalar aplicativo” se aparecer. Se não aparecer, menu ⋮ > Instalar aplicação ou Adicionar ao ecrã inicial.
+
+IMPORTANTE
+- Não envie apenas o index.html: o manifesto, o service worker e os ícones também são necessários.
+- Mantenha a versão antiga guardada. Teste esta versão antes de substituir o site actual.
+- A instalação requer que o site esteja publicado por HTTPS (por exemplo, Netlify). Abrir o HTML directamente como ficheiro não permite a instalação PWA.
+- O modo offline guarda a estrutura da aplicação depois da primeira visita, mas disputas online, Supabase e recursos externos precisam de Internet.
+- Este pacote não publica automaticamente no Netlify e não altera o site já publicado.

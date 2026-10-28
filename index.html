@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102b46">
+<meta name="description" content="Bom de Bíblia IASD Calemba 2 Antena — aprende, crê e vive a Palavra.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bom de Bíblia">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Bom de Bíblia IASD Calemba 2 Antena</title>
+<style>
+  
+/* DESIGN PROFISSIONAL — BOM DE BÍBLIA */
+
+body {
+  background: #f2f5fb;
+  color: #17243b;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 16px;
+}
+
+h1, h2, h3 {
+  color: #102b50;
+  line-height: 1.3;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(24px, 6vw, 34px);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 23px;
+  border-bottom: 3px solid #d6ad45;
+  padding-bottom: 8px;
+}
+
+button,
+.primary {
+  background: linear-gradient(135deg, #123966, #205a91);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(16, 43, 80, 0.15);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+button:active,
+.primary:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccd5e3;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  background: #ffffff;
+  color: #17243b;
+  margin-bottom: 10px;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
+
+#pontuacaoOnline,
+#estadoPartida,
+#nomesJogadores,
+#nivelOnline,
+#progressoOnline {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+  border-left: 4px solid #d6ad45;
+}
+
+#classificacaoNivelOnline {
+  background: #ffffff;
+  border: 1px solid #e1e7f0;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 5px 18px rgba(16, 43, 80, 0.08);
+}
+
+#classificacaoNivelOnline h3 {
+  color: #123966;
+}
+
+#barraNivel {
+  width: 100%;
+  height: 12px;
+  accent-color: #d6ad45;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  button,
+  .primary {
+    max-width: 100%;
+    min-height: 44px;
+  }
+
+  #classificacaoNivelOnline {
+    padding: 12px;
+  }
+}
+
+:root{--navy:#102b46;--blue:#174a72;--gold:#e7b84b;--cream:#f6f3ea;--ink:#172535;--muted:#667587;--green:#217a53;--red:#a83c3c}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#102b46,#1d5275);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);min-height:100vh;padding:20px}
+.wrap{max-width:760px;margin:0 auto}.brand{color:#fff;text-align:center;padding:12px 0 20px}.mark{display:inline-grid;place-items:center;width:78px;height:78px;border:1.5px solid var(--gold);border-radius:20px;color:var(--gold);margin-bottom:10px;padding:8px}.mark svg{width:100%;height:100%;display:block}.church-label{display:block;color:#f5d98d;font-size:10px;letter-spacing:1.2px;font-weight:800;margin:0 0 10px}.brand h1{margin:0;font-size:clamp(28px,6vw,42px);letter-spacing:.2px}.brand p{margin:7px 0 0;color:#d8e4ed}.tag{display:inline-block;border:1px solid #52718b;border-radius:999px;padding:5px 11px;font-size:12px;margin-top:12px;color:#f5d98d}
+.panel{background:var(--cream);border-radius:22px;padding:clamp(18px,4vw,30px);box-shadow:0 18px 55px #06162666}.intro{text-align:center}.intro h2{font-size:25px;margin:5px 0 8px;color:var(--navy)}.intro p{color:var(--muted);line-height:1.55}.controls{display:grid;gap:13px;margin:22px 0}.field label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}.field select,.field input{width:100%;padding:13px;border:1px solid #cbd3da;border-radius:11px;background:#fff;font:inherit;color:var(--ink)}button{font:inherit;font-weight:750;border:0;border-radius:12px;padding:13px 16px;cursor:pointer;transition:transform .12s,opacity .12s}button:active{transform:scale(.99)}button:disabled{opacity:.5;cursor:not-allowed}.primary{background:var(--gold);color:#172535;width:100%}.secondary{background:#e5eaf0;color:var(--navy)}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);margin-bottom:14px}.progress{height:8px;background:#dce2e6;border-radius:99px;overflow:hidden;margin-bottom:23px}.progress div{height:100%;width:0;background:var(--gold);transition:width .25s}.qmeta{font-size:12px;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.7px}.question{font-size:clamp(20px,4.5vw,27px);line-height:1.3;color:var(--navy);margin:9px 0 20px}.answers{display:grid;gap:10px}.answer{display:flex;gap:11px;align-items:center;text-align:left;width:100%;background:#fff;border:1px solid #d7dee4;color:var(--ink);font-weight:600}.letter{display:grid;place-items:center;flex:0 0 30px;height:30px;border-radius:9px;background:#edf1f4;color:var(--navy);font-size:13px}.answer.correct{border-color:var(--green);background:#e7f4ec}.answer.correct .letter{background:var(--green);color:#fff}.answer.wrong{border-color:var(--red);background:#f9e9e7}.answer.wrong .letter{background:var(--red);color:#fff}.feedback{margin-top:16px;padding:14px;border-radius:12px;background:#e9eef2;line-height:1.5}.feedback.good{background:#e7f4ec}.feedback.bad{background:#f9e9e7}.ref{display:block;font-size:12px;color:var(--muted);margin-top:8px;font-weight:700}.actions{display:flex;gap:10px;margin-top:18px}.actions button{flex:1}.scoregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}.scorebox{background:#fff;border-radius:12px;padding:13px;text-align:center}.scorebox strong{display:block;font-size:24px;color:var(--navy)}.scorebox span{font-size:11px;color:var(--muted)}.notice{font-size:12px;line-height:1.5;color:var(--muted);margin-top:18px;text-align:center}.ranking{margin-top:22px;padding-top:18px;border-top:1px solid #d7dee4}.ranking h3{color:var(--navy);margin:0 0 8px}.ranking-list{display:grid;gap:8px;margin-top:12px}.rank-row{display:grid;grid-template-columns:34px 1fr auto;gap:9px;align-items:center;background:#fff;border-radius:10px;padding:10px;font-size:14px}.rank-pos{font-weight:800;color:var(--blue);font-size:18px;text-align:center}.rank-row.podium-1{border:2px solid #d8aa24;background:#fff8df}.rank-row.podium-2{border:2px solid #aeb8c2;background:#f4f6f8}.rank-row.podium-3{border:2px solid #bd8154;background:#fff0e5}.rank-score{font-weight:800;color:var(--navy);white-space:nowrap}.hidden{display:none!important}.pill{display:inline-block;background:#e4ebef;color:var(--navy);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+@media(min-width:600px){.controls.two{grid-template-columns:1fr 1fr}}
+  
+/* MELHORAR A NITIDEZ DO CABEÇALHO */
+
+#cabecalhoBiblia {
+  background: #ffffff !important;
+  border: 2px solid #d6ad45;
+  box-shadow: 0 5px 16px rgba(16, 43, 80, 0.12);
+}
+
+#cabecalhoBiblia .textoCabecalho h1 {
+  color: #102b50 !important;
+  font-weight: 900;
+  text-shadow: none;
+}
+
+#cabecalhoBiblia .identidadeIgreja {
+  color: #805900 !important;
+  font-weight: 800;
+}
+
+#cabecalhoBiblia .fraseCabecalho {
+  color: #26364b !important;
+  font-weight: 600;
+}
+
+#cabecalhoBiblia .linhaDourada {
+  background: #d6ad45;
+}
+
+/* CENTRALIZAR O CABEÇALHO */
+
+#cabecalhoBiblia {
+  text-align: center !important;
+}
+
+#cabecalhoBiblia .textoCabecalho {
+  width: 100%;
+  text-align: center !important;
+}
+
+#cabecalhoBiblia .textoCabecalho h1,
+#cabecalhoBiblia .identidadeIgreja,
+#cabecalhoBiblia .fraseCabecalho {
+  text-align: center !important;
+  width: 100%;
+}
+
+#cabecalhoBiblia {
+  flex-direction: column;
+}
+
+/* CARTÕES DOS NÍVEIS — BOM DE BÍBLIA */
+.niveis-cartoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.cartao-nivel {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 100px;
+  padding: 16px;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #17304f;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao-nivel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px #00000025;
+}
+
+.cartao-nivel.ativo {
+  border-color: #e9b949;
+  box-shadow: 0 0 0 2px #e9b94935;
+  background: #fff9e9;
+}
+
+.emoji-nivel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #edf2fa;
+  font-size: 27px;
+}
+
+.texto-nivel {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.texto-nivel strong {
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.texto-nivel small {
+  color: #637187;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cartao-nivel:focus-visible {
+  outline: 3px solid #e9b949;
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .niveis-cartoes {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .cartao-nivel {
+    min-height: 84px;
+  }
+}
+
+
+
+/* ===== SISTEMA VISUAL PROFISSIONAL V4 ===== */
+:root{
+  --navy:#0b1f3a;--blue:#174a78;--blue2:#2868a5;--gold:#e4b64f;
+  --cream:#ffffff;--ink:#17283e;--muted:#5e6f83;--green:#16734b;--red:#b33b46;
+  --line:#dce5ef;--surface:#f4f7fb;--shadow:0 16px 42px rgba(7,27,53,.12)
+}
+html{scroll-behavior:smooth}
+body{padding:clamp(10px,2.8vw,28px);background:radial-gradient(ellipse at top left,#24547a 0%,#102b46 42%,#08192d 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+#cabecalhoBiblia{display:none!important}
+.wrap{max-width:1040px;margin:0 auto}
+.brand{position:relative;overflow:hidden;padding:26px 20px 30px;margin:0 auto 22px;border:1px solid rgba(228,182,79,.45);border-radius:26px;background:linear-gradient(135deg,rgba(13,35,61,.98),rgba(24,74,113,.96));box-shadow:0 22px 50px rgba(0,0,0,.22)}
+.brand:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(228,182,79,.13);border-radius:50%;right:-110px;top:-155px;box-shadow:0 0 0 28px rgba(228,182,79,.035),0 0 0 58px rgba(228,182,79,.025);pointer-events:none}
+.brand:after{content:"";position:absolute;height:3px;left:12%;right:12%;bottom:0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.mark{width:86px;height:86px;border-radius:24px;background:rgba(255,255,255,.055);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);position:relative}
+.church-label{font-size:11px;letter-spacing:2px;color:#f5d98d}
+.brand h1{font-size:clamp(30px,5vw,48px);font-weight:900;letter-spacing:-1.1px;line-height:1.08;margin:5px 0 10px;text-wrap:balance}
+.brand p{font-size:clamp(14px,2vw,17px);color:#dce8f2}
+.tag{font-size:10px;letter-spacing:.8px;background:rgba(255,255,255,.06);border-color:rgba(228,182,79,.45);color:#f7d986}
+.panel{background:#fff;border:1px solid rgba(255,255,255,.7);border-radius:26px;padding:clamp(17px,3.8vw,36px);box-shadow:var(--shadow)}
+.intro h2{font-size:clamp(23px,3vw,30px);letter-spacing:-.45px;border:0;padding:0;margin:12px 0 8px}
+.intro p{max-width:690px;margin:0 auto;color:#5c6c80;font-size:15px}
+.pill{background:#eaf2fb;color:#1b4f7c;border:1px solid #d6e5f4;font-size:11px;letter-spacing:.35px;text-transform:uppercase}
+.percurso-niveis{display:flex;align-items:flex-start;gap:13px;margin:23px 0 14px;padding:15px 17px;border:1px solid #d8e6f4;border-radius:17px;background:linear-gradient(110deg,#f0f6fd,#fff)}
+.percurso-icone{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:12px;background:#174a78;color:#fff;font-size:23px;font-weight:800}
+.percurso-niveis strong{display:block;color:#102b46;font-size:14px}
+.percurso-niveis p{margin:3px 0 0;color:#627287;font-size:13px;line-height:1.5}
+.niveis-cartoes{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:16px 0 25px}
+.cartao-nivel{position:relative;min-height:116px;align-items:flex-start;padding:17px;border:1px solid #dce5ef;border-radius:18px;background:linear-gradient(145deg,#fff,#f8fafd);box-shadow:0 4px 12px rgba(16,43,70,.035);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.cartao-nivel:before{content:"";position:absolute;top:0;left:17px;right:17px;height:3px;border-radius:0 0 6px 6px;background:#c8d5e4;transition:background .18s ease}
+.cartao-nivel:hover{transform:translateY(-3px);border-color:#b5cce2;box-shadow:0 12px 22px rgba(16,43,70,.09)}
+.cartao-nivel.ativo{border-color:#d7a934;background:linear-gradient(145deg,#fffdf6,#fff7e4);box-shadow:0 0 0 2px rgba(228,182,79,.16),0 12px 25px rgba(16,43,70,.08)}
+.cartao-nivel.ativo:before{background:linear-gradient(90deg,#c88c1c,#f1d47d)}
+.emoji-nivel{width:50px;height:50px;border-radius:15px;background:#eaf1f9;font-size:26px;box-shadow:inset 0 0 0 1px rgba(23,74,120,.05)}
+.cartao-nivel.ativo .emoji-nivel{background:#ffedbc}
+.texto-nivel{gap:6px;padding-top:1px}
+.texto-nivel strong{font-size:16px;color:#102b46}
+.texto-nivel small{font-size:12px;line-height:1.45;color:#607186}
+.field label,label{font-size:13px;font-weight:750;color:#233b55}
+.field input,.field select,input,select,textarea{border:1px solid #cbd7e4;border-radius:12px;background:#fff;color:#142a43;padding:13px 14px;outline:none;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{border-color:#4b86bb;box-shadow:0 0 0 3px rgba(40,104,165,.13)}
+button{border-radius:13px;min-height:46px;transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+button:hover:not(:disabled){filter:brightness(1.025);box-shadow:0 7px 16px rgba(13,43,73,.12)}
+button:focus-visible{outline:3px solid #e4b64f;outline-offset:3px}
+.primary{background:linear-gradient(120deg,#174a78,#246ca4);color:#fff;box-shadow:0 7px 16px rgba(23,74,120,.18)}
+#begin{background:linear-gradient(110deg,#d7a43a,#f0ce76);color:#17283e;font-size:16px;font-weight:850;box-shadow:0 9px 18px rgba(181,132,35,.22)}
+.secondary{background:#edf2f7;color:#1b3a5b;border:1px solid #d8e2ec}
+.card{border:1px solid #dce5ef;border-radius:20px;background:linear-gradient(145deg,#fff,#f9fbfd);box-shadow:0 8px 25px rgba(16,43,70,.06);padding:clamp(15px,3vw,23px)!important}
+.card h2{font-size:21px;border:0;border-bottom:1px solid #e3eaf2;padding-bottom:12px;margin:0 0 12px;color:#102b46}
+#areaPartidaOnline{scroll-margin-top:18px}
+#areaPartidaOnline.online-active{animation:onlineIn .32s ease both}
+@keyframes onlineIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+#estadoPartida{background:#edf5fb;border:1px solid #d8e7f4;border-left:4px solid #2d75ad;border-radius:12px;padding:11px 13px;font-weight:750;color:#174a78}
+#nomesJogadores,#progressoOnline,#nivelOnline,#pontuacaoOnline{border:1px solid #e0e8f0;border-left:4px solid #d9ac43;background:#fff;border-radius:12px;padding:12px 13px;font-size:13px;color:#3b5068;overflow-wrap:anywhere}
+#perguntaOnline{font-size:clamp(20px,3vw,26px);line-height:1.35;color:#102b46;margin:22px 0 17px;letter-spacing:-.25px}
+#respostasOnline .primary{display:flex!important;align-items:center;text-align:left;min-height:54px;padding:14px 16px;background:#fff;color:#173553;border:1px solid #d8e3ee;box-shadow:none;white-space:normal;line-height:1.45}
+#respostasOnline .primary:hover:not(:disabled){border-color:#75a1c8;background:#f3f8fd}
+#respostasOnline .primary:disabled{opacity:.76;background:#f1f5f9;color:#3e5369}
+#feedbackOnline{padding:12px 14px;border-radius:12px;background:#f1f6fb;color:#37526e;font-size:13px;line-height:1.55}
+#barraNivel{height:10px!important;border-radius:99px;overflow:hidden;accent-color:#d9ad43}
+#classificacaoNivelOnline{border:1px solid #e0e8f0;background:#f9fbfd;box-shadow:none}
+#classificacaoNivelOnline h3{color:#102b46}
+.ranking{margin-top:30px;padding-top:25px;border-top:1px solid #e0e8f0}
+.ranking h3{font-size:21px;color:#102b46}
+.rank-row{border:1px solid #e4ebf2;border-radius:13px;padding:12px}
+.rank-row.podium-1{border-color:#e1bd5c;background:#fff9e8}
+.notice{font-size:12px;color:#718095;line-height:1.6}
+#result .scorebox{border:1px solid #e0e8f0;box-shadow:0 4px 12px rgba(16,43,70,.04)}
+#result .scorebox strong{font-size:clamp(22px,4vw,30px)}
+footer#assinaturaEduardo{box-shadow:0 12px 32px rgba(0,0,0,.18);border:1px solid rgba(228,182,79,.4);border-bottom:0}
+@media(min-width:760px){.controls{grid-template-columns:1fr}.card[style*="margin-top:20px"]{margin-top:24px!important}}
+@media(max-width:600px){body{padding:10px}.brand{padding:22px 15px 25px;border-radius:21px;margin-bottom:14px}.mark{width:74px;height:74px;border-radius:20px}.brand h1{font-size:clamp(27px,8vw,36px)}.panel{border-radius:21px;padding:17px}.niveis-cartoes{grid-template-columns:1fr;gap:10px}.cartao-nivel{min-height:86px;padding:14px}.emoji-nivel{width:46px;height:46px}.percurso-niveis{padding:13px}.scoregrid{grid-template-columns:1fr 1fr}.scorebox:last-child{grid-column:1/-1}.actions{flex-direction:column}.actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* EXPERIÊNCIA AVANÇADA: progresso, transições e assinatura */
+.level-ribbon{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
+.level-chip{padding:7px 11px;border:1px solid #d6dee7;border-radius:999px;background:#fff;color:#516174;font-size:12px;font-weight:800}
+.level-chip.active{background:#102b46;color:#f3cf70;border-color:#d7b34f;box-shadow:0 4px 14px #102b4620}
+.level-chip.done{background:#e6f5ed;color:#176b47;border-color:#9bd3b6}
+.level-transition{padding:22px;border-radius:18px;background:linear-gradient(135deg,#102b46,#174d78);color:#fff;text-align:center;box-shadow:0 12px 32px #102b4630}
+.level-transition h3{font-size:clamp(23px,4vw,32px);margin:8px 0;color:#f3cf70}
+.level-transition p{line-height:1.6;color:#e7eef7}
+#assinaturaEduardo{position:relative;overflow:hidden;box-shadow:0 18px 50px #06162630!important}
+#assinaturaEduardo:before{content:"EA";position:absolute;right:16px;top:-28px;font-size:130px;font-weight:900;letter-spacing:-12px;color:#ffffff08;pointer-events:none}
+.signature-mark{width:54px;height:54px;margin:0 auto 13px;border:1px solid #d6b45c;border-radius:16px;display:grid;place-items:center;color:#f3cf70;font-size:17px;font-weight:900;letter-spacing:1px;box-shadow:inset 0 0 0 4px #ffffff08}
+.signature-role{display:inline-block;border:1px solid #ffffff26;border-radius:999px;padding:7px 12px;margin:0 0 14px;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#e7eef7}
+.signature-credit{font-size:21px!important;letter-spacing:.2px}
+.signature-line{max-width:360px;width:60%;height:1px;background:linear-gradient(90deg,transparent,#d6b45c,transparent);margin:15px auto}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  
+<header id="cabecalhoBiblia" aria-hidden="true">
+  <div class="simboloBiblia" aria-hidden="true">📖</div>
+  <div class="textoCabecalho">
+    <h1>BOM DE BÍBLIA</h1>
+    <p class="identidadeIgreja">IASD Calemba 2 Antena</p>
+    <p class="fraseCabecalho">Aprender a Bíblia, fortalecer a fé.</p>
+  </div>
+  <div class="linhaDourada"></div>
+</header>
+
+<div class="wrap">
+  <header class="brand">
+    <div class="mark" role="img" aria-label="Símbolo inspirado na identidade visual adventista: cruz, chamas e Bíblia aberta">
+      <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M36 36V14 M28 22H44"/>
+          <path d="M35 11C27 5 20 11 23 19C25 24 30 28 35 31"/>
+          <path d="M37 11C45 5 52 11 49 19C47 24 42 28 37 31"/>
+          <path d="M9 42C18 37 27 39 35 44V61C27 56 18 54 9 58Z"/>
+          <path d="M63 42C54 37 45 39 37 44V61C45 56 54 54 63 58Z"/>
+          <path d="M36 44V61"/>
+        </g>
+      </svg>
+    </div>
+    <span class="church-label">IGREJA ADVENTISTA DO SÉTIMO DIA</span>
+    <h1>Bom de Bíblia IASD Calemba 2 Antena</h1>
+    <p>Aprende. Crê. Vive a Palavra.</p>
+    <span class="tag">PROJECTO INDEPENDENTE • BASE BÍBLICA ADVENTISTA</span>
+  </header>
+  <main class="panel">
+    <section id="start">
+      <div class="intro">
+        <span class="pill">Desafio bíblico gratuito</span>
+        <h2>Vamos testar o teu conhecimento?</h2>
+        <p>Escolhe um dos cinco níveis, responde às perguntas, consulta as referências bíblicas e aprende com cada explicação. Quanto mais avanças, maior será o foco em interpretação, contexto e análise bíblica.</p>
+      </div>
+   
+<div class="niveis-cartoes" id="niveisCartoes">
+
+  <button type="button" class="cartao-nivel ativo"
+    data-nivel="Iniciante">
+    <span class="emoji-nivel">📘</span>
+    <span class="texto-nivel">
+      <strong>Iniciante</strong>
+      <small>Base bíblica e reconhecimento directo · 10 perguntas</small>
+    </span>
+  </button>
+
+  <button type="button" class="cartao-nivel"
+    data-nivel="Intermediário">
+    <span class="emoji-nivel">📗</span>
+    <span class="texto-nivel">
+      <strong>Intermediário</strong>
+      <small>Compreensão de textos e histórias · 15 perguntas</small>
+    </span>
+  </button>
+
+  <button type="button" class="cartao-nivel"
+    data-nivel="Avançado">
+    <span class="emoji-nivel">📙</span>
+    <span class="texto-nivel">
+      <strong>Avançado</strong>
+      <small>Aplicação, contexto e relações bíblicas · 20 perguntas</small>
+    </span>
+  </button>
+
+  <button type="button" class="cartao-nivel"
+    data-nivel="Mestre da Bíblia">
+    <span class="emoji-nivel">📕</span>
+    <span class="texto-nivel">
+      <strong>Mestre da Bíblia</strong>
+      <small>Interpretação e comparação de passagens · 25 perguntas</small>
+    </span>
+  </button>
+
+  <button type="button" class="cartao-nivel"
+    data-nivel="Desafio Apocalíptico">
+    <span class="emoji-nivel">🏆</span>
+    <span class="texto-nivel">
+      <strong>Desafio Apocalíptico</strong>
+      <small>Análise profética e temas complexos · 30 perguntas</small>
+    </span>
+  </button>
+
+</div>
+
+<select id="level" hidden>
+  <option value="Iniciante">Iniciante</option>
+  <option value="Intermediário">Intermediário</option>
+  <option value="Avançado">Avançado</option>
+  <option value="Mestre da Bíblia">Mestre da Bíblia</option>
+  <option value="Desafio Apocalíptico">Desafio Apocalíptico</option>
+</select>
+
+<div class="controls">
+  <div class="field">
+    <label for="player">Nome do participante</label>
+    <input id="player" maxlength="32"
+      placeholder="Ex.: Ana Manuel">
+  </div>
+</div>
+
+      <p class="notice" style="margin:0 0 12px">A Maratona Bíblica percorre automaticamente os 5 níveis: 100 perguntas por partida, seleccionadas de um banco que cobre os 66 livros da Bíblia. As alternativas são embaralhadas e a dificuldade progride por nível. No fim de cada nível, a plataforma avança sozinha para o seguinte.</p>
+      <button class="primary" id="begin">🚀 Iniciar Maratona Bíblica</button>
+      
+<div class="card" style="margin-top:20px;padding:18px;">
+  <h2>⚔️ Disputas Bíblicas Online</h2>
+  <p>Cria uma sala privada com código ou encontra uma partida aberta. Cada sala aceita até 10 participantes.</p>
+  <label for="nomeDisputa">O teu nome</label>
+  <input id="nomeDisputa" type="text" maxlength="32" placeholder="Escreve o teu nome">
+  <label for="nivelDisputa">Modo de dificuldade</label>
+  <select id="nivelDisputa">
+    <option value="Iniciante">Maratona progressiva — começa no Iniciante e termina no Desafio Apocalíptico</option>
+  </select>
+  <button class="primary" id="criarSala">🔐 Criar sala privada</button>
+  <button class="primary" id="partidaAberta">🌍 Procurar partida aberta</button>
+  <p id="mensagemDisputa"></p>
+  
+  <label for="codigoEntrada">Código da sala</label>
+  <input
+    id="codigoEntrada"
+    type="text"
+    maxlength="6"
+    placeholder="Ex.: AB12CD"
+    style="text-transform:uppercase"
+  >
+  <button class="primary" id="entrarSala" type="button">
+    🚪 Entrar na sala
+  </button>
+  <p id="mensagemEntrada"></p>
+</div>
+      
+<div id="areaPartidaOnline" class="card" style="display:none;margin-top:20px;padding:18px;">
+  <h2>📖 Partida Bíblica Online</h2>
+  <p id="estadoPartida">A aguardar os jogadores...</p>
+  <p id="nomesJogadores"></p>
+  <p id="progressoOnline"></p>
+  <p id="nivelOnline">Nível: Aguardando partida</p>
+  <progress id="barraNivel" value="0" max="10"
+  style="width:100%;height:18px;"></progress>
+  <h3 id="perguntaOnline">Aguardando o início da partida</h3>
+  <div id="respostasOnline"></div>
+  <p id="feedbackOnline"></p>
+  <p id="pontuacaoOnline"></p>
+  <div id="classificacaoNivelOnline"></div>
+  <button id="iniciarPartidaOnline" class="primary" type="button">▶️ Iniciar partida</button>
+  <button id="proximaOnline" class="primary" type="button">Próxima pergunta</button>
+</div>
+
+
+      <section class="ranking" aria-labelledby="rankingTitle">
+        <h3 id="rankingTitle">🏆 Ranking público</h3>
+        <p class="notice" style="text-align:left;margin:6px 0">Os melhores resultados aparecem aqui quando a ligação à base de dados estiver configurada.</p>
+        <button class="secondary" id="refreshRanking" type="button" style="width:100%">Atualizar ranking</button>
+        <p id="rankingStatus" class="notice" aria-live="polite">Aguardando configuração da base de dados.</p>
+        <div id="rankingList" class="ranking-list"></div>
+      </section>
+      <p class="notice">As explicações resumem uma leitura bíblica de orientação adventista. O banco foi ampliado para abranger os 66 livros bíblicos; recomenda-se revisão editorial contínua das perguntas e referências. Esta versão não é afiliada oficialmente à Igreja Adventista.</p>
+    </section>
+    <section id="quiz" class="hidden">
+      <div id="levelRibbon" class="level-ribbon" aria-label="Progresso dos cinco níveis"></div>
+      <div class="topline"><span id="playerLabel">Participante</span><span id="counter">Pergunta 1 de 8</span></div>
+      <div class="progress"><div id="bar"></div></div>
+      <div class="qmeta" id="qmeta"></div>
+      <h2 class="question" id="question"></h2>
+      <div class="answers" id="answers"></div>
+      <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+      <div class="actions"><button id="quit" class="secondary">Sair</button><button id="next" class="primary" disabled>Próxima pergunta</button></div>
+    </section>
+    <section id="result" class="hidden">
+      <div class="intro">
+        <span class="pill">Desafio concluído</span>
+        <h2 id="resultTitle">Muito bem!</h2>
+        <p id="resultMessage"></p>
+      </div>
+      <div class="scoregrid">
+        <div class="scorebox"><strong id="points">0</strong><span>PONTOS</span></div>
+        <div class="scorebox"><strong id="correctCount">0/0</strong><span>RESPOSTAS CERTAS</span></div>
+        <div class="scorebox"><strong id="percentage">0%</strong><span>APROVEITAMENTO</span></div>
+      </div>
+      <button class="primary" id="again">Jogar novamente</button>
+      <p id="saveStatus" class="notice" aria-live="polite">A preparar o envio do resultado para o ranking público.</p>
+    </section>
+  </main>
+</div>
+<script>
+// CONFIGURAÇÃO: substitui estes dois valores pelos dados do teu projecto Supabase.
+// Usa apenas Project URL e Publishable key (ou anon key antiga). Nunca uses Secret key/service_role.
+const SUPABASE_URL = "https://pjzvhagbmgtwlpbuhjyy.supabase.co";
+const SUPABASE_PUBLIC_KEY = "sb_publishable_A--3byS30zfsVvy3_EKC2w_NVDeg8bD";
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLIC_KEY
+);
+function supabaseConfigured(){
+  return SUPABASE_URL.startsWith("https://") &&
+    !SUPABASE_URL.includes("COLOCA_AQUI") &&
+    SUPABASE_PUBLIC_KEY.length > 20 &&
+    !SUPABASE_PUBLIC_KEY.includes("COLOCA_AQUI");
+}
+async function loadRanking(){
+  const status=$("rankingStatus");
+  const list=$("rankingList");
+  if(!supabaseConfigured()){
+    status.textContent="Falta configurar o Project URL e a Publishable key neste ficheiro HTML.";
+    return;
+  }
+  status.textContent="A carregar ranking…";
+  try{
+    const response=await fetch(`${SUPABASE_URL}/rest/v1/ranking_biblia?select=nome,pontuacao,total_perguntas,nivel,criado_em&order=pontuacao.desc,criado_em.asc&limit=10`,{
+      headers:{apikey:SUPABASE_PUBLIC_KEY,Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`}
+    });
+    if(!response.ok) throw new Error("Não foi possível ler o ranking. Verifica as políticas da tabela e o Project URL.");
+    const rows=await response.json();
+    list.replaceChildren();
+    if(!rows.length){status.textContent="Ainda não há resultados no ranking. Sê o primeiro a participar!";return;}
+    rows.forEach((row,i)=>{
+      const item=document.createElement("div");item.className="rank-row";
+      if(i<3)item.classList.add(`podium-${i+1}`);
+      const pos=document.createElement("span");pos.className="rank-pos";
+      pos.textContent=i===0?"🥇":i===1?"🥈":i===2?"🥉":`${i+1}.`;
+      const info=document.createElement("span");
+      const name=document.createElement("strong");name.textContent=row.nome||"Participante";
+      const level=document.createElement("small");level.style.display="block";level.style.color="var(--muted)";level.textContent=row.nivel||"Nível não indicado";
+      info.append(name,level);
+      const scoreEl=document.createElement("span");scoreEl.className="rank-score";scoreEl.textContent=`${row.pontuacao} pts`;
+      item.append(pos,info,scoreEl);list.appendChild(item);
+    });
+    status.textContent=`Top 10 — a mostrar ${rows.length} resultado(s), ordenados pela pontuação.`;
+  }catch(error){status.textContent=error.message||"Erro ao carregar o ranking.";}
+}
+async function saveRankingResult(){
+  const status=$("saveStatus");
+  if(!supabaseConfigured()){
+    status.textContent="O resultado foi calculado, mas o ranking ainda não está ligado. Falta configurar os dados do Supabase.";
+    return;
+  }
+  status.textContent="A guardar o resultado no ranking…";
+  try{
+    const response=await fetch(`${SUPABASE_URL}/rest/v1/ranking_biblia`,{
+      method:"POST",
+      headers:{apikey:SUPABASE_PUBLIC_KEY,Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`,"Content-Type":"application/json",Prefer:"return=minimal"},
+      body:JSON.stringify({nome:playerName.slice(0,32),pontuacao:score*10,total_perguntas:questions.length,nivel:selectedLevel})
+    });
+    if(!response.ok) throw new Error("Não foi possível guardar. Confirma a política de INSERT no Supabase.");
+    status.textContent="Resultado enviado para o ranking público!";
+    await loadRanking();
+  }catch(error){status.textContent=error.message||"Erro ao guardar o resultado.";}
+}
+
+const bank = [
+ {level:"Iniciante",cat:"Bíblia",q:"Quem construiu a arca para sobreviver ao dilúvio?",a:["Abraão","Moisés","Noé","David"],correct:2,ref:"Génesis 6:13-22",why:"Deus instruiu Noé a construir a arca para preservar a sua família e os animais durante o dilúvio."},
+{level:"Iniciante",cat:"Bíblia",q:"Quem recebeu de Deus a missão de libertar Israel do Egipto?",a:["Moisés","Samuel","Gideão","Neemias"],correct:0,ref:"Êxodo 3:7-10",why:"Deus chamou Moisés para conduzir os israelitas para fora do Egipto."},
+{level:"Iniciante",cat:"Bíblia",q:"Qual foi o primeiro milagre de Jesus relatado no Evangelho de João?",a:["Curar um cego","Transformar água em vinho","Ressuscitar Lázaro","Multiplicar os pães"],correct:1,ref:"João 2:1-11",why:"Em Caná da Galileia, Jesus transformou água em vinho, manifestando a sua glória."},
+ {level:"Iniciante",cat:"Doutrinas adventistas",q:"Segundo Génesis 2:2-3, o que fez Deus no sétimo dia?",a:["Criou os peixes","Descansou, abençoou e santificou o dia","Construiu o santuário","Instituiu a Páscoa"],correct:1,ref:"Génesis 2:2-3; Êxodo 20:8-11",why:"O relato diz que Deus descansou no sétimo dia, o abençoou e o santificou. Os adventistas reconhecem aqui a base bíblica do sábado como memorial da criação."},
+ {level:"Iniciante",cat:"Bíblia",q:"Em que cidade nasceu Jesus?",a:["Nazaré","Jerusalém","Belém","Cafarnaum"],correct:2,ref:"Mateus 2:1; Lucas 2:4-7",why:"Os Evangelhos de Mateus e Lucas situam o nascimento de Jesus em Belém."},
+ {level:"Intermediário",cat:"Vida cristã",q:"Segundo João 13:34-35, como os discípulos de Jesus seriam reconhecidos?",a:["Pela riqueza","Pelo amor uns aos outros","Pelo poder político","Pela fama"],correct:1,ref:"João 13:34-35",why:"Jesus ensinou que o amor mútuo seria a marca visível dos seus discípulos."},
+ {level:"Intermediário",cat:"Doutrinas adventistas",q:"Qual é a esperança central apresentada em 1 Tessalonicenses 4:16-17?",a:["A reencarnação","A segunda vinda de Cristo e a reunião dos fiéis com Ele","A imortalidade natural de todos os seres humanos","A construção de um templo em Jerusalém"],correct:1,ref:"1 Tessalonicenses 4:16-17",why:"Paulo descreve a descida do Senhor, a ressurreição dos mortos em Cristo e a reunião dos salvos com Ele."},
+ {level:"Intermediário",cat:"Bíblia",q:"Quem recebeu os Dez Mandamentos no monte Sinai?",a:["Josué","Arão","Moisés","Elias"],correct:2,ref:"Êxodo 31:18; 32:15-16",why:"O relato bíblico identifica Moisés como aquele que recebeu as tábuas do testemunho."},
+ {level:"Avançado",cat:"Doutrinas adventistas",q:"Segundo Eclesiastes 9:5, qual é a condição dos mortos descrita pelo texto?",a:["Conhecem tudo o que acontece na Terra","Os mortos não sabem coisa nenhuma","Regressam imediatamente em outro corpo","Governam os vivos"],correct:1,ref:"Eclesiastes 9:5; João 11:11-14",why:"Eclesiastes afirma que os mortos não sabem coisa nenhuma; Jesus também comparou a morte de Lázaro ao sono. A interpretação deve considerar o contexto bíblico mais amplo."},
+ {level:"Avançado",cat:"Vida cristã",q:"Segundo Miqueias 6:8, o que o Senhor pede ao ser humano?",a:["Praticar a justiça, amar a misericórdia e andar humildemente com Deus","Procurar fama","Nunca ajudar desconhecidos","Confiar apenas nas próprias forças"],correct:0,ref:"Miqueias 6:8",why:"O profeta resume a resposta que Deus deseja: justiça, misericórdia e humildade diante dEle."},
+ {level:"Avançado",cat:"Bíblia",q:"Qual discípulo negou Jesus três vezes antes de o galo cantar?",a:["João","Pedro","André","Tomé"],correct:1,ref:"Lucas 22:54-62",why:"Pedro negou conhecer Jesus três vezes e, depois de se lembrar das palavras do Senhor, chorou amargamente."},
+ {level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"De acordo com Apocalipse 14:6-7, a mensagem do primeiro anjo chama as pessoas a quê?",a:["Adorar o Criador","Adorar imagens","Abandonar a Bíblia","Procurar poder terreno"],correct:0,ref:"Apocalipse 14:6-7",why:"A mensagem chama todas as nações a temer a Deus, dar-Lhe glória e adorar Aquele que fez o céu, a Terra, o mar e as fontes das águas."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Daniel 2, que materiais aparecem misturados nos pés da estátua?",a:["Ouro e prata", "Ferro e barro", "Bronze e cobre", "Prata e madeira"],correct:1,ref:"Daniel 2:41-43",why:"O ferro misturado com barro representa um reino dividido."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"Quantos animais aparecem na visão de Daniel 7?",a:["Dois", "Três", "Quatro", "Sete"],correct:2,ref:"Daniel 7:2-7",why:"A visão apresenta quatro grandes animais."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"Quantas igrejas recebem mensagens em Apocalipse 2 e 3?",a:["Quatro", "Sete", "Doze", "Vinte e quatro"],correct:1,ref:"Apocalipse 1:11; capítulos 2–3",why:"As mensagens são dirigidas a sete igrejas da Ásia."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 12, que mulher é vista vestida do sol?",a:["Uma mulher numa visão simbólica", "A rainha de Sabá", "A esposa de Pilatos", "A filha de Herodes"],correct:0,ref:"Apocalipse 12:1-6",why:"A mulher e o dragão fazem parte de uma visão profética."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"O que anuncia o primeiro anjo de Apocalipse 14?",a:["O evangelho eterno", "A construção de uma torre", "Um rei terreno", "O fim da oração"],correct:0,ref:"Apocalipse 14:6-7",why:"O primeiro anjo proclama o evangelho eterno e chama à adoração do Criador."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"Qual número é associado à besta em Apocalipse 13:18?",a:["12", "40", "666", "144"],correct:2,ref:"Apocalipse 13:18",why:"O texto menciona o número 666."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"Que período é mencionado em Daniel 8:14?",a:["2300 tardes e manhãs", "40 dias", "70 anos", "12 meses"],correct:0,ref:"Daniel 8:14",why:"A passagem menciona 2300 tardes e manhãs; a interpretação requer estudar o contexto."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"O que João vê descendo do céu em Apocalipse 21?",a:["A Nova Jerusalém", "A torre de Babel", "A antiga Babilónia", "O monte Sinai"],correct:0,ref:"Apocalipse 21:1-2",why:"João vê a Nova Jerusalém descendo do céu."},
+ 
+ // Perguntas adicionais por nível — cada nível tem pelo menos oito perguntas.
+ {level:"Iniciante",cat:"Bíblia",q:"Quem foi lançado na cova dos leões?",a:["Daniel","José","Samuel","Isaías"],correct:0,ref:"Daniel 6:16-23",why:"Daniel foi lançado na cova por continuar a orar a Deus."},
+ {level:"Iniciante",cat:"Bíblia",q:"Quem derrotou Golias?",a:["Saul","David","Salomão","Josué"],correct:1,ref:"1 Samuel 17:45-50",why:"David enfrentou Golias confiando no Senhor."},
+ {level:"Iniciante",cat:"Bíblia",q:"Quantos discípulos Jesus escolheu como apóstolos?",a:["Sete","Dez","Doze","Quarenta"],correct:2,ref:"Lucas 6:13-16",why:"Jesus escolheu doze apóstolos."},
+ {level:"Iniciante",cat:"Bíblia",q:"Quem era a mãe de Jesus?",a:["Marta","Maria","Rute","Ester"],correct:1,ref:"Lucas 1:26-31",why:"O anjo Gabriel anunciou a Maria que ela seria mãe de Jesus."},
+ {level:"Iniciante",cat:"Bíblia",q:"Que alimento Jesus usou para alimentar uma multidão, além de peixes?",a:["Uvas","Pães","Azeitonas","Melões"],correct:1,ref:"João 6:9-13",why:"O relato menciona cinco pães de cevada e dois peixes."},
+ {level:"Intermediário",cat:"Bíblia",q:"Que parábola fala de um homem que ajudou um viajante ferido?",a:["O semeador","O bom samaritano","As dez virgens","O rico insensato"],correct:1,ref:"Lucas 10:30-37",why:"O samaritano demonstrou amor prático ao cuidar do homem ferido."},
+ {level:"Intermediário",cat:"Bíblia",q:"Qual profeta foi engolido por um grande peixe?",a:["Jonas","Amós","Joel","Ageu"],correct:0,ref:"Jonas 1:17",why:"O livro de Jonas relata que o Senhor preparou um grande peixe."},
+ {level:"Intermediário",cat:"Bíblia",q:"Quem interpretou os sonhos do faraó no Egipto?",a:["Moisés","José","Arão","Benjamim"],correct:1,ref:"Génesis 41:14-32",why:"José explicou os sonhos sobre sete anos de abundância e sete anos de fome."},
+ {level:"Intermediário",cat:"Bíblia",q:"Em que rio João baptizava as pessoas?",a:["Nilo","Eufrates","Jordão","Tigre"],correct:2,ref:"Mateus 3:5-6",why:"João baptizava no rio Jordão."},
+ {level:"Intermediário",cat:"Bíblia",q:"Qual mulher escondeu os espias israelitas em Jericó?",a:["Débora","Raabe","Ana","Abigail"],correct:1,ref:"Josué 2:1-6",why:"Raabe acolheu e escondeu os espias enviados por Josué."},
+ {level:"Avançado",cat:"Doutrinas",q:"Segundo Romanos 6:23, qual é o dom gratuito de Deus?",a:["Riqueza terrena","Vida eterna em Cristo Jesus","Fama","Poder político"],correct:1,ref:"Romanos 6:23",why:"Paulo contrasta o salário do pecado com o dom gratuito de Deus: a vida eterna em Cristo."},
+ {level:"Avançado",cat:"Bíblia",q:"Qual era o nome do sacerdote que encontrou o livro da Lei no templo no tempo de Josias?",a:["Hilquias","Eli","Zadoque","Abiatar"],correct:0,ref:"2 Reis 22:8-11",why:"Hilquias, o sumo sacerdote, encontrou o livro da Lei na casa do Senhor."},
+ {level:"Avançado",cat:"Bíblia",q:"Quem escreveu a maior parte das cartas do Novo Testamento tradicionalmente atribuídas a um apóstolo?",a:["Pedro","Paulo","Tiago","Judas"],correct:1,ref:"Romanos 1:1; 2 Timóteo 1:1",why:"O Novo Testamento contém numerosas cartas identificadas como escritas por Paulo."},
+ {level:"Avançado",cat:"Bíblia",q:"Em Actos 15, qual questão importante foi debatida pelos apóstolos e anciãos?",a:["A construção da arca","A circuncisão dos gentios convertidos","A escolha de um rei","A divisão do Mar Vermelho"],correct:1,ref:"Actos 15:1-29",why:"O concílio de Jerusalém debateu as exigências impostas aos gentios que se convertiam."},
+ {level:"Avançado",cat:"Bíblia",q:"Segundo Hebreus 11:1, a fé é a certeza de quê?",a:["Das coisas que se esperam e a convicção de factos que se não veem","Que nunca teremos dificuldades","Que podemos controlar o futuro","Que não precisamos de agir"],correct:0,ref:"Hebreus 11:1",why:"Hebreus descreve a fé como certeza daquilo que se espera e convicção do que não se vê."},
+ {level:"Mestre da Bíblia",cat:"Exegese",q:"Em Lucas 4:16-21, que passagem Jesus leu na sinagoga de Nazaré?",a:["Isaías 61:1-2","Daniel 2:44","Salmo 23","Génesis 1:1"],correct:0,ref:"Lucas 4:16-21; Isaías 61:1-2",why:"Jesus leu uma passagem de Isaías sobre o Espírito do Senhor e a missão de anunciar boas-novas."},
+ {level:"Mestre da Bíblia",cat:"Santuário",q:"Segundo Hebreus 8:1-2, Cristo é ministro de que santuário?",a:["De um santuário feito por mãos humanas apenas","Do santuário verdadeiro, que o Senhor erigiu","Do templo de Salomão na Terra","De um altar pagão"],correct:1,ref:"Hebreus 8:1-2",why:"Hebreus apresenta Cristo como ministro do santuário verdadeiro, estabelecido pelo Senhor."},
+ {level:"Mestre da Bíblia",cat:"Profecias",q:"Em Daniel 9:24, sobre quem e sobre que cidade são determinadas as setenta semanas?",a:["O povo de Daniel e a cidade santa","Os filisteus e Gaza","Roma e Atenas","Egipto e Tebas"],correct:0,ref:"Daniel 9:24",why:"O texto menciona o povo de Daniel e a cidade santa; a interpretação profética exige analisar o contexto."},
+ {level:"Mestre da Bíblia",cat:"Exegese",q:"Qual princípio é ilustrado pela comparação de Escritura com Escritura?",a:["Interpretar um texto ignorando o contexto","Deixar que passagens relacionadas ajudem a esclarecer o tema","Usar apenas opiniões pessoais","Evitar ler o capítulo inteiro"],correct:1,ref:"Isaías 28:9-10; 1 Coríntios 2:13",why:"Comparar passagens relacionadas ajuda a compreender o ensino bíblico dentro do seu contexto."},
+ {level:"Mestre da Bíblia",cat:"Doutrinas",q:"Segundo 1 Coríntios 15:51-54, quando os fiéis mortais serão revestidos de imortalidade?",a:["Na ressurreição, ao toque da última trombeta","No nascimento","Ao receberem uma coroa terrena","Antes da criação"],correct:0,ref:"1 Coríntios 15:51-54",why:"Paulo relaciona a transformação dos fiéis com a última trombeta e a ressurreição."},
+ {level:"Mestre da Bíblia",cat:"Profecias",q:"Em Apocalipse 1:20, o que representam as sete estrelas na explicação da visão?",a:["Os anjos das sete igrejas","Sete reis do Egipto","Sete rios","Sete montanhas"],correct:0,ref:"Apocalipse 1:20",why:"A própria passagem explica que as estrelas são os anjos das sete igrejas."},
+ {level:"Mestre da Bíblia",cat:"Profecias",q:"Segundo Daniel 7:10, o que foi colocado diante do Ancião de Dias?",a:["Um mar de vidro","Milhares de milhares que o serviam e milhões que estavam diante dele","Uma arca de madeira","Uma torre"],correct:1,ref:"Daniel 7:9-10",why:"A visão descreve a corte celestial e multidões que serviam diante do Ancião de Dias."},
+ {level:"Mestre da Bíblia",cat:"Bíblia",q:"Qual é o tema central de Hebreus 4:14-16?",a:["Jesus como grande sumo sacerdote e o convite para nos aproximarmos de Deus","A construção do templo de Salomão","A viagem de Jonas","A queda de Jericó"],correct:0,ref:"Hebreus 4:14-16",why:"O texto apresenta Jesus como grande sumo sacerdote e convida os crentes a aproximarem-se do trono da graça."},
+ {level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 5, quem é digno de abrir o livro e os seus selos?",a:["Um dos anciãos","O Leão da tribo de Judá, o Cordeiro","O dragão","A besta que sobe do mar"],correct:1,ref:"Apocalipse 5:1-9",why:"A visão identifica Cristo como o Cordeiro digno de abrir o livro e os seus selos."}, 
+{level:"Intermediário",cat:"Bíblia",q:"Quem sucedeu Moisés na liderança de Israel?",a:["Calebe","Josué","Arão","Samuel"],correct:1,ref:"Josué 1:1-2",why:"Deus chamou Josué para conduzir Israel depois da morte de Moisés."},
+{level:"Intermediário",cat:"Bíblia",q:"Qual rei pediu sabedoria a Deus?",a:["Saul","David","Salomão","Ezequias"],correct:2,ref:"1 Reis 3:5-12",why:"Salomão pediu entendimento para governar o povo com justiça."},
+{level:"Intermediário",cat:"Bíblia",q:"Quem foi levado ao céu num redemoinho?",a:["Elias","Eliseu","Isaías","Jeremias"],correct:0,ref:"2 Reis 2:11",why:"Elias foi levado ao céu num redemoinho."},
+{level:"Intermediário",cat:"Bíblia",q:"Quem era o cobrador de impostos que subiu a uma árvore para ver Jesus?",a:["Nicodemos","Zaqueu","Bartimeu","Cornélio"],correct:1,ref:"Lucas 19:1-4",why:"Zaqueu subiu a um sicómoro porque era de pequena estatura."},
+{level:"Intermediário",cat:"Bíblia",q:"Em que dia da semana as mulheres foram ao túmulo de Jesus?",a:["No primeiro dia da semana","No segundo dia","Na sexta-feira","No sábado à tarde"],correct:0,ref:"Lucas 24:1",why:"As mulheres foram ao túmulo muito cedo no primeiro dia da semana."},
+{level:"Intermediário",cat:"Bíblia",q:"Qual apóstolo era conhecido como o discípulo amado no Evangelho de João?",a:["João","Pedro","André","Filipe"],correct:0,ref:"João 21:20-24",why:"O Evangelho identifica o discípulo que Jesus amava, tradicionalmente entendido como João."},
+{level:"Intermediário",cat:"Bíblia",q:"Quem foi escolhido para ocupar o lugar de Judas entre os doze apóstolos?",a:["Barnabé","Matias","Silas","Estêvão"],correct:1,ref:"Actos 1:23-26",why:"Matias foi escolhido depois de os discípulos orarem e lançarem sortes."},
+{level:"Intermediário",cat:"Vida cristã",q:"Segundo Gálatas 5:22-23, qual destas qualidades faz parte do fruto do Espírito?",a:["Inveja","Domínio próprio","Orgulho","Vingança"],correct:1,ref:"Gálatas 5:22-23",why:"O domínio próprio é uma das qualidades enumeradas por Paulo."},
+{level:"Intermediário",cat:"Doutrinas adventistas",q:"Segundo Êxodo 20:8-11, qual dia foi separado como sábado?",a:["O primeiro dia","O sexto dia","O sétimo dia","Qualquer dia escolhido"],correct:2,ref:"Êxodo 20:8-11",why:"O mandamento identifica o sétimo dia como sábado, memorial da criação."},
+ 
+{level:"Avançado",cat:"Bíblia",q:"Qual profeta confrontou o rei David por causa do seu pecado com Bate-Seba?",a:["Elias","Natã","Eliseu","Samuel"],correct:1,ref:"2 Samuel 12:1-7",why:"Natã contou uma parábola a David e mostrou-lhe a gravidade do seu pecado."},
+{level:"Avançado",cat:"Bíblia",q:"Quem foi escolhido para substituir Judas Iscariotes entre os apóstolos?",a:["Paulo","Matias","Barnabé","Timóteo"],correct:1,ref:"Actos 1:21-26",why:"Os discípulos escolheram Matias depois de orarem."},
+{level:"Avançado",cat:"Bíblia",q:"Qual rei viu uma mão escrever na parede durante um banquete?",a:["Nabucodonosor","Ciro","Belsazar","Dario"],correct:2,ref:"Daniel 5:1-5",why:"Durante o banquete de Belsazar, apareceu uma mão que escreveu na parede."},
+{level:"Avançado",cat:"Bíblia",q:"Quem explicou ao eunuco etíope a profecia de Isaías?",a:["Pedro","Filipe","Estêvão","André"],correct:1,ref:"Actos 8:26-35",why:"Filipe explicou que a passagem apontava para Jesus."},
+{level:"Avançado",cat:"Bíblia",q:"Qual juiz de Israel fez um voto precipitado depois de uma batalha?",a:["Gideão","Sansão","Jefté","Débora"],correct:2,ref:"Juízes 11:30-35",why:"Jefté fez um voto precipitado antes de enfrentar os amonitas."},
+{level:"Avançado",cat:"Bíblia",q:"Que profeta teve a visão de um vale de ossos secos?",a:["Ezequiel","Jeremias","Oseias","Amós"],correct:0,ref:"Ezequiel 37:1-14",why:"A visão simbolizava a restauração de Israel pelo poder de Deus."},
+{level:"Avançado",cat:"Bíblia",q:"Quem foi a mulher que julgava Israel debaixo de uma palmeira?",a:["Ester","Débora","Rute","Miriã"],correct:1,ref:"Juízes 4:4-5",why:"Débora era profetisa e julgava Israel."},
+{level:"Avançado",cat:"Bíblia",q:"Qual apóstolo teve a visão de um lençol com animais antes de visitar Cornélio?",a:["João","Pedro","Paulo","Tiago"],correct:1,ref:"Actos 10:9-20",why:"A visão preparou Pedro para compreender que não devia considerar impuros os gentios que Deus aceitava."},
+{level:"Avançado",cat:"Bíblia",q:"Quem pediu a Jesus que se lembrasse dele quando entrasse no seu reino?",a:["Um dos ladrões crucificados","Pilatos","Barrabás","Simão, o fariseu"],correct:0,ref:"Lucas 23:39-43",why:"Um dos criminosos reconheceu a inocência de Jesus e pediu-Lhe que Se lembrasse dele."},
+{level:"Avançado",cat:"Doutrinas adventistas",q:"Segundo 1 Coríntios 6:19-20, por que devemos cuidar do nosso corpo?",a:["Porque somos donos absolutos dele","Porque o corpo é santuário do Espírito Santo e pertencemos a Deus","Para nunca envelhecer","Para obter fama"],correct:1,ref:"1 Coríntios 6:19-20",why:"Paulo ensina que o corpo é santuário do Espírito Santo e que devemos glorificar a Deus nele."},
+{level:"Avançado",cat:"Bíblia",q:"Qual rei de Judá promoveu uma importante reforma depois de se encontrar o livro da Lei?",a:["Josias","Acaz","Manassés","Roboão"],correct:0,ref:"2 Reis 22:8-13; 23:1-3",why:"Josias ouviu a leitura do livro da Lei e promoveu uma reforma religiosa."},
+{level:"Avançado",cat:"Bíblia",q:"Segundo Actos 17:11, por que os bereanos foram considerados mais nobres?",a:["Porque eram ricos","Porque examinavam diariamente as Escrituras para verificar o que ouviam","Porque recusavam ouvir os apóstolos","Porque governavam muitas cidades"],correct:1,ref:"Actos 17:10-12",why:"Os bereanos comparavam a pregação com as Escrituras para verificar se era verdadeira."},
+
+{level:"Mestre da Bíblia",cat:"Exegese",q:"Em João 1:1, como é descrito o Verbo?",a:["Como um anjo criado","Como estando no princípio com Deus e sendo Deus","Como um rei de Israel","Como um sacerdote levítico"],correct:1,ref:"João 1:1-3",why:"João apresenta o Verbo como existente desde o princípio, em relação com Deus e identificado como Deus."},
+{level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"Segundo Romanos 3:28, como é justificado o ser humano?",a:["Pelas obras da lei","Pela fé, independentemente das obras da lei","Pela riqueza","Pela tradição humana"],correct:1,ref:"Romanos 3:28",why:"Paulo ensina que a justificação é pela fé, não como resultado das obras da lei."},
+{level:"Mestre da Bíblia",cat:"Santuário",q:"Em Hebreus 9:11-12, o que Cristo obteve por meio do seu próprio sangue?",a:["Uma coroa terrena","Eterna redenção","Um reino político","A libertação de Roma"],correct:1,ref:"Hebreus 9:11-12",why:"O texto afirma que Cristo entrou uma vez por todas e obteve eterna redenção."},
+{level:"Mestre da Bíblia",cat:"Profecias",q:"Em Daniel 7:13-14, o que é dado ao Filho do Homem?",a:["Domínio, glória e reino","O trono de Babilónia","A liderança dos levitas","Um exército romano"],correct:0,ref:"Daniel 7:13-14",why:"A visão descreve o Filho do Homem recebendo domínio, glória e um reino eterno."},
+{level:"Mestre da Bíblia",cat:"Bíblia",q:"Segundo Efésios 2:8-10, para que fomos criados em Cristo Jesus?",a:["Para viver sem responsabilidade","Para boas obras que Deus preparou","Para obter fama","Para evitar toda a convivência"],correct:1,ref:"Efésios 2:8-10",why:"A salvação é pela graça mediante a fé, e os salvos são criados em Cristo para boas obras."},
+{level:"Mestre da Bíblia",cat:"Exegese",q:"Qual é o contexto imediato de Filipenses 2:5-8?",a:["O apelo à humildade e à atitude de Cristo","A divisão do reino de Israel","A construção da arca","A queda de Jericó"],correct:0,ref:"Filipenses 2:1-8",why:"Paulo usa a atitude humilde de Cristo como exemplo para a comunidade cristã."},
+{level:"Mestre da Bíblia",cat:"Bíblia",q:"Em Romanos 5:12, por meio de quem o pecado entrou no mundo?",a:["Moisés","Adão","Abraão","David"],correct:1,ref:"Romanos 5:12",why:"Paulo relaciona a entrada do pecado no mundo com um só homem, Adão."},
+{level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"Segundo 1 Tessalonicenses 4:16, o que acontece primeiro na sequência descrita por Paulo?",a:["Os mortos em Cristo ressuscitam","Todos recebem imediatamente a recompensa final","A Terra deixa de existir","Os discípulos regressam a Jerusalém"],correct:0,ref:"1 Tessalonicenses 4:16-17",why:"Paulo afirma que os mortos em Cristo ressuscitarão primeiro, antes da reunião descrita no versículo seguinte."},
+{level:"Mestre da Bíblia",cat:"Profecias",q:"Em Apocalipse 12:17, contra quem o dragão faz guerra?",a:["Aos que guardam os mandamentos de Deus e têm o testemunho de Jesus","Aos reis de Israel apenas","Aos comerciantes de Tiro","Aos habitantes de Nínive"],correct:0,ref:"Apocalipse 12:17",why:"A passagem identifica o povo contra o qual o dragão faz guerra."},
+{level:"Mestre da Bíblia",cat:"Bíblia",q:"Qual foi a principal preocupação de Paulo em Romanos 9–11?",a:["O lugar de Israel no plano de Deus e a misericórdia divina","A construção do templo de Salomão","A escolha dos doze apóstolos","A divisão das terras de Canaã"],correct:0,ref:"Romanos 9–11",why:"Paulo discute Israel, a promessa, a fé e a misericórdia de Deus."},
+{level:"Mestre da Bíblia",cat:"Exegese",q:"Em Mateus 5:17, o que Jesus diz sobre a Lei e os Profetas?",a:["Veio abolir tudo","Veio cumprir","Não tinham importância","Eram apenas tradições romanas"],correct:1,ref:"Mateus 5:17-20",why:"Jesus declara que não veio abolir a Lei ou os Profetas, mas cumprir."},
+{level:"Mestre da Bíblia",cat:"Santuário",q:"Segundo Hebreus 10:19-22, por que os crentes podem aproximar-se de Deus com confiança?",a:["Por causa do caminho aberto pelo sangue de Jesus","Por causa da sua posição social","Por causa de sacrifícios humanos","Por causa da riqueza do templo"],correct:0,ref:"Hebreus 10:19-22",why:"O texto associa o acesso confiante a Deus à obra de Jesus e ao seu sangue."},
+{level:"Mestre da Bíblia",cat:"Bíblia",q:"Em 1 Coríntios 13, qual destas virtudes permanece juntamente com a fé e a esperança?",a:["A fama","O amor","A riqueza","O poder"],correct:1,ref:"1 Coríntios 13:13",why:"Paulo destaca a fé, a esperança e o amor, afirmando que o maior deles é o amor."},
+{level:"Mestre da Bíblia",cat:"Profecias",q:"Em Apocalipse 20:4, o que é mencionado em relação aos santos?",a:["Que viveram e reinaram com Cristo mil anos","Que construíram a torre de Babel","Que governaram o Egipto","Que nunca enfrentaram perseguição"],correct:0,ref:"Apocalipse 20:4-6",why:"A passagem descreve os santos vivendo e reinando com Cristo durante mil anos."},
+{level:"Mestre da Bíblia",cat:"Doutrinas adventistas",q:"Segundo João 14:1-3, qual é a promessa de Jesus aos discípulos?",a:["Que nunca morreriam fisicamente","Que voltará e os levará para estar com Ele","Que governariam Roma","Que receberiam riquezas imediatamente"],correct:1,ref:"João 14:1-3",why:"Jesus promete preparar lugar e voltar para receber os seus discípulos."},
+{level:"Mestre da Bíblia",cat:"Bíblia",q:"Segundo Gálatas 3:16, a quem Paulo relaciona a promessa feita a Abraão?",a:["A Cristo, identificado como a descendência prometida","A Ciro","A Pilatos","A Herodes"],correct:0,ref:"Gálatas 3:16",why:"Paulo interpreta a promessa e destaca Cristo na sua referência à descendência de Abraão."},
+{level:"Mestre da Bíblia",cat:"Exegese",q:"Qual é a função do contexto histórico e literário na interpretação bíblica?",a:["Substituir o texto por opiniões pessoais","Ajudar a compreender o sentido da passagem no seu contexto","Impedir a comparação de passagens","Eliminar a necessidade de ler o capítulo"],correct:1,ref:"Neemias 8:8; Lucas 24:27",why:"Examinar o contexto e explicar o texto ajuda a evitar interpretações isoladas ou incorretas."},
+ 
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 1:8, como Deus Se identifica?",a:["O Alfa e o Ómega","O rei de Babilónia","O anjo do abismo","O filho de Herodes"],correct:0,ref:"Apocalipse 1:8",why:"O texto apresenta o Senhor Deus como o Alfa e o Ómega, Aquele que é, que era e que há de vir."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 4, quantos seres viventes estão ao redor do trono?",a:["Dois","Quatro","Sete","Doze"],correct:1,ref:"Apocalipse 4:6-8",why:"A visão descreve quatro seres viventes ao redor do trono."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 6, o que acontece quando o sexto selo é aberto?",a:["Há um grande terramoto e fenómenos celestes","O templo de Salomão é construído","Moisés regressa ao Egipto","O Jordão seca"],correct:0,ref:"Apocalipse 6:12-17",why:"O sexto selo descreve um grande terramoto e sinais no Sol, na Lua e nas estrelas."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 7:4, quantos são selados das tribos de Israel na visão?",a:["12 mil","70 mil","144 mil","2300"],correct:2,ref:"Apocalipse 7:4-8",why:"João ouve o número de 144 mil selados, distribuídos pelas tribos mencionadas."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 8, o que ocorre quando o sétimo selo é aberto?",a:["Há silêncio no céu por cerca de meia hora","A Nova Jerusalém desce","Jesus nasce em Belém","O mar transforma-se em sangue"],correct:0,ref:"Apocalipse 8:1",why:"O texto descreve silêncio no céu por cerca de meia hora."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 11:3, por quanto tempo as duas testemunhas profetizam?",a:["40 dias","1260 dias","2300 dias","1000 anos"],correct:1,ref:"Apocalipse 11:3",why:"A passagem menciona 1260 dias, usando linguagem profética."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 12:9, como é identificado o grande dragão?",a:["Como a antiga serpente, chamada diabo e Satanás","Como o rei Ciro","Como o profeta Daniel","Como o sumo sacerdote"],correct:0,ref:"Apocalipse 12:9",why:"O próprio texto identifica o dragão com o diabo e Satanás."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 13:1, de onde sobe a besta vista por João?",a:["Do mar","Do templo","Do monte Sinai","Do rio Jordão"],correct:0,ref:"Apocalipse 13:1",why:"João vê uma besta a subir do mar."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 13:11, de onde sobe a segunda besta?",a:["Da terra","Do mar","Do céu aberto","Do rio Eufrates"],correct:0,ref:"Apocalipse 13:11",why:"A segunda besta é descrita como subindo da terra."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 14:8, que cidade é anunciada como caída?",a:["Babilónia","Jerusalém","Nínive","Damasco"],correct:0,ref:"Apocalipse 14:8",why:"O segundo anjo anuncia a queda de Babilónia."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 14:12, quais características são atribuídas aos santos?",a:["Paciência, guardar os mandamentos de Deus e fé em Jesus","Riqueza e poder político","Dominar todos os povos","Nunca enfrentar provações"],correct:0,ref:"Apocalipse 14:12",why:"A passagem destaca a perseverança dos santos, os mandamentos de Deus e a fé em Jesus."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 15:2, o que João vê junto do mar de vidro?",a:["Os vencedores da besta, da sua imagem e do número do seu nome","Os reis de Israel em guerra","Os construtores da arca","Os sacerdotes de Baal"],correct:0,ref:"Apocalipse 15:2",why:"João vê os vencedores junto do mar de vidro, com harpas de Deus."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 16:16, que lugar é chamado Armagedom?",a:["O lugar onde os reis são reunidos para a batalha","A cidade do nascimento de Jesus","O monte onde Moisés recebeu a Lei","O jardim do Éden"],correct:0,ref:"Apocalipse 16:13-16",why:"A passagem menciona a reunião dos reis no lugar chamado Armagedom."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 17, sobre que animal está sentada a mulher da visão?",a:["Uma besta escarlate","Um cordeiro branco","Um cavalo de guerra","Um leão dourado"],correct:0,ref:"Apocalipse 17:3",why:"João vê uma mulher sentada sobre uma besta escarlate."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 19:11, como é chamado o cavaleiro fiel e verdadeiro?",a:["A Palavra de Deus","O rei de Tiro","O anjo do abismo","O príncipe do Egipto"],correct:0,ref:"Apocalipse 19:11-13",why:"A visão apresenta o cavaleiro fiel e verdadeiro e identifica o seu nome como a Palavra de Deus."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 20:1-3, por quanto tempo Satanás é preso simbolicamente?",a:["Sete anos","Quarenta dias","Mil anos","Setenta semanas"],correct:2,ref:"Apocalipse 20:1-3",why:"O texto descreve Satanás preso por mil anos."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 20:12, que livros são abertos no juízo?",a:["Os livros e o livro da vida","Apenas os livros dos reis","Os livros de Moisés somente","Os registos de Roma"],correct:0,ref:"Apocalipse 20:11-15",why:"A visão menciona livros abertos e também o livro da vida."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 21:4, o que Deus fará na nova criação?",a:["Enxugará dos olhos toda lágrima e eliminará a morte","Restaurará Babilónia","Construirá outro Egipto","Reiniciará o dilúvio"],correct:0,ref:"Apocalipse 21:1-4",why:"A promessa descreve o fim da morte, do luto, do clamor e da dor."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 21:16, que forma tem a cidade santa?",a:["Quadrada, com comprimento e largura iguais","Circular","Em forma de triângulo","Em forma de estrela"],correct:0,ref:"Apocalipse 21:15-17",why:"A cidade é descrita com comprimento e largura iguais."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Segundo Apocalipse 22:2, o que cresce junto ao rio da água da vida?",a:["A árvore da vida","A árvore do conhecimento do bem e do mal","Uma oliveira comum","Uma videira de Noé"],correct:0,ref:"Apocalipse 22:1-2",why:"A visão descreve a árvore da vida, que produz doze frutos e cujas folhas servem para a cura das nações."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Em Apocalipse 22:12, o que Jesus declara que traz consigo?",a:["A sua recompensa para retribuir a cada um","Uma nova arca","As tábuas da Lei","O trono de Salomão"],correct:0,ref:"Apocalipse 22:12",why:"Jesus declara que vem sem demora e traz consigo a recompensa."},
+{level:"Desafio Apocalíptico",cat:"Profecias",q:"Qual é o convite final de Apocalipse 22:17?",a:["Quem tem sede venha e receba de graça a água da vida","Todos devem construir uma torre","Ninguém pode aproximar-se","Todos devem regressar ao Egipto"],correct:0,ref:"Apocalipse 22:17",why:"O convite chama quem tem sede a vir e receber gratuitamente a água da vida."},
+,
+{level:"Iniciante",cat:"Génesis",q:"Que sinal Deus colocou como aliança de que não voltaria a destruir toda a terra com um dilúvio?",a:["Um arco nas nuvens","Uma coluna de fogo","Uma estrela","Uma oliveira"],correct:0,ref:"Génesis 9:12-17",why:"O arco nas nuvens é apresentado como sinal da aliança de Deus com a terra."},
+{level:"Iniciante",cat:"Êxodo",q:"O que Deus usou para falar com Moisés no deserto?",a:["Uma sarça que ardia sem se consumir","Uma estátua de ouro","Um navio","Uma árvore caída"],correct:0,ref:"Êxodo 3:1-6",why:"Deus chamou Moisés do meio da sarça ardente."},
+{level:"Iniciante",cat:"Levítico",q:"Que dia anual era especialmente dedicado à purificação do santuário e ao povo?",a:["Dia da Expiação","Festa das Trombetas apenas","Pentecostes","Lua nova"],correct:0,ref:"Levítico 16:29-34",why:"Levítico descreve o Dia da Expiação como ocasião solene de purificação."},
+{level:"Iniciante",cat:"Números",q:"Quem foi enviado com outros homens para espiar Canaã e demonstrou confiança em Deus juntamente com Josué?",a:["Calebe","Corá","Balaão","Arão"],correct:0,ref:"Números 13:30; 14:6-9",why:"Calebe e Josué confiaram que Deus poderia conduzir Israel à terra."},
+{level:"Iniciante",cat:"Deuteronómio",q:"Qual é o princípio central de Deuteronómio 6:5?",a:["Amar a Deus de todo o coração, alma e força","Confiar nos ídolos","Buscar riqueza primeiro","Evitar toda a comunidade"],correct:0,ref:"Deuteronómio 6:4-5",why:"Israel é chamado a amar o Senhor integralmente."},
+{level:"Iniciante",cat:"Josué",q:"Que cidade teve as suas muralhas a cair depois de Israel obedecer às instruções de Deus?",a:["Jericó","Nínive","Babilónia","Damasco"],correct:0,ref:"Josué 6:1-20",why:"A queda das muralhas de Jericó é narrada em Josué 6."},
+{level:"Iniciante",cat:"Juízes",q:"Que juiz ficou conhecido pela sua força extraordinária?",a:["Sansão","Gedeão","Otniel","Jefté"],correct:0,ref:"Juízes 14:5-6; 16:17",why:"Sansão recebeu força extraordinária enquanto consagrado a Deus."},
+{level:"Iniciante",cat:"Rute",q:"Qual foi a atitude de Rute para com Noemi?",a:["Permaneceu fiel e acompanhou-a","Abandonou-a imediatamente","Tornou-se rainha do Egipto","Conduziu um exército"],correct:0,ref:"Rute 1:16-17",why:"Rute escolheu acompanhar Noemi e adoptar o seu povo e Deus."},
+{level:"Iniciante",cat:"1 Samuel",q:"Quem ouviu Deus chamá-lo quando ainda era menino?",a:["Samuel","Saul","Absalão","Joabe"],correct:0,ref:"1 Samuel 3:1-10",why:"Samuel ouviu o chamado de Deus e respondeu com disponibilidade."},
+{level:"Iniciante",cat:"2 Samuel",q:"Que rei ficou associado à aliança de Deus sobre uma dinastia duradoura?",a:["David","Acabe","Saul","Nabucodonosor"],correct:0,ref:"2 Samuel 7:12-16",why:"Deus prometeu a David uma casa e um reino, numa promessa ligada à esperança messiânica."},
+{level:"Iniciante",cat:"1 Reis",q:"Que rei pediu sabedoria a Deus para governar o povo?",a:["Salomão","Roboão","Acabe","Jeú"],correct:0,ref:"1 Reis 3:5-12",why:"Salomão pediu discernimento para julgar o povo."},
+{level:"Iniciante",cat:"2 Reis",q:"Quem foi levado ao céu num redemoinho, segundo o relato bíblico?",a:["Elias","Eliseu","Isaías","Jeremias"],correct:0,ref:"2 Reis 2:9-12",why:"Elias foi levado ao céu num redemoinho."},
+{level:"Iniciante",cat:"Esdras",q:"Que escriba é apresentado como alguém dedicado a estudar, praticar e ensinar a Lei do Senhor?",a:["Esdras","Neemias","Mardoqueu","Zorobabel"],correct:0,ref:"Esdras 7:10",why:"Esdras preparou o coração para estudar, cumprir e ensinar a Lei."},
+{level:"Iniciante",cat:"Neemias",q:"Que obra Neemias liderou em Jerusalém?",a:["Reconstrução das muralhas","Construção da arca","Construção do templo de Salomão","Construção da torre de Babel"],correct:0,ref:"Neemias 2:17-18; 6:15",why:"Neemias mobilizou o povo para reconstruir as muralhas de Jerusalém."},
+{level:"Iniciante",cat:"1 Crónicas",q:"Que rei é destacado em 1 Crónicas como central na preparação para o templo, embora não o tenha construído?",a:["David","Saul","Acabe","Faraó"],correct:0,ref:"1 Crónicas 22:1-8",why:"David preparou materiais e planos, mas Deus reservou a construção do templo a Salomão."},
+{level:"Intermediário",cat:"2 Crónicas",q:"Que rei promoveu uma reforma religiosa e mandou reparar o templo após encontrar o Livro da Lei?",a:["Josias","Acaz","Manassés no início do reinado","Roboão"],correct:0,ref:"2 Crónicas 34:14-33",why:"Josias respondeu à leitura do Livro da Lei com arrependimento e reforma."},
+{level:"Intermediário",cat:"Ester",q:"Que risco Ester aceitou enfrentar para interceder pelo seu povo?",a:["Apresentar-se ao rei sem ser chamada","Fugir para o Egipto","Destruir o templo","Enfrentar Golias"],correct:0,ref:"Ester 4:11-16",why:"Ester decidiu aproximar-se do rei, mesmo correndo risco de morte."},
+{level:"Intermediário",cat:"Jó",q:"Qual foi a resposta de Jó que expressa confiança mesmo em meio à perda?",a:["O Senhor deu e o Senhor tomou; bendito seja o nome do Senhor","Deus não existe","A riqueza é tudo","Nunca voltarei a orar"],correct:0,ref:"Jó 1:20-22",why:"Jó lamentou, mas não atribuiu a Deus culpa injusta."},
+{level:"Intermediário",cat:"Salmos",q:"Segundo Salmo 119:105, o que é a palavra de Deus para o caminho do crente?",a:["Lâmpada para os pés e luz para o caminho","Uma espada de ferro literal","Uma coroa real","Um mapa político"],correct:0,ref:"Salmo 119:105",why:"A Palavra ilumina o caminho e orienta as decisões."},
+{level:"Intermediário",cat:"Provérbios",q:"Segundo Provérbios 1:7, qual é o princípio do conhecimento?",a:["O temor do Senhor","A fama pública","A força física","A riqueza herdada"],correct:0,ref:"Provérbios 1:7",why:"O temor do Senhor é apresentado como princípio do conhecimento."},
+{level:"Intermediário",cat:"Eclesiastes",q:"Qual conclusão aparece em Eclesiastes 12:13?",a:["Temer a Deus e guardar os Seus mandamentos","Viver apenas para o prazer","Confiar na fama","Acumular bens sem limite"],correct:0,ref:"Eclesiastes 12:13",why:"O livro conclui chamando a humanidade a temer a Deus e guardar os Seus mandamentos."},
+{level:"Intermediário",cat:"Cântico dos Cânticos",q:"Que tema humano é celebrado poeticamente em Cântico dos Cânticos?",a:["O amor entre os enamorados","A conquista de Jericó","A construção da arca","A queda de Babilónia"],correct:0,ref:"Cântico dos Cânticos 8:6-7",why:"O poema celebra a força e o valor do amor."},
+{level:"Intermediário",cat:"Isaías",q:"Que promessa messiânica anuncia um filho chamado Emanuel?",a:["Deus connosco","O guerreiro do Egipto","Rei da Babilónia","Filho de Moabe"],correct:0,ref:"Isaías 7:14",why:"Emanuel significa “Deus connosco” e é lido pelos cristãos em relação a Jesus."},
+{level:"Intermediário",cat:"Jeremias",q:"Que tipo de aliança Jeremias 31:31-34 anuncia?",a:["Uma nova aliança com a lei escrita no coração","Uma aliança com os ídolos","Um pacto militar com a Assíria","Uma aliança para reconstruir Babel"],correct:0,ref:"Jeremias 31:31-34",why:"A promessa descreve a lei de Deus escrita no coração e o perdão dos pecados."},
+{level:"Intermediário",cat:"Lamentações",q:"Que verdade sobre a misericórdia de Deus é afirmada em Lamentações 3:22-23?",a:["As Suas misericórdias renovam-se cada manhã","Deus nunca perdoa","A esperança é impossível","A justiça não tem valor"],correct:0,ref:"Lamentações 3:22-23",why:"O texto afirma que as misericórdias do Senhor não têm fim e renovam-se."},
+{level:"Intermediário",cat:"Ezequiel",q:"Na visão dos ossos secos, o que Deus promete fazer pelo povo?",a:["Dar vida e restaurar a esperança","Transformá-los em ouro","Levá-los ao Egipto","Apagar a sua história"],correct:0,ref:"Ezequiel 37:1-14",why:"A visão simboliza a restauração de Israel pelo poder de Deus."},
+{level:"Intermediário",cat:"Daniel",q:"Que três jovens foram lançados na fornalha por não adorarem a imagem?",a:["Sadraque, Mesaque e Abede-Nego","Pedro, Tiago e João","Caim, Abel e Sete","Elias, Eliseu e Samuel"],correct:0,ref:"Daniel 3:12-27",why:"Os três hebreus recusaram adorar a imagem e foram preservados por Deus."},
+{level:"Intermediário",cat:"Oseias",q:"Que imagem Oseias usa para descrever o amor persistente de Deus pelo Seu povo?",a:["Amor fiel apesar da infidelidade","Indiferença absoluta","Um contrato comercial","Uma guerra sem fim"],correct:0,ref:"Oseias 11:1-4",why:"Oseias retrata o cuidado de Deus como amor compassivo e paciente."},
+{level:"Intermediário",cat:"Joel",q:"Que promessa de Joel 2:28-29 é citada por Pedro no Pentecostes?",a:["Deus derramaria o Seu Espírito sobre toda a carne","O mar secaria para sempre","O templo seria levado ao céu","Israel nunca sofreria"],correct:0,ref:"Joel 2:28-32; Actos 2:16-21",why:"Pedro relaciona a manifestação do Espírito com a profecia de Joel."},
+{level:"Intermediário",cat:"Amós",q:"O que Amós 5:24 pede que corra como águas?",a:["O juízo e a justiça","O ouro e a prata","O vinho e o azeite","O poder militar"],correct:0,ref:"Amós 5:21-24",why:"Deus rejeita o culto vazio e exige justiça verdadeira."},
+{level:"Avançado",cat:"Obadias",q:"Qual é o tema central da mensagem de Obadias?",a:["O juízo contra Edom por orgulho e violência contra Judá","A construção do templo","A libertação do Egipto","A visão da nova Jerusalém"],correct:0,ref:"Obadias 1:3-15",why:"Obadias denuncia o orgulho de Edom e a sua atitude contra o irmão."},
+{level:"Avançado",cat:"Jonas",q:"Que aspecto do carácter de Deus Jonas reconhece no capítulo 4?",a:["Deus é compassivo e tardio em irar-se","Deus não se importa com as nações","Deus só ouve reis","Deus nunca perdoa cidades"],correct:0,ref:"Jonas 4:1-2",why:"Jonas sabe que Deus é misericordioso e compassivo, inclusive com Nínive."},
+{level:"Avançado",cat:"Miqueias",q:"Segundo Miqueias 6:8, o que Deus requer do ser humano?",a:["Praticar a justiça, amar a misericórdia e andar humildemente com Deus","Oferecer sacrifícios sem mudança de vida","Conquistar outras nações","Viver sem responsabilidade"],correct:0,ref:"Miqueias 6:8",why:"O profeta resume a vida fiel em justiça, misericórdia e humildade."},
+{level:"Avançado",cat:"Naum",q:"Que cidade é o foco da profecia de Naum?",a:["Nínive","Belém","Jerusalém apenas","Damasco"],correct:0,ref:"Naum 1:1; 3:1-7",why:"Naum anuncia o juízo contra Nínive, capital assíria."},
+{level:"Avançado",cat:"Habacuque",q:"Qual é a declaração de Habacuque 2:4 retomada no Novo Testamento?",a:["O justo viverá pela sua fé","O forte viverá pela espada","O rico será sempre feliz","O rei nunca cairá"],correct:0,ref:"Habacuque 2:4; Romanos 1:17",why:"A confiança fiel em Deus é o centro da declaração."},
+{level:"Avançado",cat:"Sofonias",q:"Que convite Sofonias dirige aos humildes que procuram o Senhor?",a:["Buscar o Senhor, a justiça e a mansidão","Procurar vingança pessoal","Confiar em ídolos","Abandonar a oração"],correct:0,ref:"Sofonias 2:3",why:"O profeta chama os humildes a procurar o Senhor e a Sua justiça."},
+{level:"Avançado",cat:"Ageu",q:"Qual era a preocupação principal de Ageu ao exortar o povo regressado do exílio?",a:["Reconstruir a casa do Senhor","Construir um palácio para Faraó","Reconquistar Nínive","Fazer uma arca"],correct:0,ref:"Ageu 1:2-8",why:"Ageu confronta o povo por cuidar das próprias casas enquanto o templo permanecia abandonado."},
+{level:"Avançado",cat:"Zacarias",q:"Que rei humilde é descrito a entrar em Jerusalém montado num jumento?",a:["O rei prometido, justo e salvador","O rei da Assíria","O faraó do Êxodo","O rei Saul"],correct:0,ref:"Zacarias 9:9; Mateus 21:4-9",why:"A profecia apresenta um rei humilde, cumprida na entrada de Jesus em Jerusalém."},
+{level:"Avançado",cat:"Malaquias",q:"Que mensageiro Malaquias anuncia antes do dia do Senhor?",a:["Um mensageiro que prepara o caminho","Um comandante romano","Um construtor de navios","Um rei filisteu"],correct:0,ref:"Malaquias 3:1; 4:5-6",why:"Malaquias anuncia um mensageiro preparador e a vinda de Elias em sentido profético."},
+{level:"Avançado",cat:"Mateus",q:"No Sermão da Montanha, como Jesus descreve os pacificadores?",a:["Serão chamados filhos de Deus","Serão sempre ricos","Nunca enfrentarão oposição","Governarão Roma"],correct:0,ref:"Mateus 5:9",why:"Jesus declara bem-aventurados os pacificadores."},
+{level:"Avançado",cat:"Marcos",q:"Que princípio Jesus ensina sobre a verdadeira grandeza?",a:["Quem quiser ser grande deve servir","Grandeza significa dominar os outros","O primeiro deve ser sempre servido","A fama é a medida do carácter"],correct:0,ref:"Marcos 10:42-45",why:"Jesus contrapõe o domínio ao serviço e apresenta a Sua própria missão como exemplo."},
+{level:"Avançado",cat:"Lucas",q:"Na parábola do bom samaritano, quem demonstrou ser próximo do homem ferido?",a:["Aquele que teve misericórdia e cuidou dele","O sacerdote que passou adiante","O levita que não parou","O viajante que o ignorou"],correct:0,ref:"Lucas 10:25-37",why:"Jesus define o próximo pela prática concreta da misericórdia."},
+{level:"Avançado",cat:"João",q:"Segundo João 15, que imagem Jesus usa para explicar a dependência dos discípulos dEle?",a:["A videira e os ramos","A porta e a cidade","O pastor e a moeda","O templo e o altar"],correct:0,ref:"João 15:1-5",why:"Os discípulos só dão fruto espiritual permanecendo ligados a Cristo."},
+{level:"Avançado",cat:"Actos",q:"Que acontecimento marcou a descida do Espírito Santo no Pentecostes?",a:["Os discípulos falaram em línguas compreendidas por pessoas de várias nações","O templo caiu","Paulo foi preso em Roma","Pedro construiu um barco"],correct:0,ref:"Actos 2:1-11",why:"O Espírito capacitou os discípulos e pessoas de diversas regiões ouviram as maravilhas de Deus."},
+{level:"Mestre da Bíblia",cat:"Romanos",q:"Como Romanos 5:1 descreve a consequência da justificação pela fé?",a:["Paz com Deus por meio de Jesus Cristo","Isenção de toda a dificuldade","Garantia de riqueza material","Superioridade sobre outras pessoas"],correct:0,ref:"Romanos 5:1-5",why:"A justificação pela fé conduz à paz com Deus e à esperança."},
+{level:"Mestre da Bíblia",cat:"1 Coríntios",q:"Que comparação Paulo usa para explicar a diversidade e unidade da igreja?",a:["Um corpo com muitos membros","Uma torre sem fundamento","Um exército sem comandante","Uma vinha sem ramos"],correct:0,ref:"1 Coríntios 12:12-27",why:"Os dons são diversos, mas os membros pertencem a um só corpo."},
+{level:"Mestre da Bíblia",cat:"2 Coríntios",q:"Segundo 2 Coríntios 12:9, por que a fraqueza humana não impede a obra de Deus?",a:["O poder de Cristo aperfeiçoa-se na fraqueza","A força humana é sempre suficiente","A fraqueza torna Deus ausente","A fé elimina automaticamente todos os problemas"],correct:0,ref:"2 Coríntios 12:7-10",why:"Paulo aprende que a graça de Cristo é suficiente e o Seu poder manifesta-se na fraqueza."},
+{level:"Mestre da Bíblia",cat:"Gálatas",q:"Qual contraste Paulo apresenta em Gálatas 5 entre a vida dominada pela carne e a vida no Espírito?",a:["As obras da carne e o fruto do Espírito","Dois tipos de sacrifício animal","Reis e sacerdotes","Templo e sinagoga"],correct:0,ref:"Gálatas 5:16-25",why:"Paulo contrasta comportamentos destrutivos com o fruto produzido pelo Espírito."},
+{level:"Mestre da Bíblia",cat:"Efésios",q:"Que imagem descreve a armadura espiritual de Efésios 6?",a:["Verdade, justiça, evangelho da paz, fé, salvação e Palavra de Deus","Armas de ouro e cavalos","Coroa, cetro e trono","Pedras preciosas e moedas"],correct:0,ref:"Efésios 6:10-18",why:"A armadura é uma metáfora para a resistência espiritual mediante recursos dados por Deus."},
+{level:"Mestre da Bíblia",cat:"Filipenses",q:"Qual atitude de Cristo Paulo apresenta como modelo de humildade em Filipenses 2?",a:["Esvaziou-Se, assumiu forma de servo e humilhou-Se","Exigiu ser servido por todos","Procurou poder político","Recusou obedecer ao Pai"],correct:0,ref:"Filipenses 2:5-11",why:"Cristo humilhou-Se e foi obediente até à morte, sendo depois exaltado por Deus."},
+{level:"Mestre da Bíblia",cat:"Colossenses",q:"Como Colossenses 1 descreve a posição de Cristo na criação?",a:["Todas as coisas foram criadas por meio dEle e para Ele","Cristo é apenas uma criatura entre outras","Cristo não tem relação com a criação","A criação existe independentemente de Deus"],correct:0,ref:"Colossenses 1:15-20",why:"Paulo apresenta Cristo como central na criação, sustentação e reconciliação."},
+{level:"Mestre da Bíblia",cat:"1 Tessalonicenses",q:"Que esperança Paulo associa à ressurreição dos que morreram em Cristo?",a:["Os mortos em Cristo ressuscitarão na vinda do Senhor","Os mortos não terão futuro","A igreja nunca verá Cristo","A esperança depende de riquezas"],correct:0,ref:"1 Tessalonicenses 4:13-18",why:"Paulo consola os crentes com a ressurreição e o encontro com o Senhor."},
+{level:"Mestre da Bíblia",cat:"2 Tessalonicenses",q:"Que advertência Paulo faz contra a ideia de que o dia do Senhor já chegou sem que os sinais mencionados se cumpram?",a:["Não se deixarem enganar facilmente","Abandonarem a fé","Marcarem uma data exacta","Deixarem de trabalhar todos"],correct:0,ref:"2 Tessalonicenses 2:1-3",why:"Paulo pede discernimento e adverte contra mensagens enganosas sobre esse dia."},
+{level:"Mestre da Bíblia",cat:"1 Timóteo",q:"Como 1 Timóteo 3 apresenta os requisitos para quem exerce liderança na igreja?",a:["Carácter íntegro, domínio próprio e boa reputação","Riqueza como único requisito","Popularidade acima de tudo","Ausência de responsabilidade familiar"],correct:0,ref:"1 Timóteo 3:1-7",why:"A liderança cristã é avaliada principalmente pelo carácter e pelo testemunho."},
+{level:"Mestre da Bíblia",cat:"2 Timóteo",q:"Para que é útil toda a Escritura, segundo 2 Timóteo 3:16-17?",a:["Ensinar, repreender, corrigir e instruir em justiça","Garantir fama política","Substituir a prática do bem","Prometer riqueza imediata"],correct:0,ref:"2 Timóteo 3:16-17",why:"A Escritura equipa o servo de Deus para toda a boa obra."},
+{level:"Mestre da Bíblia",cat:"Tito",q:"Que relação Tito 2 estabelece entre a graça de Deus e a vida do crente?",a:["A graça educa para renunciar à impiedade e viver com sensatez","A graça torna desnecessária a obediência","A graça serve apenas para prosperidade","A graça impede o serviço ao próximo"],correct:0,ref:"Tito 2:11-14",why:"A graça salva e também educa para uma vida piedosa."},
+{level:"Mestre da Bíblia",cat:"Filemom",q:"Qual transformação prática Paulo procura promover na relação entre Filemom e Onésimo?",a:["Receber Onésimo como irmão amado","Punir Onésimo sem diálogo","Enviar Onésimo para longe sem reconciliação","Negar a fraternidade cristã"],correct:0,ref:"Filemom 10-17",why:"Paulo apela à recepção de Onésimo não apenas como servo, mas como irmão em Cristo."},
+{level:"Desafio Apocalíptico",cat:"Hebreus",q:"Como Hebreus compara o sacerdócio de Cristo com o sacerdócio levítico?",a:["Cristo exerce um sacerdócio superior e definitivo","Cristo é sacerdote apenas por uma semana","Cristo depende de sacrifícios diários de animais","Cristo não intercede por ninguém"],correct:0,ref:"Hebreus 7:23-28; 9:11-14",why:"Hebreus apresenta o sacerdócio de Cristo como superior e o Seu sacrifício como suficiente."},
+{level:"Desafio Apocalíptico",cat:"Tiago",q:"Como Tiago 2 relaciona fé e obras?",a:["As obras demonstram a realidade da fé viva","As obras compram a salvação independentemente de Deus","A fé verdadeira nunca produz acções","A fé e a vida prática não se relacionam"],correct:0,ref:"Tiago 2:14-26",why:"Tiago argumenta que a fé viva se manifesta em acções concretas de obediência e misericórdia."},
+{level:"Desafio Apocalíptico",cat:"1 Pedro",q:"Que modelo 1 Pedro apresenta para responder ao sofrimento injusto?",a:["Cristo, que sofreu sem retribuir com insultos","Faraó, que endureceu o coração","Sansão, que procurou vingança","Pilatos, que evitou a responsabilidade"],correct:0,ref:"1 Pedro 2:21-23",why:"Pedro aponta para Cristo, que confiou no justo Juiz e não respondeu com vingança."},
+{level:"Desafio Apocalíptico",cat:"2 Pedro",q:"Que advertência 2 Pedro 3 faz sobre a aparente demora da promessa divina?",a:["O Senhor é paciente e deseja que as pessoas cheguem ao arrependimento","Deus esqueceu a promessa","A promessa depende dos impérios humanos","A história nunca terá conclusão"],correct:0,ref:"2 Pedro 3:8-13",why:"A aparente demora é explicada como paciência divina, acompanhada da promessa de novos céus e nova terra."},
+{level:"Desafio Apocalíptico",cat:"1 João",q:"Como 1 João 4 relaciona o amor a Deus com o amor ao próximo?",a:["Quem diz amar a Deus deve amar também o irmão","É possível odiar o irmão e amar perfeitamente a Deus","O amor é apenas um sentimento privado","O amor não tem relação com a fé"],correct:0,ref:"1 João 4:20-21",why:"João afirma que o amor a Deus não pode ser separado do amor ao irmão."},
+{level:"Desafio Apocalíptico",cat:"2 João",q:"Qual equilíbrio 2 João recomenda ao receber pessoas que ensinam?",a:["Permanecer na doutrina de Cristo e exercer discernimento","Aceitar qualquer ensino sem exame","Rejeitar toda pessoa sem ouvir","Substituir a verdade pela popularidade"],correct:0,ref:"2 João 7-11",why:"A carta une fidelidade à doutrina de Cristo com discernimento perante os enganadores."},
+{level:"Desafio Apocalíptico",cat:"3 João",q:"Que contraste aparece entre Gaio e Diótrefes na terceira carta de João?",a:["Gaio acolhe os irmãos; Diótrefes procura preeminência e rejeita-os","Ambos recusam toda hospitalidade","Gaio persegue João; Diótrefes é elogiado","Nenhum deles aparece na carta"],correct:0,ref:"3 João 5-10",why:"A carta elogia a hospitalidade de Gaio e critica a atitude dominadora de Diótrefes."},
+{level:"Desafio Apocalíptico",cat:"Judas",q:"Que responsabilidade Judas 3 destaca em relação à fé cristã?",a:["Batalhar pela fé entregue aos santos","Criar uma nova mensagem sem relação com Cristo","Evitar todo discernimento","Substituir a fé por poder político"],correct:0,ref:"Judas 3-4",why:"Judas chama os crentes a defender a fé perante ensinamentos que a distorcem."},
+{level:"Desafio Apocalíptico",cat:"Apocalipse",q:"Em Apocalipse 12:17, contra quem o dragão faz guerra?",a:["Os que guardam os mandamentos de Deus e têm o testemunho de Jesus","Os reis de Israel apenas","Os habitantes de Nínive","Os construtores da arca"],correct:0,ref:"Apocalipse 12:17",why:"O texto identifica o povo fiel por sua lealdade a Deus e pelo testemunho de Jesus."}
+];
+  
+console.log("TOTAL DE PERGUNTAS:", bank.length);
+
+const niveisParaVerificar = [
+  { nome: "Iniciante", esperado: 10 },
+  { nome: "Intermediário", esperado: 15 },
+  { nome: "Avançado", esperado: 20 },
+  { nome: "Mestre da Bíblia", esperado: 25 },
+  { nome: "Desafio Apocalíptico", esperado: 30 }
+];
+
+niveisParaVerificar.forEach(nivel => {
+  const quantidade = bank.filter(
+    pergunta => pergunta.level === nivel.nome
+  ).length;
+
+  console.log(
+    nivel.nome + ": " + quantidade +
+    " de " + nivel.esperado +
+    (quantidade === nivel.esperado ? " — OK" : " — VERIFICAR")
+  );
+});
+
+let questions=[], index=0, score=0, locked=false, playerName="", selectedLevel="Iniciante";
+const $=id=>document.getElementById(id);
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
+function embaralharAlternativas(pergunta){
+ const pares=pergunta.a.map((texto,i)=>({texto,correta:i===pergunta.correct}));
+ for(let i=pares.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pares[i],pares[j]]=[pares[j],pares[i]];}
+ return {...pergunta,a:pares.map(p=>p.texto),correct:pares.findIndex(p=>p.correta)};
+}
+function show(id){["start","quiz","result"].forEach(s=>$(s).classList.toggle("hidden",s!==id))}
+
+const ORDEM_NIVEIS=["Iniciante","Intermediário","Avançado","Mestre da Bíblia","Desafio Apocalíptico"];
+const QUANTIDADES_NIVEIS={"Iniciante":10,"Intermediário":15,"Avançado":20,"Mestre da Bíblia":25,"Desafio Apocalíptico":30};
+let nivelEmTransicao=false, temporizadorTransicao=null, inicioMaratona=0, historicoNiveis=[];
+function prepararMaratona(){
+  const conjunto=[];
+  for(const nivel of ORDEM_NIVEIS){
+    const pool=shuffle(bank.filter(q=>q.level===nivel)).map(embaralharAlternativas);
+    const quantidade=QUANTIDADES_NIVEIS[nivel];
+    if(pool.length<quantidade) throw new Error(`O nível ${nivel} precisa de ${quantidade} perguntas, mas só existem ${pool.length}.`);
+    conjunto.push(...pool.slice(0,quantidade));
+  }
+  return conjunto;
+}
+function begin(){
+ playerName=$("player").value.trim()||"Participante";
+ try{questions=prepararMaratona();}catch(e){alert(e.message);return;}
+ selectedLevel="Maratona Bíblica — 5 níveis";
+ index=0;score=0;locked=false;nivelEmTransicao=false;historicoNiveis=[];inicioMaratona=Date.now();
+ if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
+ $("playerLabel").textContent=playerName;
+ show("quiz");atualizarBloqueioModalidades();render();
+}
+
+function desenharFitaNiveis(nivelAtual){
+ const ribbon=$("levelRibbon");if(!ribbon)return;ribbon.replaceChildren();
+ ORDEM_NIVEIS.forEach((nivel,i)=>{const chip=document.createElement("span");chip.className="level-chip";
+  if(historicoNiveis.includes(nivel))chip.classList.add("done");else if(nivel===nivelAtual)chip.classList.add("active");
+  chip.textContent=(historicoNiveis.includes(nivel)?"✓ ":(nivel===nivelAtual?"● ":"○ "))+nivel;ribbon.appendChild(chip);
+ });
+}
+function render(){
+ locked=false;nivelEmTransicao=false;
+ const q=questions[index];if(!q)return;
+ desenharFitaNiveis(q.level);
+ const anteriores=questions.slice(0,index).filter(x=>x.level===q.level).length;
+ const totalNivel=QUANTIDADES_NIVEIS[q.level];
+ $("counter").textContent=`Pergunta ${index+1} de ${questions.length} · ${q.level} ${anteriores+1}/${totalNivel}`;
+ $("bar").style.width=`${index/questions.length*100}%`;
+ $("qmeta").textContent=`${q.level} • ${q.cat} • Nível ${ORDEM_NIVEIS.indexOf(q.level)+1} de 5`;
+ $("question").textContent=q.q;$("answers").replaceChildren();
+ $("feedback").className="feedback hidden";$("feedback").textContent="";$("next").disabled=true;
+ const proxima=questions[index+1];
+ $("next").textContent=index===questions.length-1?"Ver resultado":(proxima&&proxima.level!==q.level?"Concluir nível":"Próxima pergunta");
+ q.a.forEach((answer,i)=>{const b=document.createElement("button");b.className="answer";const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);const text=document.createElement("span");text.textContent=answer;b.append(letter,text);b.addEventListener("click",()=>choose(i,b));$("answers").appendChild(b);});
+}
+function mostrarTransicaoNivel(nivelConcluido,proximoNivel,ultimaPergunta){
+ const area=$("feedback");area.className="level-transition";area.replaceChildren();
+ const badge=document.createElement("div");badge.textContent="NÍVEL CONCLUÍDO";badge.style.cssText="font-size:11px;letter-spacing:2px;font-weight:900;color:#f3cf70";
+ const h=document.createElement("h3");h.textContent="Excelente progresso!";
+ const p=document.createElement("p");p.textContent=`Concluíste ${nivelConcluido}. A preparar automaticamente ${proximoNivel}, com perguntas mais exigentes…`;
+ const explicacao=document.createElement("p");explicacao.textContent=ultimaPergunta?.why||"Continua a aprofundar o teu estudo das Escrituras.";explicacao.style.cssText="font-size:13px;color:#fff;margin-top:12px";
+ const ref=document.createElement("small");ref.textContent=ultimaPergunta?.ref?"Referência: "+ultimaPergunta.ref:"";ref.style.cssText="display:block;color:#f3cf70;margin-bottom:8px";
+ const small=document.createElement("small");small.textContent="A próxima etapa começa automaticamente em 4 segundos.";small.style.color="#d9e5f2";area.append(badge,h,p,explicacao,ref,small);
+ $("question").textContent="🏅 Transição de nível";$("answers").replaceChildren();$("next").disabled=true;$("next").classList.add("hidden");
+ temporizadorTransicao=setTimeout(()=>{if(!$("quiz").classList.contains("hidden")){ $("next").classList.remove("hidden");index++;render();}},4000);
+}
+
+function choose(choice,button){
+ if(locked||nivelEmTransicao)return;locked=true;
+ const q=questions[index],buttons=[...$("answers").querySelectorAll("button")];
+ buttons.forEach((b,i)=>{b.disabled=true;if(i===q.correct)b.classList.add("correct")});
+ const ok=choice===q.correct;if(ok){score++;button.classList.add("correct")}else button.classList.add("wrong");
+ const f=$("feedback");f.className="feedback "+(ok?"good":"bad");f.replaceChildren();
+ const strong=document.createElement("strong");strong.textContent=ok?"Resposta correta!":"Vamos aprender com esta resposta.";
+ const explanation=document.createElement("p");explanation.textContent=q.why;
+ const ref=document.createElement("span");ref.className="ref";ref.textContent="Referência: "+q.ref;f.append(strong,explanation,ref);
+ $("next").disabled=false;
+ const seguinte=questions[index+1];
+ if(!seguinte){$("next").textContent="Ver resultado";return;}
+ if(seguinte.level!==q.level){
+  nivelEmTransicao=true;historicoNiveis.push(q.level);
+  $("next").disabled=true;
+  mostrarTransicaoNivel(q.level,seguinte.level,q);
+ }
+}
+function finish(){
+ if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
+ historicoNiveis=ORDEM_NIVEIS.slice();show("result");atualizarBloqueioModalidades();
+ const pct=Math.round(score/questions.length*100),duracao=Math.max(0,Math.round((Date.now()-inicioMaratona)/1000));
+ $("resultTitle").textContent=pct===100?"Domínio bíblico extraordinário!":"Maratona concluída, "+playerName+"!";
+ $("resultMessage").textContent=`Concluíste os 5 níveis e ${questions.length} perguntas em ${Math.floor(duracao/60)} min ${duracao%60} s. ${pct>=80?"Excelente domínio das Escrituras.":pct>=50?"Bom esforço. Revê as referências e volta a desafiar-te.":"Continua a estudar: cada etapa fortalece o teu conhecimento bíblico."}`;
+ $("points").textContent=score*10;$("correctCount").textContent=`${score}/${questions.length}`;$("percentage").textContent=pct+"%";
+ saveRankingResult();
+}
+
+$("begin").addEventListener("click",begin);
+$("next").addEventListener("click",()=>{if(nivelEmTransicao)return;if(index<questions.length-1){index++;render()}else finish()});
+
+$("quit").addEventListener("click",()=>{
+  if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
+  $("next").classList.remove("hidden");
+  show("start");
+  atualizarBloqueioModalidades();
+});
+$("again").addEventListener("click",()=>{if(temporizadorTransicao)clearTimeout(temporizadorTransicao);$("next").classList.remove("hidden");show("start")});
+$("refreshRanking").addEventListener("click",loadRanking);
+loadRanking();
+
+let salaAtual = null, papelJogador = null, temporizadorOnline = null, meuJogadorId = null, respostaEnviada = false;
+// O anfitrião coordena o avanço automático para evitar que vários participantes
+// tentem mudar a pergunta ao mesmo tempo.
+let avancoAutomaticoEmCurso = false;
+let chaveUltimoAvancoAutomatico = "";
+const cabecalhosSala = {"Content-Type":"application/json", apikey:SUPABASE_PUBLIC_KEY, Authorization:`Bearer ${SUPABASE_PUBLIC_KEY}`};
+function novoIdJogador(){return window.crypto?.randomUUID?.() || ("j"+Date.now().toString(36)+Math.random().toString(36).slice(2,10));}
+function guardarIdentidadeSala(codigo,id){try{sessionStorage.setItem("bb-player:"+codigo,id);}catch(_){}}
+function lerIdentidadeSala(codigo){try{return sessionStorage.getItem("bb-player:"+codigo);}catch(_){return null;}}
+function obterJogadores(s){if(Array.isArray(s.jogadores_json)&&s.jogadores_json.length)return s.jogadores_json;const a=[];if(s.nome_anfitriao)a.push({id:"host-legacy",nome:s.nome_anfitriao,papel:"anfitriao"});if(s.nome_jogador2)a.push({id:"p2-legacy",nome:s.nome_jogador2,papel:"jogador"});return a;}
+function obterRespostas(s){return s?.respostas_json&&typeof s.respostas_json==="object"?s.respostas_json:{};}
+function obterPontuacoes(s){return s?.pontuacoes_json&&typeof s.pontuacoes_json==="object"?s.pontuacoes_json:{};}
+async function obterSala(codigo){const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?codigo=eq.${encodeURIComponent(codigo)}&select=*`,{headers:cabecalhosSala});const t=await r.text();if(!r.ok)throw Error("Supabase: "+t);const a=JSON.parse(t);if(!a.length)throw Error("Sala não encontrada.");return a[0];}
+async function atualizarSala(codigo,dados){const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?codigo=eq.${encodeURIComponent(codigo)}`,{method:"PATCH",headers:{...cabecalhosSala,Prefer:"return=minimal"},body:JSON.stringify(dados)});const t=await r.text();if(!r.ok)throw Error("Supabase: "+t);}
+function mostrarAreaOnline(){const a=$("areaPartidaOnline");a.classList.remove("hidden");a.classList.add("online-active");a.style.display="block";a.scrollIntoView({behavior:"smooth",block:"start"});}
+function iniciarAtualizacaoOnline(){if(temporizadorOnline)clearInterval(temporizadorOnline);temporizadorOnline=setInterval(async()=>{if(!salaAtual)return;try{salaAtual=await obterSala(salaAtual.codigo);meuJogadorId=lerIdentidadeSala(salaAtual.codigo)||meuJogadorId;const eu=obterJogadores(salaAtual).find(j=>j.id===meuJogadorId);papelJogador=eu?.papel==="anfitriao"?"anfitriao":"jogador";desenharPartidaOnline();await verificarAvancoAutomatico();}catch(e){console.error("Atualização da sala:",e);}},1800);}
+
+async function verificarAvancoAutomatico(){
+  if(!salaAtual || papelJogador!=="anfitriao" || salaAtual.estado_jogo!=="em_jogo" || avancoAutomaticoEmCurso)return;
+  const indice=Number(salaAtual.pergunta_atual||0);
+  const jogadores=obterJogadores(salaAtual);
+  const perguntas=Array.isArray(salaAtual.perguntas_json)?salaAtual.perguntas_json:[];
+  if(!jogadores.length || !perguntas.length || indice>=perguntas.length)return;
+  const respostas=obterRespostas(salaAtual)[String(indice)]||{};
+  if(!jogadores.every(j=>Object.prototype.hasOwnProperty.call(respostas,j.id)))return;
+  const chave=`${salaAtual.codigo}:${indice}`;
+  if(chaveUltimoAvancoAutomatico===chave)return;
+  avancoAutomaticoEmCurso=true;
+  chaveUltimoAvancoAutomatico=chave;
+  try{
+    // Pequena pausa para que todos vejam que as respostas foram recebidas.
+    await new Promise(resolve=>setTimeout(resolve,900));
+    const atual=await obterSala(salaAtual.codigo);
+    const indiceAtual=Number(atual.pergunta_atual||0);
+    const js=obterJogadores(atual);
+    const rs=obterRespostas(atual)[String(indiceAtual)]||{};
+    const qs=Array.isArray(atual.perguntas_json)?atual.perguntas_json:[];
+    const todosResponderam=js.length>0 && js.every(j=>Object.prototype.hasOwnProperty.call(rs,j.id));
+    if(atual.estado_jogo!=="em_jogo" || indiceAtual!==indice || !todosResponderam){chaveUltimoAvancoAutomatico="";return;}
+    const proximo=indiceAtual+1;
+    if(proximo>=qs.length){
+      await atualizarSala(atual.codigo,{estado_jogo:"terminada",estado:"terminada"});
+    }else{
+      await atualizarSala(atual.codigo,{pergunta_atual:proximo});
+    }
+    salaAtual=await obterSala(atual.codigo);
+    desenharPartidaOnline();
+  }catch(e){
+    chaveUltimoAvancoAutomatico="";
+    console.error("Avanço automático:",e);
+    $("feedbackOnline").textContent="Não foi possível avançar automaticamente. A verificar novamente...";
+  }finally{
+    avancoAutomaticoEmCurso=false;
+  }
+}
+function texto(parent,tag,valor){const e=document.createElement(tag);e.textContent=valor;parent.appendChild(e);return e;}
+function desenharPartidaOnline(){const s=salaAtual;if(!s)return;atualizarBloqueioModalidades();const js=obterJogadores(s),rs=obterRespostas(s),pts=obterPontuacoes(s),idx=Number(s.pergunta_atual||0);$("nomesJogadores").textContent=`Participantes (${js.length}/10): `+js.map((j,i)=>`${i+1}. ${j.nome}${j.id===meuJogadorId?" (tu)":""}`).join(" | ");$("pontuacaoOnline").textContent="Pontuação — "+js.map(j=>`${j.nome}: ${Number(pts[j.id]||0)}`).join(" | ");$("estadoPartida").textContent=s.estado_jogo==="em_jogo"?"Partida em andamento":s.estado_jogo==="terminada"?"Partida terminada":"Sala à espera de participantes";$("iniciarPartidaOnline").style.display=papelJogador==="anfitriao"&&s.estado_jogo==="aguardando"?"inline-block":"none";$("proximaOnline").style.display="none";const box=$("classificacaoNivelOnline");box.replaceChildren();
+if(s.estado_jogo==="terminada"){ $("perguntaOnline").textContent="🏆 Partida terminada!";$("respostasOnline").replaceChildren();$("progressoOnline").textContent="Resultado final";$("feedbackOnline").textContent="Obrigado por participares!";texto(box,"h3","🏆 Classificação final");const qs=Array.isArray(s.perguntas_json)?s.perguntas_json:[];
+function certosNoNivel(j,nivel){let total=0;qs.forEach((q,i)=>{if(q.level!==nivel)return;const resp=rs[String(i)]||{};if(Object.prototype.hasOwnProperty.call(resp,j.id)&&resp[j.id]===q.correct)total++;});return total;}
+const ordem=[...js].sort((a,b)=>{
+ const diff=Number(pts[b.id]||0)-Number(pts[a.id]||0);if(diff)return diff;
+ for(let k=ORDEM_NIVEIS.length-1;k>=0;k--){const d=certosNoNivel(b,ORDEM_NIVEIS[k])-certosNoNivel(a,ORDEM_NIVEIS[k]);if(d)return d;}
+ return String(a.nome||"").localeCompare(String(b.nome||""),"pt");
+});
+ordem.forEach((j,i)=>{const desempate=ORDEM_NIVEIS.slice().reverse().map(n=>`${n}: ${certosNoNivel(j,n)}`).join(" · ");texto(box,"p",`${i+1}. ${j.nome}: ${Number(pts[j.id]||0)} ponto(s) — desempate por níveis avançados: ${desempate}`);});
+if(ordem.length){const empatados=ordem.length>1&&Number(pts[ordem[0].id]||0)===Number(pts[ordem[1].id]||0)&&ORDEM_NIVEIS.every(n=>certosNoNivel(ordem[0],n)===certosNoNivel(ordem[1],n));texto(box,"h3",empatados?`🤝 Empate técnico entre os primeiros participantes.`:`🥇 Vencedor: ${ordem[0].nome}`);texto(box,"p","Critério de desempate: pontuação total; depois, acertos do nível mais difícil para o mais fácil; persistindo igualdade, ordem alfabética do nome.");}return;}
+if(s.estado_jogo==="aguardando"){$("perguntaOnline").textContent=papelJogador==="anfitriao"?"Partilha o código e aguarda pelo menos mais um participante. Máximo: 10.":"A aguardar o anfitrião iniciar a partida...";$("respostasOnline").replaceChildren();$("progressoOnline").textContent=`Código: ${s.codigo} · ${s.partida_aberta?"Partida aberta":"Sala privada"}`;$("feedbackOnline").textContent="";return;}
+const perguntas=Array.isArray(s.perguntas_json)?s.perguntas_json:[];if(!perguntas.length||idx>=perguntas.length)return;const q=perguntas[idx],res=rs[String(idx)]||{},ja=Object.prototype.hasOwnProperty.call(res,meuJogadorId||"");respostaEnviada=ja;$("perguntaOnline").textContent=q.q;$("nivelOnline").textContent=`📖 Nível ${ORDEM_NIVEIS.indexOf(q.level)+1} de 5: ${q.level||s.nivel}`;$("progressoOnline").textContent=`Maratona: ${idx+1} de ${perguntas.length} perguntas · Respostas: ${js.filter(j=>Object.hasOwn(res,j.id)).length}/${js.length}`;$("barraNivel").max=perguntas.length;$("barraNivel").value=idx+1;$("feedbackOnline").textContent=ja?`Resposta registada. ${q.ref?"Referência: "+q.ref:""}:` .replace(/:$/,""):"Escolhe uma resposta.";const area=$("respostasOnline");area.replaceChildren();q.a.forEach((op,i)=>{const b=document.createElement("button");b.type="button";b.className="primary";b.style.cssText="display:block;width:100%;margin:8px 0";b.textContent=String.fromCharCode(65+i)+". "+op;b.disabled=ja;b.addEventListener("click",()=>enviarResposta(idx,i));area.appendChild(b);});}
+async function enviarResposta(idx,escolha){if(!salaAtual||respostaEnviada||!meuJogadorId)return;const q=salaAtual.perguntas_json?.[idx];if(!q)return;const rs={...obterRespostas(salaAtual)},porPergunta={...(rs[String(idx)]||{})};if(Object.hasOwn(porPergunta,meuJogadorId))return;porPergunta[meuJogadorId]=escolha;rs[String(idx)]=porPergunta;const pts={...obterPontuacoes(salaAtual)};pts[meuJogadorId]=Number(pts[meuJogadorId]||0)+(escolha===q.correct?1:0);try{respostaEnviada=true;await atualizarSala(salaAtual.codigo,{respostas_json:rs,pontuacoes_json:pts});salaAtual=await obterSala(salaAtual.codigo);desenharPartidaOnline();}catch(e){respostaEnviada=false;$("feedbackOnline").textContent="Erro ao guardar resposta: "+e.message;}}
+async function entrarNaSala(s,nome,msg){const js=obterJogadores(s);if(s.estado!=="aguardando"||s.estado_jogo!=="aguardando")throw Error("Esta partida já começou ou terminou.");if(js.length>=10)throw Error("Esta sala já tem 10 participantes.");if(js.some(j=>String(j.nome).toLowerCase()===nome.toLowerCase()))throw Error("Já existe alguém com esse nome nesta sala.");const id=novoIdJogador(),novos=[...js,{id,nome,papel:"jogador",entrou_em:new Date().toISOString()}],pts={...obterPontuacoes(s),[id]:0},dados={jogadores_json:novos,pontuacoes_json:pts};if(!s.nome_jogador2)dados.nome_jogador2=nome;await atualizarSala(s.codigo,dados);salaAtual=await obterSala(s.codigo);meuJogadorId=id;papelJogador="jogador";guardarIdentidadeSala(s.codigo,id);msg.textContent=`Entraste na sala de ${s.nome_anfitriao}. Participantes: ${novos.length}/10.`;mostrarAreaOnline();desenharPartidaOnline();iniciarAtualizacaoOnline();}
+async function criarSalaDisputa(aberta){const nome=$("nomeDisputa").value.trim(),nivel=$("nivelDisputa").value,msg=$("mensagemDisputa");if(!nome){msg.textContent="Escreve o teu nome primeiro.";$("nomeDisputa").focus();return;}const codigo=Math.random().toString(36).slice(2,8).toUpperCase(),id=novoIdJogador();msg.textContent="A criar sala...";try{const corpo={codigo,nome_anfitriao:nome,nivel,estado:"aguardando",estado_jogo:"aguardando",pergunta_atual:0,perguntas_json:[],respostas_anfitriao:{},respostas_jogador2:{},pontos_anfitriao:0,pontos_jogador2:0,jogadores_json:[{id,nome,papel:"anfitriao",entrou_em:new Date().toISOString()}],respostas_json:{},pontuacoes_json:{[id]:0},partida_aberta:Boolean(aberta)};const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia`,{method:"POST",headers:{...cabecalhosSala,Prefer:"return=minimal"},body:JSON.stringify(corpo)}),t=await r.text();if(!r.ok)throw Error(t);salaAtual=await obterSala(codigo);meuJogadorId=id;papelJogador="anfitriao";guardarIdentidadeSala(codigo,id);msg.textContent=`${aberta?"Partida aberta":"Sala privada"} criada! Código: ${codigo}.`;mostrarAreaOnline();desenharPartidaOnline();iniciarAtualizacaoOnline();}catch(e){console.error(e);msg.textContent="Erro ao criar sala: "+e.message+" Confirma se as colunas novas foram adicionadas ao Supabase.";}}
+$("criarSala").addEventListener("click",()=>criarSalaDisputa(false));
+$("entrarSala").addEventListener("click",async()=>{const codigo=$("codigoEntrada").value.trim().toUpperCase(),nome=$("nomeDisputa").value.trim(),msg=$("mensagemEntrada");if(!nome){msg.textContent="Escreve o teu nome no campo 'O teu nome'.";return;}if(!codigo){msg.textContent="Escreve o código da sala.";return;}msg.textContent="A procurar sala...";try{await entrarNaSala(await obterSala(codigo),nome,msg);}catch(e){msg.textContent="Não foi possível entrar: "+e.message;}});
+$("iniciarPartidaOnline").addEventListener("click",async()=>{if(!salaAtual||papelJogador!=="anfitriao")return;const js=obterJogadores(salaAtual);if(js.length<2){$("estadoPartida").textContent="É necessário pelo menos mais um participante.";return;}const escolhidas=[];try{for(const nivel of ORDEM_NIVEIS){const pool=shuffle(bank.filter(p=>p.level===nivel)).map(embaralharAlternativas),qtd=QUANTIDADES_NIVEIS[nivel];if(pool.length<qtd)throw Error(`O nível ${nivel} precisa de ${qtd} perguntas, mas só tem ${pool.length}.`);escolhidas.push(...pool.slice(0,qtd));}}catch(e){$("estadoPartida").textContent=e.message;return;}const pts={};js.forEach(j=>pts[j.id]=0);$("estadoPartida").textContent="A iniciar a Maratona Bíblica de 100 perguntas...";try{await atualizarSala(salaAtual.codigo,{estado_jogo:"em_jogo",estado:"em_jogo",pergunta_atual:0,perguntas_json:escolhidas,respostas_json:{},pontuacoes_json:pts});salaAtual=await obterSala(salaAtual.codigo);desenharPartidaOnline();}catch(e){$("estadoPartida").textContent="Erro ao iniciar: "+e.message;}});
+$("proximaOnline").addEventListener("click",()=>{if(salaAtual && papelJogador==="anfitriao")$("feedbackOnline").textContent="A próxima pergunta avança automaticamente quando todos responderem.";});
+$("partidaAberta").addEventListener("click",async()=>{const nome=$("nomeDisputa").value.trim(),msg=$("mensagemDisputa");if(!nome){msg.textContent="Escreve o teu nome antes de procurar uma partida.";$("nomeDisputa").focus();return;}msg.textContent="A procurar partidas abertas...";try{const r=await fetch(`${SUPABASE_URL}/rest/v1/salas_biblia?partida_aberta=eq.true&estado_jogo=eq.aguardando&select=*`,{headers:cabecalhosSala}),t=await r.text();if(!r.ok)throw Error(t);const salas=JSON.parse(t),s=salas.find(x=>obterJogadores(x).length<10&&!obterJogadores(x).some(j=>j.nome.toLowerCase()===nome.toLowerCase()));if(s){await entrarNaSala(s,nome,msg);}else{msg.textContent="Não há partidas abertas disponíveis. A criar uma nova partida aberta...";await criarSalaDisputa(true);}}catch(e){msg.textContent="Erro ao procurar partidas: "+e.message;}});
+
+
+/* BLOQUEIO MÚTUO DAS MODALIDADES */
+let avisoConflitoModalidades = false;
+
+function atualizarBloqueioModalidades() {
+  const quiz = $("quiz");
+  const partidaIndividualAtiva =
+    quiz && !quiz.classList.contains("hidden");
+
+  const partidaOnlineAtiva =
+    !!salaAtual && salaAtual.estado_jogo === "em_jogo";
+
+  // Se a partida online começar durante o jogo individual,
+  // interromper o jogo individual para evitar duas partidas ativas.
+  if (partidaOnlineAtiva && partidaIndividualAtiva) {
+    show("start");
+    questions = [];
+    index = 0;
+    score = 0;
+    locked = false;
+
+    if (!avisoConflitoModalidades) {
+      alert(
+        "A partida online começou. " +
+        "A partida individual foi interrompida para evitar " +
+        "duas partidas simultâneas."
+      );
+      avisoConflitoModalidades = true;
+    }
+  }
+
+  if (!partidaOnlineAtiva) {
+    avisoConflitoModalidades = false;
+  }
+
+  const bloquearIndividual = partidaOnlineAtiva;
+  const bloquearOnline =
+    partidaIndividualAtiva || partidaOnlineAtiva;
+
+  // Cartões e controlos da partida individual
+  document.querySelectorAll(".cartao-nivel").forEach(botao => {
+    botao.disabled = bloquearIndividual;
+  });
+
+  ["level", "player", "begin"].forEach(id => {
+    const elemento = $(id);
+    if (elemento) elemento.disabled = bloquearIndividual;
+  });
+
+  // Controlos para criar ou entrar numa partida online
+  ["criarSala", "entrarSala", "partidaAberta"].forEach(id => {
+    const elemento = $(id);
+    if (elemento) elemento.disabled = bloquearOnline;
+  });
+
+  // Só se pode iniciar a partida online se não houver
+  // uma partida individual em andamento.
+  const iniciarOnline = $("iniciarPartidaOnline");
+  if (iniciarOnline) {
+    iniciarOnline.disabled = partidaIndividualAtiva;
+  }
+
+  // O anfitrião pode avançar as perguntas online normalmente,
+  // desde que não exista uma partida individual ativa.
+  const proxima = $("proximaOnline");
+  if (proxima) {
+    proxima.disabled = partidaIndividualAtiva;
+  }
+}
+
+/* SELEÇÃO DOS CARTÕES — BOM DE BÍBLIA */
+(function () {
+  const grelha = document.getElementById("niveisCartoes");
+  const seletor = document.getElementById("level");
+
+  if (!grelha || !seletor) return;
+
+  const cartoes = grelha.querySelectorAll(".cartao-nivel");
+
+  function selecionarNivel(cartao) {
+    const nivel = cartao.dataset.nivel;
+
+    if (!nivel) return;
+
+    const opcaoExiste = Array.from(seletor.options)
+      .some(opcao => opcao.value === nivel);
+
+    if (!opcaoExiste) {
+      console.warn("Nível não encontrado:", nivel);
+      return;
+    }
+
+    seletor.value = nivel;
+
+    cartoes.forEach(function (item) {
+      const ativo = item === cartao;
+
+      item.classList.toggle("ativo", ativo);
+      item.setAttribute("aria-pressed", String(ativo));
+    });
+
+    seletor.dispatchEvent(
+      new Event("change", { bubbles: true })
+    );
+  }
+
+  cartoes.forEach(function (cartao) {
+    cartao.setAttribute("aria-pressed", "false");
+
+    cartao.addEventListener("click", function () {
+      selecionarNivel(cartao);
+    });
+  });
+
+  const nivelInicial = Array.from(cartoes).find(
+    cartao => cartao.dataset.nivel === seletor.value
+  );
+
+  if (nivelInicial) {
+    selecionarNivel(nivelInicial);
+  }
+})();
+
+</script>
+<!-- ASSINATURA PROFISSIONAL -->
+<footer id="assinaturaEduardo" style="margin-top:42px;padding:30px 18px;background:linear-gradient(135deg,#091729 0%,#102b46 52%,#1c4770 100%);border-top:3px solid #d6b45c;border-radius:20px 20px 0 0;text-align:center;color:#fff;font-family:Arial,sans-serif;">
+  <div class="signature-mark" aria-hidden="true">EA</div>
+  <div style="color:#f3cf70;font-size:11px;font-weight:900;letter-spacing:3px;margin-bottom:8px;">BOM DE BÍBLIA</div>
+  <div class="signature-credit" style="font-weight:800;margin-bottom:7px;">Desenvolvido por Eduardo Alfredo</div>
+  <div class="signature-role">Educação · Bíblia · Tecnologia</div>
+  <div style="max-width:470px;margin:0 auto;color:#dbe6f2;font-size:13px;line-height:1.65;">Uma experiência digital dedicada ao estudo das Escrituras, à aprendizagem progressiva e à partilha do conhecimento bíblico.</div>
+  <div class="signature-line"></div>
+  <div style="font-size:11px;color:#cbd5e1;line-height:1.8;">Projecto independente de estudo bíblico<br>© <span id="anoAssinaturaNova"></span> Bom de Bíblia · Todos os direitos reservados</div>
+</footer>
+<script>document.getElementById("anoAssinaturaNova").textContent=new Date().getFullYear();</script>
