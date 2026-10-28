@@ -909,9 +909,13 @@ function mostrarTransicaoNivel(nivelConcluido,proximoNivel,ultimaPergunta){
  const p=document.createElement("p");p.textContent=proximoNivel?`A seguir: ${proximoNivel}. O próximo nível vai começar automaticamente.`:"Concluíste o último nível da Maratona Bíblica! A preparar o resultado final…";
  const explicacao=document.createElement("p");explicacao.textContent=ultimaPergunta?.why||"Continua a aprofundar o teu estudo das Escrituras.";explicacao.style.cssText="font-size:13px;color:#fff;margin-top:12px";
  const ref=document.createElement("small");ref.textContent=ultimaPergunta?.ref?"Referência: "+ultimaPergunta.ref:"";ref.style.cssText="display:block;color:#f3cf70;margin-bottom:8px";
- const small=document.createElement("small");small.textContent=proximoNivel?"Avanço automático em 4 segundos…":"Resultado final em 4 segundos…";small.style.cssText="display:block;color:#d9e5f2";area.append(badge,h,scoreCard,p,explicacao,ref,small);
- $("question").textContent="🏆 Pontuação do nível";$("answers").replaceChildren();$("next").disabled=true;$("next").classList.add("hidden");
- temporizadorTransicao=setTimeout(()=>{if(!$("quiz").classList.contains("hidden")){if(proximoNivel){index++;$("next").classList.remove("hidden");render();}else{finish();}}},4000);
+ const small=document.createElement("small");small.textContent=proximoNivel?"Avanço automático em 8 segundos…":"Resultado final em 8 segundos…";small.style.cssText="display:block;color:#d9e5f2";area.append(badge,h,scoreCard,p,explicacao,ref,small);
+ $("question").textContent="🏆 Pontuação do nível";$("answers").replaceChildren();
+ // O botão manual fica visível durante a transição de nível.
+ $("next").classList.remove("hidden");$("next").disabled=false;
+ $("next").textContent=proximoNivel?"⏭️ Avançar para o próximo nível agora":"🏁 Ver resultado final agora";
+ if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
+ temporizadorTransicao=setTimeout(()=>{if(!$("quiz").classList.contains("hidden")){if(proximoNivel){index++;render();}else{finish();}}},8000);
 }
 
 function choose(choice,button){
@@ -931,9 +935,16 @@ function choose(choice,button){
  }
  if(seguinte.level!==q.level){
   nivelEmTransicao=true;if(!historicoNiveis.includes(q.level))historicoNiveis.push(q.level);
-  $("next").disabled=true;
   mostrarTransicaoNivel(q.level,seguinte.level,q);
+  return;
  }
+ // Dentro do mesmo nível, avançar automaticamente após breve tempo para ler o feedback.
+ if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
+ temporizadorTransicao=setTimeout(()=>{
+   if(!$("quiz").classList.contains("hidden") && locked && !nivelEmTransicao){
+     if(index<questions.length-1){index++;render();}else{finish();}
+   }
+ },1500);
 }
 function finish(){
  if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
@@ -946,7 +957,15 @@ function finish(){
 }
 
 $("begin").addEventListener("click",begin);
-$("next").addEventListener("click",()=>{if(nivelEmTransicao)return;if(index<questions.length-1){index++;render()}else finish()});
+$("next").addEventListener("click",()=>{
+ if(nivelEmTransicao){
+   if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
+   temporizadorTransicao=null;
+   if(index<questions.length-1){index++;render();}else{finish();}
+   return;
+ }
+ if(index<questions.length-1){index++;render()}else finish();
+});
 
 $("quit").addEventListener("click",()=>{
   if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
