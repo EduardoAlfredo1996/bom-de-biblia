@@ -829,7 +829,7 @@ function show(id){["start","quiz","result"].forEach(s=>$(s).classList.toggle("hi
 
 const ORDEM_NIVEIS=["Iniciante","Intermediário","Avançado","Mestre da Bíblia","Desafio Apocalíptico"];
 const QUANTIDADES_NIVEIS={"Iniciante":10,"Intermediário":15,"Avançado":20,"Mestre da Bíblia":25,"Desafio Apocalíptico":30};
-let nivelEmTransicao=false, temporizadorTransicao=null, inicioMaratona=0, historicoNiveis=[];
+let nivelEmTransicao=false, temporizadorTransicao=null, inicioMaratona=0, historicoNiveis=[], acertosPorNivel={};
 function prepararMaratona(){
   const conjunto=[];
   for(const nivel of ORDEM_NIVEIS){
@@ -844,7 +844,7 @@ function begin(){
  playerName=$("player").value.trim()||"Participante";
  try{questions=prepararMaratona();}catch(e){alert(e.message);return;}
  selectedLevel="Maratona Bíblica — 5 níveis";
- index=0;score=0;locked=false;nivelEmTransicao=false;historicoNiveis=[];inicioMaratona=Date.now();
+ index=0;score=0;locked=false;nivelEmTransicao=false;historicoNiveis=[];acertosPorNivel={};inicioMaratona=Date.now();
  if(temporizadorTransicao)clearTimeout(temporizadorTransicao);
  $("playerLabel").textContent=playerName;
  show("quiz");atualizarBloqueioModalidades();render();
@@ -874,30 +874,39 @@ function render(){
 }
 function mostrarTransicaoNivel(nivelConcluido,proximoNivel,ultimaPergunta){
  const area=$("feedback");area.className="level-transition";area.replaceChildren();
- const badge=document.createElement("div");badge.textContent="NÍVEL CONCLUÍDO";badge.style.cssText="font-size:11px;letter-spacing:2px;font-weight:900;color:#f3cf70";
- const h=document.createElement("h3");h.textContent="Excelente progresso!";
- const p=document.createElement("p");p.textContent=`Concluíste ${nivelConcluido}. A preparar automaticamente ${proximoNivel}, com perguntas mais exigentes…`;
+ const totalNivel=QUANTIDADES_NIVEIS[nivelConcluido]||questions.filter(q=>q.level===nivelConcluido).length;
+ const acertos=acertosPorNivel[nivelConcluido]||0;
+ const pct=totalNivel?Math.round(acertos/totalNivel*100):0;
+ const badge=document.createElement("div");badge.textContent="RESULTADO DO NÍVEL";badge.style.cssText="font-size:11px;letter-spacing:2px;font-weight:900;color:#f3cf70";
+ const h=document.createElement("h3");h.textContent=`${nivelConcluido} concluído!`;
+ const scoreCard=document.createElement("div");scoreCard.style.cssText="margin:14px auto;padding:14px;border:1px solid rgba(243,207,112,.55);border-radius:14px;background:rgba(255,255,255,.08);max-width:300px;text-align:center";
+ const scoreBig=document.createElement("strong");scoreBig.textContent=`${acertos}/${totalNivel} respostas certas`;scoreBig.style.cssText="display:block;font-size:22px;color:#f3cf70";
+ const scoreSmall=document.createElement("span");scoreSmall.textContent=`${acertos*10} pontos · ${pct}% de aproveitamento`;scoreSmall.style.cssText="display:block;margin-top:5px;color:#fff;font-size:14px";scoreCard.append(scoreBig,scoreSmall);
+ const p=document.createElement("p");p.textContent=proximoNivel?`A seguir: ${proximoNivel}. O próximo nível vai começar automaticamente.`:"Concluíste o último nível da Maratona Bíblica! A preparar o resultado final…";
  const explicacao=document.createElement("p");explicacao.textContent=ultimaPergunta?.why||"Continua a aprofundar o teu estudo das Escrituras.";explicacao.style.cssText="font-size:13px;color:#fff;margin-top:12px";
  const ref=document.createElement("small");ref.textContent=ultimaPergunta?.ref?"Referência: "+ultimaPergunta.ref:"";ref.style.cssText="display:block;color:#f3cf70;margin-bottom:8px";
- const small=document.createElement("small");small.textContent="A próxima etapa começa automaticamente em 4 segundos.";small.style.color="#d9e5f2";area.append(badge,h,p,explicacao,ref,small);
- $("question").textContent="🏅 Transição de nível";$("answers").replaceChildren();$("next").disabled=true;$("next").classList.add("hidden");
- temporizadorTransicao=setTimeout(()=>{if(!$("quiz").classList.contains("hidden")){ $("next").classList.remove("hidden");index++;render();}},4000);
+ const small=document.createElement("small");small.textContent=proximoNivel?"Avanço automático em 4 segundos…":"Resultado final em 4 segundos…";small.style.cssText="display:block;color:#d9e5f2";area.append(badge,h,scoreCard,p,explicacao,ref,small);
+ $("question").textContent="🏆 Pontuação do nível";$("answers").replaceChildren();$("next").disabled=true;$("next").classList.add("hidden");
+ temporizadorTransicao=setTimeout(()=>{if(!$("quiz").classList.contains("hidden")){if(proximoNivel){index++;$("next").classList.remove("hidden");render();}else{finish();}}},4000);
 }
 
 function choose(choice,button){
  if(locked||nivelEmTransicao)return;locked=true;
  const q=questions[index],buttons=[...$("answers").querySelectorAll("button")];
  buttons.forEach((b,i)=>{b.disabled=true;if(i===q.correct)b.classList.add("correct")});
- const ok=choice===q.correct;if(ok){score++;button.classList.add("correct")}else button.classList.add("wrong");
+ const ok=choice===q.correct;if(ok){score++;acertosPorNivel[q.level]=(acertosPorNivel[q.level]||0)+1;button.classList.add("correct")}else button.classList.add("wrong");
  const f=$("feedback");f.className="feedback "+(ok?"good":"bad");f.replaceChildren();
  const strong=document.createElement("strong");strong.textContent=ok?"Resposta correta!":"Vamos aprender com esta resposta.";
  const explanation=document.createElement("p");explanation.textContent=q.why;
  const ref=document.createElement("span");ref.className="ref";ref.textContent="Referência: "+q.ref;f.append(strong,explanation,ref);
  $("next").disabled=false;
  const seguinte=questions[index+1];
- if(!seguinte){$("next").textContent="Ver resultado";return;}
+ if(!seguinte){
+  nivelEmTransicao=true;if(!historicoNiveis.includes(q.level))historicoNiveis.push(q.level);
+  $("next").disabled=true;mostrarTransicaoNivel(q.level,null,q);return;
+ }
  if(seguinte.level!==q.level){
-  nivelEmTransicao=true;historicoNiveis.push(q.level);
+  nivelEmTransicao=true;if(!historicoNiveis.includes(q.level))historicoNiveis.push(q.level);
   $("next").disabled=true;
   mostrarTransicaoNivel(q.level,seguinte.level,q);
  }
